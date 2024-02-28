@@ -1,5 +1,7 @@
 # LIC
 #List of main git commands
+;
+;
 git init: Initialize a new Git repository in the current directory.
 git clone <repository_url>: Clone a repository from a remote server to your local machine.
 git add <file(s)>: Add file(s) to the staging area to be included in the next commit.
