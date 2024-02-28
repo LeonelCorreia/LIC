@@ -1,0 +1,31 @@
+LIBRARY IEEE;
+use IEEE.std_logic_1164.all;
+
+entity Flags2 is
+	port(
+	iOV : in STD_LOGIC;
+	iCB : in STD_LOGIC;
+	Op : in STD_LOGIC;
+	R : in STD_LOGIC_VECTOR(3 downto 0);
+	CY: in STD_LOGIC;
+	oOV: out STD_LOGIC;
+	oCB: out STD_LOGIC;
+	BE: out STD_LOGIC;
+	oGE: out STD_LOGIC;
+	Z: out STD_LOGIC
+	);
+end Flags2;
+architecture arq_Flags2 of Flags2 is
+begin
+
+oOV <= iOV;
+
+oCB <= (not Op and CY) or (Op and iCB);
+
+Z <= not(R(0) or R(1) or R(2) or R(3));
+
+oGE <= iOV XNOR R(3);
+
+BE <= not iOV
+
+end arq_Flags2;

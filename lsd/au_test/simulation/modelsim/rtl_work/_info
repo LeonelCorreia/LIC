@@ -1,0 +1,244 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Leonel/isel/lsd/au_test/simulation/modelsim
+Elogic_module
+Z1 w1669202485
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8C:/Leonel/isel/lsd/TLab2/ALU/Logic_Module.vhd
+Z5 FC:/Leonel/isel/lsd/TLab2/ALU/Logic_Module.vhd
+l0
+L4
+VUQ=<HmgLWEKi43:O9V3:H1
+!s100 3QYH1fen:m]P[lzj<36IW0
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1669565336
+!i10b 1
+Z8 !s108 1669565336.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/TLab2/ALU/Logic_Module.vhd|
+Z10 !s107 C:/Leonel/isel/lsd/TLab2/ALU/Logic_Module.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Aarq_logic_module
+R2
+R3
+DEx4 work 12 logic_module 0 22 UQ=<HmgLWEKi43:O9V3:H1
+l52
+L14
+Vz^9hiJI;JAP<X;0HiRW=I1
+!s100 jXJY;YGEbVmHbH@]Em38S2
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Emux4_1
+Z13 w1668567607
+R2
+R3
+R0
+Z14 8C:/Leonel/isel/lsd/lab3/Mux4_1.vhd
+Z15 FC:/Leonel/isel/lsd/lab3/Mux4_1.vhd
+l0
+L3
+VaXTaC:o<?z91[=W4F>l;L0
+!s100 `:4hYeRInaAk;D?I:824I1
+R6
+31
+R7
+!i10b 1
+R8
+Z16 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/lab3/Mux4_1.vhd|
+Z17 !s107 C:/Leonel/isel/lsd/lab3/Mux4_1.vhd|
+!i113 1
+R11
+R12
+Aarq_mux4_1
+R2
+R3
+DEx4 work 6 mux4_1 0 22 aXTaC:o<?z91[=W4F>l;L0
+l10
+L9
+VL8OJF?Z:OkG6N4`NVejW]2
+!s100 ?XdCN1`HQf@gzFMk1^LV<1
+R6
+31
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Eporta_asr
+Z18 w1668598963
+R2
+R3
+R0
+Z19 8C:/Leonel/isel/lsd/TLab2/ALU/Porta_ASR.vhd
+Z20 FC:/Leonel/isel/lsd/TLab2/ALU/Porta_ASR.vhd
+l0
+L3
+V^<QN6jeALBZH7fiPkF0810
+!s100 KdNi7Td1QdGI0hCD8PF]00
+R6
+31
+R7
+!i10b 1
+R8
+Z21 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/TLab2/ALU/Porta_ASR.vhd|
+Z22 !s107 C:/Leonel/isel/lsd/TLab2/ALU/Porta_ASR.vhd|
+!i113 1
+R11
+R12
+Aarq_porta_asr
+R2
+R3
+DEx4 work 9 porta_asr 0 22 ^<QN6jeALBZH7fiPkF0810
+l18
+L9
+VD:@VW;]9Bg?4i>gP1=9UM3
+!s100 83:zjlk7^2l7AfjKd2iI<3
+R6
+31
+R7
+!i10b 1
+R8
+R21
+R22
+!i113 1
+R11
+R12
+Eporta_lsr
+Z23 w1668571823
+R2
+R3
+R0
+Z24 8C:/Leonel/isel/lsd/TLab2/ALU/Porta_LSR.vhd
+Z25 FC:/Leonel/isel/lsd/TLab2/ALU/Porta_LSR.vhd
+l0
+L3
+VhalT`G7lb7@2]RY>J=C=O2
+!s100 ebK5eXUjDOKRS0egc<iV61
+R6
+31
+Z26 !s110 1669565335
+!i10b 1
+Z27 !s108 1669565335.000000
+Z28 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/TLab2/ALU/Porta_LSR.vhd|
+Z29 !s107 C:/Leonel/isel/lsd/TLab2/ALU/Porta_LSR.vhd|
+!i113 1
+R11
+R12
+Aarq_porta_lsr
+R2
+R3
+DEx4 work 9 porta_lsr 0 22 halT`G7lb7@2]RY>J=C=O2
+l19
+L9
+Vi<mPNDaPzXVIT7dTNCH?=1
+!s100 Kd=Q`D^bLV`mG@^Km5BN42
+R6
+31
+R26
+!i10b 1
+R27
+R28
+R29
+!i113 1
+R11
+R12
+Eporta_or
+Z30 w1668571596
+R2
+R3
+R0
+Z31 8C:/Leonel/isel/lsd/TLab2/ALU/Porta_OR.vhd
+Z32 FC:/Leonel/isel/lsd/TLab2/ALU/Porta_OR.vhd
+l0
+L3
+Vnah_BTHE9lR0b5aca]6bH3
+!s100 I9T7Jkh3<80i^2W[KZ7NX1
+R6
+31
+R26
+!i10b 1
+R27
+Z33 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/TLab2/ALU/Porta_OR.vhd|
+Z34 !s107 C:/Leonel/isel/lsd/TLab2/ALU/Porta_OR.vhd|
+!i113 1
+R11
+R12
+Aarq_porta_or
+R2
+R3
+DEx4 work 8 porta_or 0 22 nah_BTHE9lR0b5aca]6bH3
+l10
+L9
+VY2<2@N7dTPT;[M^BVk[S<3
+!s100 hG8WKR`VafSofd?4e194>0
+R6
+31
+R26
+!i10b 1
+R27
+R33
+R34
+!i113 1
+R11
+R12
+Eporta_xnor
+Z35 w1668571674
+R2
+R3
+R0
+Z36 8C:/Leonel/isel/lsd/TLab2/ALU/Porta_XNOR.vhd
+Z37 FC:/Leonel/isel/lsd/TLab2/ALU/Porta_XNOR.vhd
+l0
+L3
+V4:c8SWF`^0mA2<68HfYFz1
+!s100 Qc1k;75WXTLe3DiS^AYS`2
+R6
+31
+R26
+!i10b 1
+R27
+Z38 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/TLab2/ALU/Porta_XNOR.vhd|
+Z39 !s107 C:/Leonel/isel/lsd/TLab2/ALU/Porta_XNOR.vhd|
+!i113 1
+R11
+R12
+Aarq_porta_xnor
+R2
+R3
+DEx4 work 10 porta_xnor 0 22 4:c8SWF`^0mA2<68HfYFz1
+l10
+L9
+Vn]<Zz=?<31hn9BdAWPoQD3
+!s100 c_7nlfFDI]jd21ZMOjgM53
+R6
+31
+R26
+!i10b 1
+R27
+R38
+R39
+!i113 1
+R11
+R12

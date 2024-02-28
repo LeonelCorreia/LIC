@@ -1,0 +1,18 @@
+LIBRARY IEEE;
+use IEEE.std_logic_1164.all;
+
+entity semi_Adder is
+	port(
+	I0, I1 : in STD_LOGIC;
+	CBi : in STD_LOGIC;
+	S : out STD_LOGIC;
+	CBo : out STD_LOGIC);
+end semi_Adder;
+architecture arq_semi_Adder of semi_Adder is
+begin
+
+S <= I0 XOR I1 XOR CBi;
+
+CBo <=  I0 AND I1;
+
+end arq_semi_Adder;

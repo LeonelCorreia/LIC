@@ -1,0 +1,265 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Leonel/isel/lsd/lab5/simulation/modelsim
+Ecountup
+w1671193575
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+8C:/Leonel/isel/lsd/lab5/CountUp.vhd
+FC:/Leonel/isel/lsd/lab5/CountUp.vhd
+l0
+L4
+V>T8W@EDiVM56kVkX<Xko_0
+!s100 2J`kHHPA48UXaW5bARS=31
+Z3 OV;C;10.5b;63
+31
+Z4 !s110 1671193647
+!i10b 1
+Z5 !s108 1671193647.000000
+!s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/lab5/CountUp.vhd|
+!s107 C:/Leonel/isel/lsd/lab5/CountUp.vhd|
+!i113 1
+Z6 o-93 -work work
+Z7 tExplicit 1 CvgOpt 0
+Edecoderhex
+Z8 w1669741605
+R1
+R2
+R0
+Z9 8C:/Users/leone/Downloads/LSD_2223i_LAB5_rev_24_11/decoderHex.vhd
+Z10 FC:/Users/leone/Downloads/LSD_2223i_LAB5_rev_24_11/decoderHex.vhd
+l0
+L4
+VVP0MH9SS__Df8o@095odC1
+!s100 AX_HhmKjc[f<03e<ULWS^2
+R3
+31
+Z11 !s110 1671193646
+!i10b 1
+Z12 !s108 1671193646.000000
+Z13 !s90 -reportprogress|300|-93|-work|work|C:/Users/leone/Downloads/LSD_2223i_LAB5_rev_24_11/decoderHex.vhd|
+Z14 !s107 C:/Users/leone/Downloads/LSD_2223i_LAB5_rev_24_11/decoderHex.vhd|
+!i113 1
+R6
+R7
+Alogicfuntion
+R1
+R2
+DEx4 work 10 decoderhex 0 22 VP0MH9SS__Df8o@095odC1
+l21
+L10
+VzgAAVJPiF6RZBiAMgn@To2
+!s100 N;V]gecEa>5Bm5KBA4H^@3
+R3
+31
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R6
+R7
+Efull_adder
+Z15 w1667936161
+R1
+R2
+R0
+Z16 8C:/Leonel/isel/lsd/lab4/Full_Adder.vhd
+Z17 FC:/Leonel/isel/lsd/lab4/Full_Adder.vhd
+l0
+L4
+V`Oke6WzQ9A_Ok]QI=BhDJ3
+!s100 ;o3ZILGmH[fF@[PP=X0350
+R3
+31
+R4
+!i10b 1
+R5
+Z18 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/lab4/Full_Adder.vhd|
+Z19 !s107 C:/Leonel/isel/lsd/lab4/Full_Adder.vhd|
+!i113 1
+R6
+R7
+Aarq_full_adder
+R1
+R2
+DEx4 work 10 full_adder 0 22 `Oke6WzQ9A_Ok]QI=BhDJ3
+l25
+L12
+VBIRcQ<mX3`FQoB=HkQmz72
+!s100 o?2J<C8KS?QFPg128=5LJ3
+R3
+31
+R4
+!i10b 1
+R5
+R18
+R19
+!i113 1
+R6
+R7
+Eint7seg
+R8
+R1
+R2
+R0
+Z20 8C:/Users/leone/Downloads/LSD_2223i_LAB5_rev_24_11/int7seg.vhd
+Z21 FC:/Users/leone/Downloads/LSD_2223i_LAB5_rev_24_11/int7seg.vhd
+l0
+L4
+VJg9:^[`Fz[^9g0DaDUB<d1
+!s100 `Pjz7i?]GB<AdE:ElX6_Q1
+R3
+31
+R11
+!i10b 1
+R12
+Z22 !s90 -reportprogress|300|-93|-work|work|C:/Users/leone/Downloads/LSD_2223i_LAB5_rev_24_11/int7seg.vhd|
+Z23 !s107 C:/Users/leone/Downloads/LSD_2223i_LAB5_rev_24_11/int7seg.vhd|
+!i113 1
+R6
+R7
+Alogicfunction
+R1
+R2
+DEx4 work 7 int7seg 0 22 Jg9:^[`Fz[^9g0DaDUB<d1
+l14
+L10
+VOZgz7jh:T@kV8Zh^N`b=F1
+!s100 CY]3fWdCP;YT2S4TbP`fm2
+R3
+31
+R11
+!i10b 1
+R12
+R22
+R23
+!i113 1
+R6
+R7
+Emux2_1
+Z24 w1669807759
+R1
+R2
+R0
+Z25 8C:/Leonel/isel/lsd/lab5/MUX2_1.vhd
+Z26 FC:/Leonel/isel/lsd/lab5/MUX2_1.vhd
+l0
+L4
+VQeEFUlYiQR?ORG[f_7=BC1
+!s100 P66<JKl713HGdKi^6SAX@3
+R3
+31
+R4
+!i10b 1
+R5
+Z27 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/lab5/MUX2_1.vhd|
+Z28 !s107 C:/Leonel/isel/lsd/lab5/MUX2_1.vhd|
+!i113 1
+R6
+R7
+Aarq_mux2_1
+R1
+R2
+DEx4 work 6 mux2_1 0 22 QeEFUlYiQR?ORG[f_7=BC1
+l12
+L11
+VIf:n;lZOFnVM6cQZ[?O:K2
+!s100 hk=Yi;Zc`RiBbQboTcfKU3
+R3
+31
+R4
+!i10b 1
+R5
+R27
+R28
+!i113 1
+R6
+R7
+Ereg
+Z29 w1669815290
+R1
+R2
+R0
+Z30 8C:/Leonel/isel/lsd/lab5/Reg.vhd
+Z31 FC:/Leonel/isel/lsd/lab5/Reg.vhd
+l0
+L4
+VnIRmY4_>5F;IWMzJF]cTe3
+!s100 ^IbSi_E7m?1mhKNPXHG2[3
+R3
+31
+R4
+!i10b 1
+R5
+Z32 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/lab5/Reg.vhd|
+Z33 !s107 C:/Leonel/isel/lsd/lab5/Reg.vhd|
+!i113 1
+R6
+R7
+Aarq_reg
+R1
+R2
+DEx4 work 3 reg 0 22 nIRmY4_>5F;IWMzJF]cTe3
+l24
+L13
+V3VPch<IG::mON9=84IEL;0
+!s100 [<;ebAU^J36AlFjM=RKW93
+R3
+31
+R4
+!i10b 1
+R5
+R32
+R33
+!i113 1
+R6
+R7
+Esemi_adder
+Z34 w1667934300
+R1
+R2
+R0
+Z35 8C:/Leonel/isel/lsd/lab4/semi_Adder.vhd
+Z36 FC:/Leonel/isel/lsd/lab4/semi_Adder.vhd
+l0
+L4
+VXzN[8N>EB>bl7iXm@6<bN0
+!s100 Sk0gOJhK3<4JWY6@:anmG3
+R3
+31
+R4
+!i10b 1
+R5
+Z37 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/lab4/semi_Adder.vhd|
+Z38 !s107 C:/Leonel/isel/lsd/lab4/semi_Adder.vhd|
+!i113 1
+R6
+R7
+Aarq_semi_adder
+R1
+R2
+DEx4 work 10 semi_adder 0 22 XzN[8N>EB>bl7iXm@6<bN0
+l13
+L12
+VDFKNeWez5W986SWYMLl<U2
+!s100 ^]@aDoeh5CaU`3_PKD3[a3
+R3
+31
+R4
+!i10b 1
+R5
+R37
+R38
+!i113 1
+R6
+R7

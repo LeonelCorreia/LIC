@@ -1,0 +1,283 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Leonel/isel/lsd/lab4/simulation/modelsim
+Eadder_subtractor
+Z1 w1667997931
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8C:/Leonel/isel/lsd/lab4/Adder_Subtractor.vhd
+Z5 FC:/Leonel/isel/lsd/lab4/Adder_Subtractor.vhd
+l0
+L4
+V9X[dX4QCWa3fiH]R=^_5K2
+!s100 WQ1MYZS_PcDTU^M8I@:H40
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1669566525
+!i10b 1
+Z8 !s108 1669566525.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/lab4/Adder_Subtractor.vhd|
+Z10 !s107 C:/Leonel/isel/lsd/lab4/Adder_Subtractor.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Aarq_adder_subtractor
+R2
+R3
+DEx4 work 16 adder_subtractor 0 22 9X[dX4QCWa3fiH]R=^_5K2
+l39
+L15
+Vh4NY]j]B]IMGGY96S2d2>3
+!s100 2Q][fQ8]DezQ=o6jO_H@h0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Eflags
+Z13 w1668971550
+R2
+R3
+R0
+Z14 8C:/Leonel/isel/lsd/lab4/Flags.vhd
+Z15 FC:/Leonel/isel/lsd/lab4/Flags.vhd
+l0
+L4
+V:SM@2dL1C^gT]L7lG;BLo3
+!s100 I@4G=_TMlaAoWAnKGOW<=0
+R6
+31
+R7
+!i10b 1
+R8
+Z16 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/lab4/Flags.vhd|
+Z17 !s107 C:/Leonel/isel/lsd/lab4/Flags.vhd|
+!i113 1
+R11
+R12
+Aarq_flags
+R2
+R3
+DEx4 work 5 flags 0 22 :SM@2dL1C^gT]L7lG;BLo3
+l15
+L14
+VV=<mmdI175aKzMib0]GiV3
+!s100 R3Cn[6U8JA[6f<M6camhO1
+R6
+31
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Efull_adder
+Z18 w1667936161
+R2
+R3
+R0
+Z19 8C:/Leonel/isel/lsd/lab4/Full_Adder.vhd
+Z20 FC:/Leonel/isel/lsd/lab4/Full_Adder.vhd
+l0
+L4
+V`Oke6WzQ9A_Ok]QI=BhDJ3
+!s100 ;o3ZILGmH[fF@[PP=X0350
+R6
+31
+R7
+!i10b 1
+R8
+Z21 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/lab4/Full_Adder.vhd|
+Z22 !s107 C:/Leonel/isel/lsd/lab4/Full_Adder.vhd|
+!i113 1
+R11
+R12
+Aarq_full_adder
+R2
+R3
+DEx4 work 10 full_adder 0 22 `Oke6WzQ9A_Ok]QI=BhDJ3
+l25
+L12
+VBIRcQ<mX3`FQoB=HkQmz72
+!s100 o?2J<C8KS?QFPg128=5LJ3
+R6
+31
+R7
+!i10b 1
+R8
+R21
+R22
+!i113 1
+R11
+R12
+Esemi_adder
+Z23 w1667934300
+R2
+R3
+R0
+Z24 8C:/Leonel/isel/lsd/lab4/semi_Adder.vhd
+Z25 FC:/Leonel/isel/lsd/lab4/semi_Adder.vhd
+l0
+L4
+VXzN[8N>EB>bl7iXm@6<bN0
+!s100 Sk0gOJhK3<4JWY6@:anmG3
+R6
+31
+R7
+!i10b 1
+R8
+Z26 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/lab4/semi_Adder.vhd|
+Z27 !s107 C:/Leonel/isel/lsd/lab4/semi_Adder.vhd|
+!i113 1
+R11
+R12
+Aarq_semi_adder
+R2
+R3
+DEx4 work 10 semi_adder 0 22 XzN[8N>EB>bl7iXm@6<bN0
+l13
+L12
+VDFKNeWez5W986SWYMLl<U2
+!s100 ^]@aDoeh5CaU`3_PKD3[a3
+R6
+31
+R7
+!i10b 1
+R8
+R26
+R27
+!i113 1
+R11
+R12
+Eunidaritmet
+Z28 w1669205259
+R2
+R3
+R0
+Z29 8C:/Leonel/isel/lsd/lab4/UnidAritmet.vhd
+Z30 FC:/Leonel/isel/lsd/lab4/UnidAritmet.vhd
+l0
+L4
+V=k@b?z@0nMX5ZoWELfGGf3
+!s100 KH`7=7bfWG2o;R397<VgK0
+R6
+31
+R7
+!i10b 1
+R8
+Z31 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/lab4/UnidAritmet.vhd|
+Z32 !s107 C:/Leonel/isel/lsd/lab4/UnidAritmet.vhd|
+!i113 1
+R11
+R12
+Aarq_unidaritmet
+R2
+R3
+DEx4 work 11 unidaritmet 0 22 =k@b?z@0nMX5ZoWELfGGf3
+l48
+L14
+VW6gSYzLQmF:2>HgUeknKP1
+!s100 53z1`QjYi^9HHbkY5SnI90
+R6
+31
+R7
+!i10b 1
+R8
+R31
+R32
+!i113 1
+R11
+R12
+Eunidaritmet_test
+Z33 w1668000096
+R2
+R3
+R0
+Z34 8C:/Leonel/isel/lsd/lab4/output_files/UnidAritmet_test.vhd
+Z35 FC:/Leonel/isel/lsd/lab4/output_files/UnidAritmet_test.vhd
+l0
+L4
+VcUbME0:J0Aia[WL=^`bl43
+!s100 >Il?Z@imY<bOCaPS52jfA0
+R6
+31
+R7
+!i10b 1
+R8
+Z36 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/lab4/output_files/UnidAritmet_test.vhd|
+Z37 !s107 C:/Leonel/isel/lsd/lab4/output_files/UnidAritmet_test.vhd|
+!i113 1
+R11
+R12
+Atb
+R2
+R3
+DEx4 work 16 unidaritmet_test 0 22 cUbME0:J0Aia[WL=^`bl43
+l22
+L7
+VkiS6CGm7gW9^^GXzEISLD2
+!s100 RZ5R_@:6FDD71^:18]6K]0
+R6
+31
+R7
+!i10b 1
+R8
+R36
+R37
+!i113 1
+R11
+R12
+Exors
+Z38 w1667993669
+R2
+R3
+R0
+Z39 8C:/Leonel/isel/lsd/lab4/XORs.vhd
+Z40 FC:/Leonel/isel/lsd/lab4/XORs.vhd
+l0
+L4
+V62U@_AP:]I^7:A9=5Ck6L3
+!s100 :l77O;l7E<G?cOJnW<<bb3
+R6
+31
+R7
+!i10b 1
+R8
+Z41 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/lab4/XORs.vhd|
+Z42 !s107 C:/Leonel/isel/lsd/lab4/XORs.vhd|
+!i113 1
+R11
+R12
+Aarq_xors
+R2
+R3
+DEx4 work 4 xors 0 22 62U@_AP:]I^7:A9=5Ck6L3
+l11
+L10
+VFYa[W:P8[1jl9j0eL1kNJ0
+!s100 oikNB?H1lfB80j1JX>LAH3
+R6
+31
+R7
+!i10b 1
+R8
+R41
+R42
+!i113 1
+R11
+R12

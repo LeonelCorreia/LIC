@@ -1,0 +1,11 @@
+LIBRARY IEEE;
+use IEEE.std_logic_1164.all;
+
+entity Adder_Subtractor is
+	port( 
+	A0, A1, A2, A3: in STD_LOGIC;
+	B0, B1, B2, B3: in STD_LOGIC;
+	C0: in STD_LOGIC;
+	C4: out STD_LOGIC;
+	S0, S1, S2, S3: out STD_LOGIC);
+end Adder_Subtractor;

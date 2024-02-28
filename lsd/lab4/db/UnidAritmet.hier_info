@@ -1,0 +1,147 @@
+|UnidAritmet
+A[0] => Adder_Subtractor:UAdder_Subtractor.A[0]
+A[1] => Adder_Subtractor:UAdder_Subtractor.A[1]
+A[2] => Adder_Subtractor:UAdder_Subtractor.A[2]
+A[3] => Adder_Subtractor:UAdder_Subtractor.A[3]
+A[3] => Flags:UFlags.A3
+B[0] => Adder_Subtractor:UAdder_Subtractor.B[0]
+B[1] => Adder_Subtractor:UAdder_Subtractor.B[1]
+B[2] => Adder_Subtractor:UAdder_Subtractor.B[2]
+B[3] => Adder_Subtractor:UAdder_Subtractor.B[3]
+OPau => Adder_Subtractor:UAdder_Subtractor.OPau
+CBi => Adder_Subtractor:UAdder_Subtractor.CBi
+CBo << Flags:UFlags.oCBo
+OV << Flags:UFlags.OV
+R[0] << Adder_Subtractor:UAdder_Subtractor.S[0]
+R[1] << Adder_Subtractor:UAdder_Subtractor.S[1]
+R[2] << Adder_Subtractor:UAdder_Subtractor.S[2]
+R[3] << Adder_Subtractor:UAdder_Subtractor.S[3]
+
+
+|UnidAritmet|Adder_Subtractor:UAdder_Subtractor
+A[0] => Full_Adder:UFull_Adder.A[0]
+A[1] => Full_Adder:UFull_Adder.A[1]
+A[2] => Full_Adder:UFull_Adder.A[2]
+A[3] => Full_Adder:UFull_Adder.A[3]
+B[0] => XORs:UXORs_2.I1
+B[1] => XORs:UXORs_3.I1
+B[2] => XORs:UXORs_4.I1
+B[3] => XORs:UXORs_5.I1
+OPau => XORs:UXORs_1.I0
+OPau => XORs:UXORs_2.I0
+OPau => XORs:UXORs_3.I0
+OPau => XORs:UXORs_4.I0
+OPau => XORs:UXORs_5.I0
+OPau => XORs:UXORs_6.I0
+CBi => XORs:UXORs_1.I1
+PassB3 <= XORs:UXORs_5.S
+CBo <= XORs:UXORs_6.S
+S[0] <= Full_Adder:UFull_Adder.S[0]
+S[1] <= Full_Adder:UFull_Adder.S[1]
+S[2] <= Full_Adder:UFull_Adder.S[2]
+S[3] <= Full_Adder:UFull_Adder.S[3]
+
+
+|UnidAritmet|Adder_Subtractor:UAdder_Subtractor|XORs:UXORs_1
+I0 => S.IN0
+I1 => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|UnidAritmet|Adder_Subtractor:UAdder_Subtractor|XORs:UXORs_2
+I0 => S.IN0
+I1 => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|UnidAritmet|Adder_Subtractor:UAdder_Subtractor|XORs:UXORs_3
+I0 => S.IN0
+I1 => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|UnidAritmet|Adder_Subtractor:UAdder_Subtractor|XORs:UXORs_4
+I0 => S.IN0
+I1 => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|UnidAritmet|Adder_Subtractor:UAdder_Subtractor|XORs:UXORs_5
+I0 => S.IN0
+I1 => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|UnidAritmet|Adder_Subtractor:UAdder_Subtractor|XORs:UXORs_6
+I0 => S.IN0
+I1 => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|UnidAritmet|Adder_Subtractor:UAdder_Subtractor|Full_Adder:UFull_Adder
+A[0] => semi_Adder:Usemi_Adder_1.A
+A[1] => semi_Adder:Usemi_Adder_2.A
+A[2] => semi_Adder:Usemi_Adder_3.A
+A[3] => semi_Adder:Usemi_Adder_4.A
+B[0] => semi_Adder:Usemi_Adder_1.B
+B[1] => semi_Adder:Usemi_Adder_2.B
+B[2] => semi_Adder:Usemi_Adder_3.B
+B[3] => semi_Adder:Usemi_Adder_4.B
+C0 => semi_Adder:Usemi_Adder_1.CBi
+C4 <= semi_Adder:Usemi_Adder_4.CBo
+S[0] <= semi_Adder:Usemi_Adder_1.S
+S[1] <= semi_Adder:Usemi_Adder_2.S
+S[2] <= semi_Adder:Usemi_Adder_3.S
+S[3] <= semi_Adder:Usemi_Adder_4.S
+
+
+|UnidAritmet|Adder_Subtractor:UAdder_Subtractor|Full_Adder:UFull_Adder|semi_Adder:Usemi_Adder_1
+A => S.IN0
+A => CBo.IN0
+B => S.IN1
+B => CBo.IN1
+CBi => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CBo <= CBo.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|UnidAritmet|Adder_Subtractor:UAdder_Subtractor|Full_Adder:UFull_Adder|semi_Adder:Usemi_Adder_2
+A => S.IN0
+A => CBo.IN0
+B => S.IN1
+B => CBo.IN1
+CBi => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CBo <= CBo.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|UnidAritmet|Adder_Subtractor:UAdder_Subtractor|Full_Adder:UFull_Adder|semi_Adder:Usemi_Adder_3
+A => S.IN0
+A => CBo.IN0
+B => S.IN1
+B => CBo.IN1
+CBi => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CBo <= CBo.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|UnidAritmet|Adder_Subtractor:UAdder_Subtractor|Full_Adder:UFull_Adder|semi_Adder:Usemi_Adder_4
+A => S.IN0
+A => CBo.IN0
+B => S.IN1
+B => CBo.IN1
+CBi => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CBo <= CBo.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|UnidAritmet|Flags:UFlags
+A3 => OV.IN0
+B3 => OV.IN1
+iCBo => OV.IN1
+iCBo => oCBo.DATAIN
+R3 => OV.IN1
+OV <= OV.DB_MAX_OUTPUT_PORT_TYPE
+oCBo <= iCBo.DB_MAX_OUTPUT_PORT_TYPE
+
+

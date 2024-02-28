@@ -1,0 +1,12 @@
+	LIBRARY IEEE;
+use IEEE.std_logic_1164.all;
+entity Porta_XNOR is
+port(A : in STD_LOGIC_VECTOR(3 downto 0);
+B : in STD_LOGIC_VECTOR(3 downto 0);
+O : out STD_LOGIC_VECTOR(3 downto 0)
+);
+end Porta_XNOR;
+architecture arq_Porta_XNOR of Porta_XNOR is
+begin
+O <= A XNOR B;
+end arq_Porta_XNOR;

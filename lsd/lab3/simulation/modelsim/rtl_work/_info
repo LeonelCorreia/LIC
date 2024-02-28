@@ -1,0 +1,166 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Leonel/lsd/lab3/simulation/modelsim
+Elucirc
+Z1 w1666181202
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8C:/Leonel/lsd/lab3/Lucirci_TopLevelEntity_lab3.vhd
+Z5 FC:/Leonel/lsd/lab3/Lucirci_TopLevelEntity_lab3.vhd
+l0
+L3
+VCjfCGRM8JoV81`4h27c^X0
+!s100 oUHe]m6KzkmQfNhV2mM>b0
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1666457819
+!i10b 1
+Z8 !s108 1666457819.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/lsd/lab3/Lucirci_TopLevelEntity_lab3.vhd|
+Z10 !s107 C:/Leonel/lsd/lab3/Lucirci_TopLevelEntity_lab3.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Aarq_lucirc
+R2
+R3
+DEx4 work 6 lucirc 0 22 CjfCGRM8JoV81`4h27c^X0
+l27
+L9
+V:^644hB2f1G]0Db[hTlnz1
+!s100 ?Kg5co0LDH0KAhEPe?@0e3
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Emux4
+Z13 w1666178638
+R2
+R3
+R0
+Z14 8C:/Leonel/lsd/lab3/Mux_lab3.vhd
+Z15 FC:/Leonel/lsd/lab3/Mux_lab3.vhd
+l0
+L3
+Vi]4Q4i6P^:6`[cg]EBgkG3
+!s100 1jJ;KEm8U;YGK;03`P>hI2
+R6
+31
+R7
+!i10b 1
+R8
+Z16 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/lsd/lab3/Mux_lab3.vhd|
+Z17 !s107 C:/Leonel/lsd/lab3/Mux_lab3.vhd|
+!i113 1
+R11
+R12
+Aarq_mux4
+R2
+R3
+DEx4 work 4 mux4 0 22 i]4Q4i6P^:6`[cg]EBgkG3
+l11
+L10
+VZSCeERbGUCCb21Q^Va<MH0
+!s100 6aVhLknD`YSMWKzR@TWAM1
+R6
+31
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Eorl4
+Z18 w1666179706
+R2
+R3
+R0
+Z19 8C:/Leonel/lsd/lab3/OR_lab3.vhd
+Z20 FC:/Leonel/lsd/lab3/OR_lab3.vhd
+l0
+L3
+VZF4WABoT_?i49=Hkohii^1
+!s100 iG_lf[P:6m7KAV?aYF:Yj1
+R6
+31
+R7
+!i10b 1
+R8
+Z21 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/lsd/lab3/OR_lab3.vhd|
+Z22 !s107 C:/Leonel/lsd/lab3/OR_lab3.vhd|
+!i113 1
+R11
+R12
+Aarq_orl4
+R2
+R3
+DEx4 work 4 orl4 0 22 ZF4WABoT_?i49=Hkohii^1
+l10
+L9
+VKa2FU3^^ngoo^ILDzJ=761
+!s100 4fEY:k:8ejRI`_6>:l4f60
+R6
+31
+R7
+!i10b 1
+R8
+R21
+R22
+!i113 1
+R11
+R12
+Exnorl4
+Z23 w1666179702
+R2
+R3
+R0
+Z24 8C:/Leonel/lsd/lab3/XNOR_lab3.vhd
+Z25 FC:/Leonel/lsd/lab3/XNOR_lab3.vhd
+l0
+L3
+V=FSLmB41YX_1]`9NjTRAL1
+!s100 1mUlJ`mk;b39oOieJlh3a3
+R6
+31
+R7
+!i10b 1
+R8
+Z26 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/lsd/lab3/XNOR_lab3.vhd|
+Z27 !s107 C:/Leonel/lsd/lab3/XNOR_lab3.vhd|
+!i113 1
+R11
+R12
+Aarq_xnorl4
+R2
+R3
+DEx4 work 6 xnorl4 0 22 =FSLmB41YX_1]`9NjTRAL1
+l10
+L9
+VBmdDa0C3=ORg7=7K`YQgX2
+!s100 W5GiA7dFfAaV@3UkSdjW?0
+R6
+31
+R7
+!i10b 1
+R8
+R26
+R27
+!i113 1
+R11
+R12

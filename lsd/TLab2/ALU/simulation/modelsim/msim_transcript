@@ -1,0 +1,268 @@
+# Reading C:/intelFPGA_lite/19.1/modelsim_ase/tcl/vsim/pref.tcl
+# ERROR: No extended dataflow license exists
+# do ALU_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/19.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Leonel/isel/lsd/lab4/XORs.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:55:56 on Nov 27,2022
+# vcom -reportprogress 300 -93 -work work C:/Leonel/isel/lsd/lab4/XORs.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity XORs
+# -- Compiling architecture arq_XORs of XORs
+# End time: 15:55:56 on Nov 27,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Leonel/isel/lsd/lab4/UnidAritmet.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:55:56 on Nov 27,2022
+# vcom -reportprogress 300 -93 -work work C:/Leonel/isel/lsd/lab4/UnidAritmet.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity UnidAritmet
+# -- Compiling architecture arq_UnidAritmet of UnidAritmet
+# End time: 15:55:57 on Nov 27,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Leonel/isel/lsd/lab4/semi_Adder.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:55:57 on Nov 27,2022
+# vcom -reportprogress 300 -93 -work work C:/Leonel/isel/lsd/lab4/semi_Adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity semi_Adder
+# -- Compiling architecture arq_semi_Adder of semi_Adder
+# End time: 15:55:57 on Nov 27,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Leonel/isel/lsd/lab4/Full_Adder.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:55:57 on Nov 27,2022
+# vcom -reportprogress 300 -93 -work work C:/Leonel/isel/lsd/lab4/Full_Adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Full_Adder
+# -- Compiling architecture arq_Full_Adder of Full_Adder
+# End time: 15:55:57 on Nov 27,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Leonel/isel/lsd/lab4/Flags.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:55:59 on Nov 27,2022
+# vcom -reportprogress 300 -93 -work work C:/Leonel/isel/lsd/lab4/Flags.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Flags
+# -- Compiling architecture arq_Flags of Flags
+# End time: 15:56:00 on Nov 27,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Leonel/isel/lsd/lab4/Adder_Subtractor.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:56:00 on Nov 27,2022
+# vcom -reportprogress 300 -93 -work work C:/Leonel/isel/lsd/lab4/Adder_Subtractor.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Adder_Subtractor
+# -- Compiling architecture arq_Adder_Subtractor of Adder_Subtractor
+# End time: 15:56:00 on Nov 27,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Leonel/isel/lsd/TLab2/ALU/Logic_Module.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:56:00 on Nov 27,2022
+# vcom -reportprogress 300 -93 -work work C:/Leonel/isel/lsd/TLab2/ALU/Logic_Module.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Logic_Module
+# -- Compiling architecture arq_Logic_Module of Logic_Module
+# End time: 15:56:00 on Nov 27,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Leonel/isel/lsd/TLab2/ALU/Porta_XNOR.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:56:00 on Nov 27,2022
+# vcom -reportprogress 300 -93 -work work C:/Leonel/isel/lsd/TLab2/ALU/Porta_XNOR.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Porta_XNOR
+# -- Compiling architecture arq_Porta_XNOR of Porta_XNOR
+# End time: 15:56:00 on Nov 27,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Leonel/isel/lsd/TLab2/ALU/Porta_OR.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:56:00 on Nov 27,2022
+# vcom -reportprogress 300 -93 -work work C:/Leonel/isel/lsd/TLab2/ALU/Porta_OR.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Porta_OR
+# -- Compiling architecture arq_Porta_OR of Porta_OR
+# End time: 15:56:00 on Nov 27,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Leonel/isel/lsd/TLab2/ALU/Porta_LSR.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:56:00 on Nov 27,2022
+# vcom -reportprogress 300 -93 -work work C:/Leonel/isel/lsd/TLab2/ALU/Porta_LSR.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Porta_LSR
+# -- Compiling architecture arq_Porta_LSR of Porta_LSR
+# End time: 15:56:00 on Nov 27,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Leonel/isel/lsd/TLab2/ALU/Porta_ASR.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:56:00 on Nov 27,2022
+# vcom -reportprogress 300 -93 -work work C:/Leonel/isel/lsd/TLab2/ALU/Porta_ASR.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Porta_ASR
+# -- Compiling architecture arq_Porta_ASR of Porta_ASR
+# End time: 15:56:00 on Nov 27,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Leonel/isel/lsd/lab3/Mux4_1.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:56:00 on Nov 27,2022
+# vcom -reportprogress 300 -93 -work work C:/Leonel/isel/lsd/lab3/Mux4_1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MUX4_1
+# -- Compiling architecture arq_MUX4_1 of MUX4_1
+# End time: 15:56:00 on Nov 27,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Leonel/isel/lsd/TLab2/ALU/Flags2.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:56:00 on Nov 27,2022
+# vcom -reportprogress 300 -93 -work work C:/Leonel/isel/lsd/TLab2/ALU/Flags2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Flags2
+# -- Compiling architecture arq_Flags2 of Flags2
+# End time: 15:56:00 on Nov 27,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Leonel/isel/lsd/TLab2/ALU/MUX_Final.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:56:00 on Nov 27,2022
+# vcom -reportprogress 300 -93 -work work C:/Leonel/isel/lsd/TLab2/ALU/MUX_Final.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MUX_Final
+# -- Compiling architecture arq_MUX_Final of MUX_Final
+# End time: 15:56:00 on Nov 27,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Leonel/isel/lsd/TLab2/ALU/ALU.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:56:00 on Nov 27,2022
+# vcom -reportprogress 300 -93 -work work C:/Leonel/isel/lsd/TLab2/ALU/ALU.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ALU
+# -- Compiling architecture arq_ALU of ALU
+# End time: 15:56:01 on Nov 27,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+vcom -reportprogress 300 -work work C:/Users/leone/Downloads/TLab2_full_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:56:14 on Nov 27,2022
+# vcom -reportprogress 300 -work work C:/Users/leone/Downloads/TLab2_full_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_textio
+# -- Compiling entity TLab2_full_tb
+# -- Compiling architecture arc_TLab2_full_tb of TLab2_full_tb
+# End time: 15:56:15 on Nov 27,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work C:/Users/leone/Downloads/TLab2_full_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:56:16 on Nov 27,2022
+# vcom -reportprogress 300 -work work C:/Users/leone/Downloads/TLab2_full_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_textio
+# -- Compiling entity TLab2_full_tb
+# -- Compiling architecture arc_TLab2_full_tb of TLab2_full_tb
+# End time: 15:56:16 on Nov 27,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.tlab2_full_tb
+# vsim work.tlab2_full_tb 
+# Start time: 15:56:24 on Nov 27,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tlab2_full_tb(arc_tlab2_full_tb)
+# ** Warning: (vsim-3473) Component instance "UUT : TLab2" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /tlab2_full_tb File: C:/Users/leone/Downloads/TLab2_full_tb.vhd
+add wave -position insertpoint  \
+sim:/tlab2_full_tb/BE_SW \
+sim:/tlab2_full_tb/BE_TB \
+sim:/tlab2_full_tb/CBi_TB \
+sim:/tlab2_full_tb/CBo_SW \
+sim:/tlab2_full_tb/CBo_TB \
+sim:/tlab2_full_tb/F_SW \
+sim:/tlab2_full_tb/F_TB \
+sim:/tlab2_full_tb/GE_SW \
+sim:/tlab2_full_tb/GE_TB \
+sim:/tlab2_full_tb/OP_TB \
+sim:/tlab2_full_tb/operands_width \
+sim:/tlab2_full_tb/operation_delay \
+sim:/tlab2_full_tb/operation_width \
+sim:/tlab2_full_tb/OV_SW \
+sim:/tlab2_full_tb/OV_TB \
+sim:/tlab2_full_tb/W_TB \
+sim:/tlab2_full_tb/Y_TB \
+sim:/tlab2_full_tb/Z_SW \
+sim:/tlab2_full_tb/Z_TB
+add wave -position insertpoint  \
+sim:/tlab2_full_tb/BE_SW \
+sim:/tlab2_full_tb/BE_TB \
+sim:/tlab2_full_tb/CBi_TB \
+sim:/tlab2_full_tb/CBo_SW \
+sim:/tlab2_full_tb/CBo_TB \
+sim:/tlab2_full_tb/F_SW \
+sim:/tlab2_full_tb/F_TB \
+sim:/tlab2_full_tb/GE_SW \
+sim:/tlab2_full_tb/GE_TB \
+sim:/tlab2_full_tb/OP_TB \
+sim:/tlab2_full_tb/operands_width \
+sim:/tlab2_full_tb/operation_delay \
+sim:/tlab2_full_tb/operation_width \
+sim:/tlab2_full_tb/OV_SW \
+sim:/tlab2_full_tb/OV_TB \
+sim:/tlab2_full_tb/W_TB \
+sim:/tlab2_full_tb/Y_TB \
+sim:/tlab2_full_tb/Z_SW \
+sim:/tlab2_full_tb/Z_TB
+run -all
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tlab2_full_tb
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tlab2_full_tb
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tlab2_full_tb
+# ** Failure: Failure Result
+#    Time: 10 ns  Iteration: 0  Process: /tlab2_full_tb/comparison File: C:/Users/leone/Downloads/TLab2_full_tb.vhd
+# Break in Process comparison at C:/Users/leone/Downloads/TLab2_full_tb.vhd line 176
+# End time: 15:58:17 on Nov 27,2022, Elapsed time: 0:01:53
+# Errors: 0, Warnings: 4

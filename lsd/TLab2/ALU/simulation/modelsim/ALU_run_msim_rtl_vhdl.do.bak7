@@ -1,0 +1,31 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {C:/Leonel/isel/lsd/lab4/XORs.vhd}
+vcom -93 -work work {C:/Leonel/isel/lsd/lab4/UnidAritmet.vhd}
+vcom -93 -work work {C:/Leonel/isel/lsd/lab4/semi_Adder.vhd}
+vcom -93 -work work {C:/Leonel/isel/lsd/lab4/Full_Adder.vhd}
+vcom -93 -work work {C:/Leonel/isel/lsd/lab4/Flags.vhd}
+vcom -93 -work work {C:/Leonel/isel/lsd/lab4/Adder_Subtractor.vhd}
+vcom -93 -work work {C:/Leonel/isel/lsd/TLab2/ALU/Logic_Module.vhd}
+vcom -93 -work work {C:/Leonel/isel/lsd/TLab2/ALU/Porta_XNOR.vhd}
+vcom -93 -work work {C:/Leonel/isel/lsd/TLab2/ALU/Porta_OR.vhd}
+vcom -93 -work work {C:/Leonel/isel/lsd/TLab2/ALU/Porta_LSR.vhd}
+vcom -93 -work work {C:/Leonel/isel/lsd/TLab2/ALU/Porta_ASR.vhd}
+vcom -93 -work work {C:/Leonel/isel/lsd/lab3/Mux4_1.vhd}
+vcom -93 -work work {C:/Leonel/isel/lsd/TLab2/ALU/Flags2.vhd}
+vcom -93 -work work {C:/Leonel/isel/lsd/TLab2/ALU/MUX_Final.vhd}
+vcom -93 -work work {C:/Leonel/isel/lsd/TLab2/ALU/ALU.vhd}
+
+vcom -93 -work work {C:/Leonel/isel/lsd/TLab2/ALU/ALU_full_tb.vhd}
+
+vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs="+acc"  ALU_full_tb
+
+add wave *
+view structure
+view signals
+run -all

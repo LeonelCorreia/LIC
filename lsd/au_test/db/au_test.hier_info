@@ -1,0 +1,353 @@
+|Logic_Module
+A[0] => Porta_OR:UPorta_OR.A[0]
+A[0] => Porta_XNOR:UPorta_XNOR.A[0]
+A[0] => Porta_LSR:UPorta_LSR.A[0]
+A[0] => Porta_ASR:UPorta_ASR.A[0]
+A[0] => MUX4_1:UMUX4_1_CY.A[1]
+A[1] => Porta_OR:UPorta_OR.A[1]
+A[1] => Porta_XNOR:UPorta_XNOR.A[1]
+A[1] => Porta_LSR:UPorta_LSR.A[1]
+A[1] => Porta_ASR:UPorta_ASR.A[1]
+A[1] => MUX4_1:UMUX4_1_CY.A[2]
+A[2] => Porta_OR:UPorta_OR.A[2]
+A[2] => Porta_XNOR:UPorta_XNOR.A[2]
+A[2] => Porta_LSR:UPorta_LSR.A[2]
+A[2] => Porta_ASR:UPorta_ASR.A[2]
+A[2] => MUX4_1:UMUX4_1_CY.A[3]
+A[3] => Porta_OR:UPorta_OR.A[3]
+A[3] => Porta_XNOR:UPorta_XNOR.A[3]
+A[3] => Porta_LSR:UPorta_LSR.A[3]
+A[3] => Porta_ASR:UPorta_ASR.A[3]
+B[0] => Porta_OR:UPorta_OR.B[0]
+B[0] => Porta_XNOR:UPorta_XNOR.B[0]
+B[0] => Porta_LSR:UPorta_LSR.B[0]
+B[0] => Porta_ASR:UPorta_ASR.B[0]
+B[0] => MUX4_1:UMUX4_1_1.sel[0]
+B[0] => MUX4_1:UMUX4_1_2.sel[0]
+B[0] => MUX4_1:UMUX4_1_3.sel[0]
+B[0] => MUX4_1:UMUX4_1_4.sel[0]
+B[0] => MUX4_1:UMUX4_1_CY.sel[0]
+B[1] => Porta_OR:UPorta_OR.B[1]
+B[1] => Porta_XNOR:UPorta_XNOR.B[1]
+B[1] => Porta_LSR:UPorta_LSR.B[1]
+B[1] => Porta_ASR:UPorta_ASR.B[1]
+B[1] => MUX4_1:UMUX4_1_1.sel[1]
+B[1] => MUX4_1:UMUX4_1_2.sel[1]
+B[1] => MUX4_1:UMUX4_1_3.sel[1]
+B[1] => MUX4_1:UMUX4_1_4.sel[1]
+B[1] => MUX4_1:UMUX4_1_CY.sel[1]
+B[2] => Porta_OR:UPorta_OR.B[2]
+B[2] => Porta_XNOR:UPorta_XNOR.B[2]
+B[2] => Porta_LSR:UPorta_LSR.B[2]
+B[2] => Porta_ASR:UPorta_ASR.B[2]
+B[3] => Porta_OR:UPorta_OR.B[3]
+B[3] => Porta_XNOR:UPorta_XNOR.B[3]
+B[3] => Porta_LSR:UPorta_LSR.B[3]
+B[3] => Porta_ASR:UPorta_ASR.B[3]
+Op[0] => ~NO_FANOUT~
+Op[1] => ~NO_FANOUT~
+R[0] <= MUX4_1:UMUX4_1_1.O
+R[1] <= MUX4_1:UMUX4_1_2.O
+R[2] <= MUX4_1:UMUX4_1_3.O
+R[3] <= MUX4_1:UMUX4_1_4.O
+CY <= MUX4_1:UMUX4_1_CY.O
+
+
+|Logic_Module|Porta_OR:UPorta_OR
+A[0] => O.IN0
+A[1] => O.IN0
+A[2] => O.IN0
+A[3] => O.IN0
+B[0] => O.IN1
+B[1] => O.IN1
+B[2] => O.IN1
+B[3] => O.IN1
+O[0] <= O.DB_MAX_OUTPUT_PORT_TYPE
+O[1] <= O.DB_MAX_OUTPUT_PORT_TYPE
+O[2] <= O.DB_MAX_OUTPUT_PORT_TYPE
+O[3] <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Logic_Module|Porta_XNOR:UPorta_XNOR
+A[0] => O.IN0
+A[1] => O.IN0
+A[2] => O.IN0
+A[3] => O.IN0
+B[0] => O.IN1
+B[1] => O.IN1
+B[2] => O.IN1
+B[3] => O.IN1
+O[0] <= O.DB_MAX_OUTPUT_PORT_TYPE
+O[1] <= O.DB_MAX_OUTPUT_PORT_TYPE
+O[2] <= O.DB_MAX_OUTPUT_PORT_TYPE
+O[3] <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Logic_Module|Porta_LSR:UPorta_LSR
+A[0] => Mux4_1:UMux_4_1_1.A[0]
+A[1] => Mux4_1:UMux_4_1_1.A[1]
+A[1] => Mux4_1:UMux_4_1_2.A[0]
+A[2] => Mux4_1:UMux_4_1_1.A[2]
+A[2] => Mux4_1:UMux_4_1_2.A[1]
+A[2] => Mux4_1:UMux_4_1_3.A[0]
+A[3] => Mux4_1:UMux_4_1_1.A[3]
+A[3] => Mux4_1:UMux_4_1_2.A[2]
+A[3] => Mux4_1:UMux_4_1_3.A[1]
+A[3] => Mux4_1:UMux_4_1_4.A[0]
+B[0] => Mux4_1:UMux_4_1_1.sel[0]
+B[0] => Mux4_1:UMux_4_1_2.sel[0]
+B[0] => Mux4_1:UMux_4_1_3.sel[0]
+B[0] => Mux4_1:UMux_4_1_4.sel[0]
+B[1] => Mux4_1:UMux_4_1_1.sel[1]
+B[1] => Mux4_1:UMux_4_1_2.sel[1]
+B[1] => Mux4_1:UMux_4_1_3.sel[1]
+B[1] => Mux4_1:UMux_4_1_4.sel[1]
+B[2] => ~NO_FANOUT~
+B[3] => ~NO_FANOUT~
+O[0] <= Mux4_1:UMux_4_1_1.O
+O[1] <= Mux4_1:UMux_4_1_2.O
+O[2] <= Mux4_1:UMux_4_1_3.O
+O[3] <= Mux4_1:UMux_4_1_4.O
+
+
+|Logic_Module|Porta_LSR:UPorta_LSR|MUX4_1:UMux_4_1_1
+A[0] => O.IN1
+A[1] => O.IN1
+A[2] => O.IN1
+A[3] => O.IN1
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[1] => O.IN1
+sel[1] => O.IN1
+sel[1] => O.IN1
+sel[1] => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Logic_Module|Porta_LSR:UPorta_LSR|MUX4_1:UMux_4_1_2
+A[0] => O.IN1
+A[1] => O.IN1
+A[2] => O.IN1
+A[3] => O.IN1
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[1] => O.IN1
+sel[1] => O.IN1
+sel[1] => O.IN1
+sel[1] => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Logic_Module|Porta_LSR:UPorta_LSR|MUX4_1:UMux_4_1_3
+A[0] => O.IN1
+A[1] => O.IN1
+A[2] => O.IN1
+A[3] => O.IN1
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[1] => O.IN1
+sel[1] => O.IN1
+sel[1] => O.IN1
+sel[1] => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Logic_Module|Porta_LSR:UPorta_LSR|MUX4_1:UMux_4_1_4
+A[0] => O.IN1
+A[1] => O.IN1
+A[2] => O.IN1
+A[3] => O.IN1
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[1] => O.IN1
+sel[1] => O.IN1
+sel[1] => O.IN1
+sel[1] => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Logic_Module|Porta_ASR:UPorta_ASR
+A[0] => Mux4_1:UMux_4_1_1.A[0]
+A[1] => Mux4_1:UMux_4_1_1.A[1]
+A[1] => Mux4_1:UMux_4_1_2.A[0]
+A[2] => Mux4_1:UMux_4_1_1.A[2]
+A[2] => Mux4_1:UMux_4_1_2.A[1]
+A[2] => Mux4_1:UMux_4_1_3.A[0]
+A[3] => Mux4_1:UMux_4_1_1.A[3]
+A[3] => Mux4_1:UMux_4_1_2.A[3]
+A[3] => Mux4_1:UMux_4_1_2.A[2]
+A[3] => Mux4_1:UMux_4_1_3.A[3]
+A[3] => Mux4_1:UMux_4_1_3.A[2]
+A[3] => Mux4_1:UMux_4_1_3.A[1]
+A[3] => Mux4_1:UMux_4_1_4.A[3]
+A[3] => Mux4_1:UMux_4_1_4.A[2]
+A[3] => Mux4_1:UMux_4_1_4.A[1]
+A[3] => Mux4_1:UMux_4_1_4.A[0]
+B[0] => Mux4_1:UMux_4_1_1.sel[0]
+B[0] => Mux4_1:UMux_4_1_2.sel[0]
+B[0] => Mux4_1:UMux_4_1_3.sel[0]
+B[0] => Mux4_1:UMux_4_1_4.sel[0]
+B[1] => Mux4_1:UMux_4_1_1.sel[1]
+B[1] => Mux4_1:UMux_4_1_2.sel[1]
+B[1] => Mux4_1:UMux_4_1_3.sel[1]
+B[1] => Mux4_1:UMux_4_1_4.sel[1]
+B[2] => ~NO_FANOUT~
+B[3] => ~NO_FANOUT~
+O[0] <= Mux4_1:UMux_4_1_1.O
+O[1] <= Mux4_1:UMux_4_1_2.O
+O[2] <= Mux4_1:UMux_4_1_3.O
+O[3] <= Mux4_1:UMux_4_1_4.O
+
+
+|Logic_Module|Porta_ASR:UPorta_ASR|MUX4_1:UMux_4_1_1
+A[0] => O.IN1
+A[1] => O.IN1
+A[2] => O.IN1
+A[3] => O.IN1
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[1] => O.IN1
+sel[1] => O.IN1
+sel[1] => O.IN1
+sel[1] => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Logic_Module|Porta_ASR:UPorta_ASR|MUX4_1:UMux_4_1_2
+A[0] => O.IN1
+A[1] => O.IN1
+A[2] => O.IN1
+A[3] => O.IN1
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[1] => O.IN1
+sel[1] => O.IN1
+sel[1] => O.IN1
+sel[1] => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Logic_Module|Porta_ASR:UPorta_ASR|MUX4_1:UMux_4_1_3
+A[0] => O.IN1
+A[1] => O.IN1
+A[2] => O.IN1
+A[3] => O.IN1
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[1] => O.IN1
+sel[1] => O.IN1
+sel[1] => O.IN1
+sel[1] => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Logic_Module|Porta_ASR:UPorta_ASR|MUX4_1:UMux_4_1_4
+A[0] => O.IN1
+A[1] => O.IN1
+A[2] => O.IN1
+A[3] => O.IN1
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[1] => O.IN1
+sel[1] => O.IN1
+sel[1] => O.IN1
+sel[1] => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Logic_Module|MUX4_1:UMUX4_1_1
+A[0] => O.IN1
+A[1] => O.IN1
+A[2] => O.IN1
+A[3] => O.IN1
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[1] => O.IN1
+sel[1] => O.IN1
+sel[1] => O.IN1
+sel[1] => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Logic_Module|MUX4_1:UMUX4_1_2
+A[0] => O.IN1
+A[1] => O.IN1
+A[2] => O.IN1
+A[3] => O.IN1
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[1] => O.IN1
+sel[1] => O.IN1
+sel[1] => O.IN1
+sel[1] => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Logic_Module|MUX4_1:UMUX4_1_3
+A[0] => O.IN1
+A[1] => O.IN1
+A[2] => O.IN1
+A[3] => O.IN1
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[1] => O.IN1
+sel[1] => O.IN1
+sel[1] => O.IN1
+sel[1] => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Logic_Module|MUX4_1:UMUX4_1_4
+A[0] => O.IN1
+A[1] => O.IN1
+A[2] => O.IN1
+A[3] => O.IN1
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[1] => O.IN1
+sel[1] => O.IN1
+sel[1] => O.IN1
+sel[1] => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Logic_Module|MUX4_1:UMUX4_1_CY
+A[0] => O.IN1
+A[1] => O.IN1
+A[2] => O.IN1
+A[3] => O.IN1
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[0] => O.IN0
+sel[1] => O.IN1
+sel[1] => O.IN1
+sel[1] => O.IN1
+sel[1] => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+

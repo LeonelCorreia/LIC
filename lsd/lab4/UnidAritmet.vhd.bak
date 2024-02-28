@@ -1,0 +1,12 @@
+LIBRARY IEEE;
+use IEEE.std_logic_1164.all;
+
+entity UnidAritmet is
+	port( 
+	A: in STD_LOGIC (3 down to );
+	B0, B1, B2, B3: in STD_LOGIC;
+	OPau: in STD_LOGIC;
+	CBi: in STD_LOGIC;
+	CBo: out STD_LOGIC;
+	S0, S1, S2, S3: out STD_LOGIC);
+end Adder_Subtractor;

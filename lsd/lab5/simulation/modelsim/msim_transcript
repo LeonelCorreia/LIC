@@ -1,0 +1,104 @@
+# Reading C:/intelFPGA_lite/19.1/modelsim_ase/tcl/vsim/pref.tcl
+# do contador_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/19.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/leone/Downloads/LSD_2223i_LAB5_rev_24_11/int7seg.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:27:26 on Dec 16,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/leone/Downloads/LSD_2223i_LAB5_rev_24_11/int7seg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity int7seg
+# -- Compiling architecture logicFunction of int7seg
+# End time: 12:27:26 on Dec 16,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/leone/Downloads/LSD_2223i_LAB5_rev_24_11/decoderHex.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:27:26 on Dec 16,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/leone/Downloads/LSD_2223i_LAB5_rev_24_11/decoderHex.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity decoderHex
+# -- Compiling architecture logicFuntion of decoderHex
+# End time: 12:27:26 on Dec 16,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Leonel/isel/lsd/lab4/Full_Adder.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:27:27 on Dec 16,2022
+# vcom -reportprogress 300 -93 -work work C:/Leonel/isel/lsd/lab4/Full_Adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Full_Adder
+# -- Compiling architecture arq_Full_Adder of Full_Adder
+# End time: 12:27:27 on Dec 16,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Leonel/isel/lsd/lab4/semi_Adder.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:27:27 on Dec 16,2022
+# vcom -reportprogress 300 -93 -work work C:/Leonel/isel/lsd/lab4/semi_Adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity semi_Adder
+# -- Compiling architecture arq_semi_Adder of semi_Adder
+# End time: 12:27:27 on Dec 16,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Leonel/isel/lsd/lab5/MUX2_1.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:27:27 on Dec 16,2022
+# vcom -reportprogress 300 -93 -work work C:/Leonel/isel/lsd/lab5/MUX2_1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MUX2_1
+# -- Compiling architecture arq_MUX2_1 of MUX2_1
+# End time: 12:27:27 on Dec 16,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Leonel/isel/lsd/lab5/Reg.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:27:27 on Dec 16,2022
+# vcom -reportprogress 300 -93 -work work C:/Leonel/isel/lsd/lab5/Reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Reg
+# -- Compiling architecture arq_Reg of Reg
+# End time: 12:27:27 on Dec 16,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Leonel/isel/lsd/lab5/CountUp.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:27:27 on Dec 16,2022
+# vcom -reportprogress 300 -93 -work work C:/Leonel/isel/lsd/lab5/CountUp.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity CountUp
+# -- Compiling architecture arq_CountUp of CountUp
+# ** Error: C:/Leonel/isel/lsd/lab5/CountUp.vhd(49): (vcom-1193) Formal "A" length is 4; number of individual associations is 3.
+# ** Error: C:/Leonel/isel/lsd/lab5/CountUp.vhd(91): VHDL Compiler exiting
+# End time: 12:27:27 on Dec 16,2022, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: C:/intelFPGA_lite/19.1/modelsim_ase/win32aloem/vcom failed.
+# Error in macro ./contador_run_msim_rtl_vhdl.do line 14
+# C:/intelFPGA_lite/19.1/modelsim_ase/win32aloem/vcom failed.
+#     while executing
+# "vcom -93 -work work {C:/Leonel/isel/lsd/lab5/CountUp.vhd}"
+vsim work.countup
+# vsim work.countup 
+# Start time: 12:27:32 on Dec 16,2022
+# Loading std.standard
+# ** Error: (vsim-3173) Entity 'C:/Leonel/isel/lsd/lab5/simulation/modelsim/rtl_work.countup' has no architecture.
+# Error loading design
+# End time: 12:27:32 on Dec 16,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0

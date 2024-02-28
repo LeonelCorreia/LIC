@@ -1,0 +1,638 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Leonel/isel/lsd/TLab2/ALU/simulation/modelsim
+Eadder_subtractor
+Z1 w1667997931
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8C:/Leonel/isel/lsd/lab4/Adder_Subtractor.vhd
+Z5 FC:/Leonel/isel/lsd/lab4/Adder_Subtractor.vhd
+l0
+L4
+V9X[dX4QCWa3fiH]R=^_5K2
+!s100 WQ1MYZS_PcDTU^M8I@:H40
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1669564560
+!i10b 1
+Z8 !s108 1669564560.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/lab4/Adder_Subtractor.vhd|
+Z10 !s107 C:/Leonel/isel/lsd/lab4/Adder_Subtractor.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Aarq_adder_subtractor
+R2
+R3
+DEx4 work 16 adder_subtractor 0 22 9X[dX4QCWa3fiH]R=^_5K2
+l39
+L15
+Vh4NY]j]B]IMGGY96S2d2>3
+!s100 2Q][fQ8]DezQ=o6jO_H@h0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Ealu
+Z13 w1669206493
+R2
+R3
+R0
+Z14 8C:/Leonel/isel/lsd/TLab2/ALU/ALU.vhd
+Z15 FC:/Leonel/isel/lsd/TLab2/ALU/ALU.vhd
+l0
+L4
+VJ^ZjfjPh9cQ:TiF6KRVgG0
+!s100 gDWOKZRAEAf<A4^eZ^4l83
+R6
+31
+Z16 !s110 1669564561
+!i10b 1
+R8
+Z17 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/TLab2/ALU/ALU.vhd|
+Z18 !s107 C:/Leonel/isel/lsd/TLab2/ALU/ALU.vhd|
+!i113 1
+R11
+R12
+Aarq_alu
+R2
+R3
+DEx4 work 3 alu 0 22 J^ZjfjPh9cQ:TiF6KRVgG0
+l82
+L18
+VG5>^GkA7Z0Q]=I;:4h5JE0
+!s100 dFZBmRVLzoFlIegV`5nSO1
+R6
+31
+R16
+!i10b 1
+R8
+R17
+R18
+!i113 1
+R11
+R12
+Eflags
+Z19 w1668971550
+R2
+R3
+R0
+Z20 8C:/Leonel/isel/lsd/lab4/Flags.vhd
+Z21 FC:/Leonel/isel/lsd/lab4/Flags.vhd
+l0
+L4
+V:SM@2dL1C^gT]L7lG;BLo3
+!s100 I@4G=_TMlaAoWAnKGOW<=0
+R6
+31
+R7
+!i10b 1
+Z22 !s108 1669564559.000000
+Z23 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/lab4/Flags.vhd|
+Z24 !s107 C:/Leonel/isel/lsd/lab4/Flags.vhd|
+!i113 1
+R11
+R12
+Aarq_flags
+R2
+R3
+DEx4 work 5 flags 0 22 :SM@2dL1C^gT]L7lG;BLo3
+l15
+L14
+VV=<mmdI175aKzMib0]GiV3
+!s100 R3Cn[6U8JA[6f<M6camhO1
+R6
+31
+R7
+!i10b 1
+R22
+R23
+R24
+!i113 1
+R11
+R12
+Eflags2
+Z25 w1669208313
+R2
+R3
+R0
+Z26 8C:/Leonel/isel/lsd/TLab2/ALU/Flags2.vhd
+Z27 FC:/Leonel/isel/lsd/TLab2/ALU/Flags2.vhd
+l0
+L4
+V1f4fBK42hm9ThDD?[P9ET3
+!s100 oZM`b6J8>Dela2NTl;Io>3
+R6
+31
+R7
+!i10b 1
+R8
+Z28 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/TLab2/ALU/Flags2.vhd|
+Z29 !s107 C:/Leonel/isel/lsd/TLab2/ALU/Flags2.vhd|
+!i113 1
+R11
+R12
+Aarq_flags2
+R2
+R3
+DEx4 work 6 flags2 0 22 1f4fBK42hm9ThDD?[P9ET3
+l19
+L18
+VoJP``g0;L]oO5?9M:JcZU1
+!s100 oOIDgcV6:_AdH_o::TC^`3
+R6
+31
+R7
+!i10b 1
+R8
+R28
+R29
+!i113 1
+R11
+R12
+Efull_adder
+Z30 w1667936161
+R2
+R3
+R0
+Z31 8C:/Leonel/isel/lsd/lab4/Full_Adder.vhd
+Z32 FC:/Leonel/isel/lsd/lab4/Full_Adder.vhd
+l0
+L4
+V`Oke6WzQ9A_Ok]QI=BhDJ3
+!s100 ;o3ZILGmH[fF@[PP=X0350
+R6
+31
+Z33 !s110 1669564557
+!i10b 1
+Z34 !s108 1669564557.000000
+Z35 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/lab4/Full_Adder.vhd|
+Z36 !s107 C:/Leonel/isel/lsd/lab4/Full_Adder.vhd|
+!i113 1
+R11
+R12
+Aarq_full_adder
+R2
+R3
+DEx4 work 10 full_adder 0 22 `Oke6WzQ9A_Ok]QI=BhDJ3
+l25
+L12
+VBIRcQ<mX3`FQoB=HkQmz72
+!s100 o?2J<C8KS?QFPg128=5LJ3
+R6
+31
+R33
+!i10b 1
+R34
+R35
+R36
+!i113 1
+R11
+R12
+Elogic_module
+Z37 w1669202485
+R2
+R3
+R0
+Z38 8C:/Leonel/isel/lsd/TLab2/ALU/Logic_Module.vhd
+Z39 FC:/Leonel/isel/lsd/TLab2/ALU/Logic_Module.vhd
+l0
+L4
+VUQ=<HmgLWEKi43:O9V3:H1
+!s100 3QYH1fen:m]P[lzj<36IW0
+R6
+31
+R7
+!i10b 1
+R8
+Z40 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/TLab2/ALU/Logic_Module.vhd|
+Z41 !s107 C:/Leonel/isel/lsd/TLab2/ALU/Logic_Module.vhd|
+!i113 1
+R11
+R12
+Aarq_logic_module
+R2
+R3
+DEx4 work 12 logic_module 0 22 UQ=<HmgLWEKi43:O9V3:H1
+l52
+L14
+Vz^9hiJI;JAP<X;0HiRW=I1
+!s100 jXJY;YGEbVmHbH@]Em38S2
+R6
+31
+R7
+!i10b 1
+R8
+R40
+R41
+!i113 1
+R11
+R12
+Emux4_1
+Z42 w1668567607
+R2
+R3
+R0
+Z43 8C:/Leonel/isel/lsd/lab3/Mux4_1.vhd
+Z44 FC:/Leonel/isel/lsd/lab3/Mux4_1.vhd
+l0
+L3
+VaXTaC:o<?z91[=W4F>l;L0
+!s100 `:4hYeRInaAk;D?I:824I1
+R6
+31
+R7
+!i10b 1
+R8
+Z45 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/lab3/Mux4_1.vhd|
+Z46 !s107 C:/Leonel/isel/lsd/lab3/Mux4_1.vhd|
+!i113 1
+R11
+R12
+Aarq_mux4_1
+R2
+R3
+DEx4 work 6 mux4_1 0 22 aXTaC:o<?z91[=W4F>l;L0
+l10
+L9
+VL8OJF?Z:OkG6N4`NVejW]2
+!s100 ?XdCN1`HQf@gzFMk1^LV<1
+R6
+31
+R7
+!i10b 1
+R8
+R45
+R46
+!i113 1
+R11
+R12
+Emux_final
+Z47 w1668569714
+R2
+R3
+R0
+Z48 8C:/Leonel/isel/lsd/TLab2/ALU/MUX_Final.vhd
+Z49 FC:/Leonel/isel/lsd/TLab2/ALU/MUX_Final.vhd
+l0
+L4
+V2R][i91TU1YXc8K6<K=hf2
+!s100 bQ9hTLV<L>0JBgM8H2<B82
+R6
+31
+R7
+!i10b 1
+R8
+Z50 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/TLab2/ALU/MUX_Final.vhd|
+Z51 !s107 C:/Leonel/isel/lsd/TLab2/ALU/MUX_Final.vhd|
+!i113 1
+R11
+R12
+Aarq_mux_final
+R2
+R3
+DEx4 work 9 mux_final 0 22 2R][i91TU1YXc8K6<K=hf2
+l13
+L12
+VFS]62b]Ggbamz>[6]2`j82
+!s100 k2i`jo@^hEWRbg4_;=f2?3
+R6
+31
+R7
+!i10b 1
+R8
+R50
+R51
+!i113 1
+R11
+R12
+Eporta_asr
+Z52 w1668598963
+R2
+R3
+R0
+Z53 8C:/Leonel/isel/lsd/TLab2/ALU/Porta_ASR.vhd
+Z54 FC:/Leonel/isel/lsd/TLab2/ALU/Porta_ASR.vhd
+l0
+L3
+V^<QN6jeALBZH7fiPkF0810
+!s100 KdNi7Td1QdGI0hCD8PF]00
+R6
+31
+R7
+!i10b 1
+R8
+Z55 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/TLab2/ALU/Porta_ASR.vhd|
+Z56 !s107 C:/Leonel/isel/lsd/TLab2/ALU/Porta_ASR.vhd|
+!i113 1
+R11
+R12
+Aarq_porta_asr
+R2
+R3
+DEx4 work 9 porta_asr 0 22 ^<QN6jeALBZH7fiPkF0810
+l18
+L9
+VD:@VW;]9Bg?4i>gP1=9UM3
+!s100 83:zjlk7^2l7AfjKd2iI<3
+R6
+31
+R7
+!i10b 1
+R8
+R55
+R56
+!i113 1
+R11
+R12
+Eporta_lsr
+Z57 w1668571823
+R2
+R3
+R0
+Z58 8C:/Leonel/isel/lsd/TLab2/ALU/Porta_LSR.vhd
+Z59 FC:/Leonel/isel/lsd/TLab2/ALU/Porta_LSR.vhd
+l0
+L3
+VhalT`G7lb7@2]RY>J=C=O2
+!s100 ebK5eXUjDOKRS0egc<iV61
+R6
+31
+R7
+!i10b 1
+R8
+Z60 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/TLab2/ALU/Porta_LSR.vhd|
+Z61 !s107 C:/Leonel/isel/lsd/TLab2/ALU/Porta_LSR.vhd|
+!i113 1
+R11
+R12
+Aarq_porta_lsr
+R2
+R3
+DEx4 work 9 porta_lsr 0 22 halT`G7lb7@2]RY>J=C=O2
+l19
+L9
+Vi<mPNDaPzXVIT7dTNCH?=1
+!s100 Kd=Q`D^bLV`mG@^Km5BN42
+R6
+31
+R7
+!i10b 1
+R8
+R60
+R61
+!i113 1
+R11
+R12
+Eporta_or
+Z62 w1668571596
+R2
+R3
+R0
+Z63 8C:/Leonel/isel/lsd/TLab2/ALU/Porta_OR.vhd
+Z64 FC:/Leonel/isel/lsd/TLab2/ALU/Porta_OR.vhd
+l0
+L3
+Vnah_BTHE9lR0b5aca]6bH3
+!s100 I9T7Jkh3<80i^2W[KZ7NX1
+R6
+31
+R7
+!i10b 1
+R8
+Z65 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/TLab2/ALU/Porta_OR.vhd|
+Z66 !s107 C:/Leonel/isel/lsd/TLab2/ALU/Porta_OR.vhd|
+!i113 1
+R11
+R12
+Aarq_porta_or
+R2
+R3
+DEx4 work 8 porta_or 0 22 nah_BTHE9lR0b5aca]6bH3
+l10
+L9
+VY2<2@N7dTPT;[M^BVk[S<3
+!s100 hG8WKR`VafSofd?4e194>0
+R6
+31
+R7
+!i10b 1
+R8
+R65
+R66
+!i113 1
+R11
+R12
+Eporta_xnor
+Z67 w1668571674
+R2
+R3
+R0
+Z68 8C:/Leonel/isel/lsd/TLab2/ALU/Porta_XNOR.vhd
+Z69 FC:/Leonel/isel/lsd/TLab2/ALU/Porta_XNOR.vhd
+l0
+L3
+V4:c8SWF`^0mA2<68HfYFz1
+!s100 Qc1k;75WXTLe3DiS^AYS`2
+R6
+31
+R7
+!i10b 1
+R8
+Z70 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/TLab2/ALU/Porta_XNOR.vhd|
+Z71 !s107 C:/Leonel/isel/lsd/TLab2/ALU/Porta_XNOR.vhd|
+!i113 1
+R11
+R12
+Aarq_porta_xnor
+R2
+R3
+DEx4 work 10 porta_xnor 0 22 4:c8SWF`^0mA2<68HfYFz1
+l10
+L9
+Vn]<Zz=?<31hn9BdAWPoQD3
+!s100 c_7nlfFDI]jd21ZMOjgM53
+R6
+31
+R7
+!i10b 1
+R8
+R70
+R71
+!i113 1
+R11
+R12
+Esemi_adder
+Z72 w1667934300
+R2
+R3
+R0
+Z73 8C:/Leonel/isel/lsd/lab4/semi_Adder.vhd
+Z74 FC:/Leonel/isel/lsd/lab4/semi_Adder.vhd
+l0
+L4
+VXzN[8N>EB>bl7iXm@6<bN0
+!s100 Sk0gOJhK3<4JWY6@:anmG3
+R6
+31
+R33
+!i10b 1
+R34
+Z75 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/lab4/semi_Adder.vhd|
+Z76 !s107 C:/Leonel/isel/lsd/lab4/semi_Adder.vhd|
+!i113 1
+R11
+R12
+Aarq_semi_adder
+R2
+R3
+DEx4 work 10 semi_adder 0 22 XzN[8N>EB>bl7iXm@6<bN0
+l13
+L12
+VDFKNeWez5W986SWYMLl<U2
+!s100 ^]@aDoeh5CaU`3_PKD3[a3
+R6
+31
+R33
+!i10b 1
+R34
+R75
+R76
+!i113 1
+R11
+R12
+Etlab2_full_tb
+Z77 w1668969449
+Z78 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
+Z79 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R2
+R3
+R0
+Z80 8C:/Users/leone/Downloads/TLab2_full_tb.vhd
+Z81 FC:/Users/leone/Downloads/TLab2_full_tb.vhd
+l0
+L9
+V;ZDd53T[_JhB^GI7WIak=3
+!s100 Dj>S82MmzXQ5C2oDJAdJ[0
+R6
+32
+Z82 !s110 1669564576
+!i10b 1
+Z83 !s108 1669564576.000000
+Z84 !s90 -reportprogress|300|-work|work|C:/Users/leone/Downloads/TLab2_full_tb.vhd|
+Z85 !s107 C:/Users/leone/Downloads/TLab2_full_tb.vhd|
+!i113 1
+Z86 o-work work
+R12
+Aarc_tlab2_full_tb
+R78
+R79
+R2
+R3
+Z87 DEx4 work 13 tlab2_full_tb 0 22 ;ZDd53T[_JhB^GI7WIak=3
+l41
+L12
+Z88 VCGSg^fa?`1V8cV^FXgCzf3
+Z89 !s100 @`W10Q8Li^8M<2zIo6JQd2
+R6
+32
+R82
+!i10b 1
+R83
+R84
+R85
+!i113 1
+R86
+R12
+Eunidaritmet
+Z90 w1669205259
+R2
+R3
+R0
+Z91 8C:/Leonel/isel/lsd/lab4/UnidAritmet.vhd
+Z92 FC:/Leonel/isel/lsd/lab4/UnidAritmet.vhd
+l0
+L4
+V=k@b?z@0nMX5ZoWELfGGf3
+!s100 KH`7=7bfWG2o;R397<VgK0
+R6
+31
+R33
+!i10b 1
+Z93 !s108 1669564556.000000
+Z94 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/lab4/UnidAritmet.vhd|
+Z95 !s107 C:/Leonel/isel/lsd/lab4/UnidAritmet.vhd|
+!i113 1
+R11
+R12
+Aarq_unidaritmet
+R2
+R3
+DEx4 work 11 unidaritmet 0 22 =k@b?z@0nMX5ZoWELfGGf3
+l48
+L14
+VW6gSYzLQmF:2>HgUeknKP1
+!s100 53z1`QjYi^9HHbkY5SnI90
+R6
+31
+R33
+!i10b 1
+R93
+R94
+R95
+!i113 1
+R11
+R12
+Exors
+Z96 w1667993669
+R2
+R3
+R0
+Z97 8C:/Leonel/isel/lsd/lab4/XORs.vhd
+Z98 FC:/Leonel/isel/lsd/lab4/XORs.vhd
+l0
+L4
+V62U@_AP:]I^7:A9=5Ck6L3
+!s100 :l77O;l7E<G?cOJnW<<bb3
+R6
+31
+Z99 !s110 1669564556
+!i10b 1
+R93
+Z100 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/isel/lsd/lab4/XORs.vhd|
+Z101 !s107 C:/Leonel/isel/lsd/lab4/XORs.vhd|
+!i113 1
+R11
+R12
+Aarq_xors
+R2
+R3
+DEx4 work 4 xors 0 22 62U@_AP:]I^7:A9=5Ck6L3
+l11
+L10
+VFYa[W:P8[1jl9j0eL1kNJ0
+!s100 oikNB?H1lfB80j1JX>LAH3
+R6
+31
+R99
+!i10b 1
+R93
+R100
+R101
+!i113 1
+R11
+R12

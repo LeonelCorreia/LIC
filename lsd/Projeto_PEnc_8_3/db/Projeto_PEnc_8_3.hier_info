@@ -1,0 +1,67 @@
+|PEnc_8_3
+I0 => PEnc_4_2:UPEnc_4_2_1.I0
+I1 => PEnc_4_2:UPEnc_4_2_1.I1
+I2 => PEnc_4_2:UPEnc_4_2_1.I2
+I3 => PEnc_4_2:UPEnc_4_2_1.I3
+I4 => PEnc_4_2:UPEnc_4_2_2.I0
+I5 => PEnc_4_2:UPEnc_4_2_2.I1
+I6 => PEnc_4_2:UPEnc_4_2_2.I2
+I7 => PEnc_4_2:UPEnc_4_2_2.I3
+O[0] << Mux_4_2:UMux_4_2.R[0]
+O[1] << Mux_4_2:UMux_4_2.R[1]
+O[2] << PEnc_4_2:UPEnc_4_2_3.O[0]
+V << PEnc_4_2:UPEnc_4_2_3.V
+
+
+|PEnc_8_3|PEnc_4_2:UPEnc_4_2_1
+I0 => V.IN1
+I1 => O.IN0
+I1 => V.IN1
+I2 => O.IN0
+I2 => O.IN1
+I3 => O.IN1
+I3 => O.IN1
+O[0] <= O.DB_MAX_OUTPUT_PORT_TYPE
+O[1] <= O.DB_MAX_OUTPUT_PORT_TYPE
+V <= V.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PEnc_8_3|PEnc_4_2:UPEnc_4_2_2
+I0 => V.IN1
+I1 => O.IN0
+I1 => V.IN1
+I2 => O.IN0
+I2 => O.IN1
+I3 => O.IN1
+I3 => O.IN1
+O[0] <= O.DB_MAX_OUTPUT_PORT_TYPE
+O[1] <= O.DB_MAX_OUTPUT_PORT_TYPE
+V <= V.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PEnc_8_3|PEnc_4_2:UPEnc_4_2_3
+I0 => V.IN1
+I1 => O.IN0
+I1 => V.IN1
+I2 => O.IN0
+I2 => O.IN1
+I3 => O.IN1
+I3 => O.IN1
+O[0] <= O.DB_MAX_OUTPUT_PORT_TYPE
+O[1] <= O.DB_MAX_OUTPUT_PORT_TYPE
+V <= V.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PEnc_8_3|Mux_4_2:UMux_4_2
+PEnc1[0] => R.IN0
+PEnc1[1] => R.IN0
+PEnc2[0] => R.IN0
+PEnc2[1] => R.IN0
+sel => R.IN1
+sel => R.IN1
+sel => R.IN1
+sel => R.IN1
+R[0] <= R.DB_MAX_OUTPUT_PORT_TYPE
+R[1] <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
