@@ -1,0 +1,139 @@
+*******************************
+Projeto de LIC - Space Invaders
+*******************************
+
+Sistema do jogo é constituido por:
+	- 1 teclado matricial de 12 teclas
+	- 1 moedeiro (Coin Aceptor)
+	- 1 Liquid crystal Display (LCD) de 2 linhas de 16 caracteres
+	- 1 mostrador de pontuação (Score Display) display de 7 segmentos
+	- 1 chave de manutenção (1 switch)
+
+*********************************************************
+Ações que se podem realizar em modo JOGO no sistema:
+
+Jogo: 
+ - Inicia quando for primida a tecla '#' e existirem créditos disponiveis
+ - Os invasores aparecem do lado direito do LCD em ambas as linhas
+ - Ao primir a tecla '*' a mira do canhão da nave premuta de linha
+ - Para eliminar um invasor é preciso pressionar o numero do invasor e efetuar 
+   o disparo com a tecla '#'
+ - O jogo termina quando os invasores atingirem a nave espacial
+ - Os pontos no jogo são acumulados ao matar invasores
+
+Visualização da lista de pontuações:
+ - Esta acção é realizada sempre que o jogo está em modo de espera 
+   de um inicio de um jogo novo, após 10 segundos da mensagem de idenficação
+   do jogo
+
+*********************************************************
+Ações que se podem realizar em modo MANUTENÇÃO no sistema: 
+
+Teste:
+ -Premite realizar um jogo sem créditos e sem pontuação do jogo a ser 
+  contabilizada para a lista de pontuações
+
+Consultar Moedeiro:
+ - Carregando na tecla '#' permite-se a listagem do contador de moedas e 
+   jogos realizados
+
+Inciar Moedeiro:
+ - Primindo a tecla '#' e em seguida a tecla '*' o sistema de gestão coloca 
+   os contadores de moedas e jogos a zero iniciando um novo ciclo de contagem
+
+Desligar:
+ - Encerra o sistema após a confirmação do utilizador, ou seja, termina o
+   programa e as estruturas de dados contendo a informação dos contadores
+   e da lista de pontuações,são armazenadas de forma presistente em dois 
+   ficheiros de texto, por linha e com os campos de dados separados por ';' 
+ 
+ - O primeiro ficheiro deverá conter o número de jogos realizados e o número 
+   de moedas guardadas no cofre do moedeiro
+
+ - O segundo ficheiro deve conter a lista das pontuações, que compreende as 20 
+   melhores pontuações e o respetivo nome do jogador	
+ - Os dois ficheiros devem ser carregados para o sistema no seu processo de 
+   arranque
+
+************************
+*ARQUITETURA DO SISTEMA*
+************************
+Composta por 5 módulos:
+	1. Keyboard Reader
+	2. Serial LCD Controller (SLCDC)
+	3. Serial Score Controller (SSC)
+	4. Coin Acceptor
+	5. Control
+1. Este módulo é responsável pela descodificação do teclado matrcial de 12 
+   teclas determinando qual a tecla pressionada e disponibilizando o seu 
+   código, com quatro bits, ao módulo Control
+   Caso este não esteja disponível para o receber imediatamente, o código da
+   tecla é armazenado até ao limite de dez códigos
+
+2.  Apresenta as informações no LCD e é controlado pelo módulo Control
+
+3. É controlado pelo módulo Control
+
+******************************************
+HARDWARE
+
+->KEYBOARD READER: Este módulo é composto por três blocos principais
+	- key decode, o descodoficador do teclado
+	- ring buffer o bloco de armazenamento
+	- output buffer o bloco de entrega ao consumidor (módulo Control)
+
+	KEY DECODE: Este bloco é constituido por 3 sub-blocos, um teclado 
+		    matricial 4x3, um bloco key scan responsável pelo 
+		    varrimento do teclado e o bloco key control  que realiza o 
+		    controlo do varrimento e o controlo de fluxo.
+		    O controlo de fluxo do bloco key decode 
+		    (para o bloco ring buffer) define que o sinal Kval é
+	            ativado quando é detetada a pressão de uma tecla sendo 
+		    disponibilizado o codigo da tecla no barramento K0:3.
+		    Apenas é iniciado um novo ciclo de varrimento ao teclado
+		    quando o sinal Kack for ativado e a tecla primida for 
+		    libertada
+
+	RING BUFFER: Deverá ser uma estrutura de dados para armazenamento de 
+	 	     teclas com a disciplina FIFO, com uma capacidade de 
+		     armazenar até 8 palavras de 4 bits.
+		     A escrita de dados inicia-se com a ativação do sinal DAV
+		     pelo sistema produtor (Key decode), indicando que tem 
+		     dados a serem armazenados. Assim que tenha disponibilidade 
+		     para armazenar informação  o Ring Buffer escreve os dados
+		     D0:3 em memória. Para informar o sistema produtor que os 
+		     dados foram aceites é ativado o sinal DAC, assim que 
+		     conlcuida a escrita. 
+		     O sistema produtor mantém o sinal DAV ativo até que DAC 
+		     seja ativado. O Ring Buffer só desativa DAC depois de 
+		     DAV ter sido desativado. 
+	
+	OUTPUT BUFFER: É responsável pela interação com o módulo Control.
+		       O Output Buffer indica que está disponível para 
+		       armazenar dados através do sinal OBfree, nesta situação
+		       o sistema produtor (Ring buffer), pode ativar o sinal 
+		       Load. O Control quando pretende ler dados do Output
+		       Buffer, aguarda que o sinal Dval fique ativo, recolhe 
+		       os dados e ativa o sinal ACK indicando que estes já 
+		       foram consumidos. O Output Buffer, logo que o sinal ACK
+ 		       seja ativado, deve invalidar os dados baixando o sinal
+		       Dval e sinalizar que está novamente disponível para 
+		       entregar dados ao sistema consumidor, ativando o sinal 
+		       OBfree. Sempre que o bloco emissor Ring Buffer tenha dados 
+		       disponíveis e o bloco de entrega Output Buffer esteja 
+		       disponível (OBfree ativo), o Ring Buffer realiza uma leitura 
+		       da memória e entrega os dados ao Output Buffer ativando o 
+		       sinal Wreg. O Output Buffer indica que já registou os dados 
+		       desativando o sinal OBfree.			
+
+->COIN ACCEPTOR: Implementa a interface com o moedeiro sinalizando 
+o módulo Control que o moedeiro recebeu uma moeda através do sinal Coin. A entidade
+consumidora informa o Coin Acceptor que já contabilizou a moeda ativando o sinal 
+accept.
+
+->SERIAL LCD CONTROLLER: Implementa a interface com o LCD, fazendo a receção em série 
+da informação enviada pelo módulo de controlo e entregando-a posteriormente ao LCD	
+
+-> SERIAL SCORE CONTROLLER: Implementa a interface com o mostrador de pontuação 
+(Score Display), realizando a receção em série da informação enviada pelo módulo 
+de controlo e entregando-a posteriormente ao mostrador de pontuação.				
