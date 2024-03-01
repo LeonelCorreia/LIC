@@ -1,0 +1,49 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "DecOut[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Kout[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Kout[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Kout[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Kout[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Kpress",
+					"strict" : false
+				},
+				{
+					"name" : "MuxIn[0]",
+					"strict" : false
+				},
+				{
+					"name" : "MuxIn[3]",
+					"strict" : false
+				},
+				{
+					"name" : "MR",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

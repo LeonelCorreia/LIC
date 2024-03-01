@@ -1,0 +1,8 @@
+LIBRARY IEEE;
+use IEEE.std_logic_1164.all;
+
+entity keyscan is
+port(		  scan : in STD_LOGIC;
+			  output : out STD_LOGIC_VECTOR(3 downto 0);
+			  press : out STD_LOGIC);
+end keyscan;
