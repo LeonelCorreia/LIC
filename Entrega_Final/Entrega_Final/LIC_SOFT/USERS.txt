@@ -1,0 +1,10 @@
+0;3412;Alan Turing;
+1;7220;George Boole;True or false
+2;0;Maurice Karnaugh;
+3;0;John von Neumann;
+4;1111;Joao Cardoso;
+5;4512;Kathleen Booth;
+6;7698;Andre Brito;
+7;3232;Zezocas Nights;
+9;3333;Carlos Manaca;test test
+10;3333;xpto;xpto
