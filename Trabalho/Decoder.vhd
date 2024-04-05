@@ -12,8 +12,8 @@ architecture arq_decoder of Decoder is
 begin
  
 O(0) <= not S(0) and not S(1);
-O(1) <= not S(0) and S(1);
-O(2) <= S(0) and not S(1);
+O(1) <= S(0) and not S(1);
+O(2) <= not S(0) and S(1);
 O(3) <= S(0) and S(1);
  
 end arq_decoder;

@@ -1,0 +1,22 @@
+entity Keycontrol is
+port(
+	reset: in std_logic;
+	clk: in std_logic;
+	Kack: in std_logic;
+	Kpress: in std_logic;
+	Kval: out std_logic;
+	Kscan: out std_logic
+);
+
+end Keycontrol;
+
+architecture behavioral of Keycontrol is
+
+type STATE_TYPE is (STATE_INIT, STATE_PRESS, STATE_ACK_PRESS);
+
+signal CurrentState, NextState: STATE_TYPE;
+
+begin
+
+-- Flip-Flop's
+CurrentState <=

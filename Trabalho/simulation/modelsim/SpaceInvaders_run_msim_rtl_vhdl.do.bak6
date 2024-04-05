@@ -1,0 +1,17 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {C:/Leonel/LIC/rep-geral-G14/LIC/Trabalho/Trabalho/Decoder.vhd}
+vcom -93 -work work {C:/Leonel/LIC/rep-geral-G14/LIC/Trabalho/Trabalho/MUX4_1.vhd}
+vcom -93 -work work {C:/Leonel/LIC/rep-geral-G14/LIC/Trabalho/Trabalho/keyscan.vhd}
+vcom -93 -work work {C:/Leonel/LIC/rep-geral-G14/LIC/Trabalho/Trabalho/adder4bit.vhd}
+vcom -93 -work work {C:/Leonel/LIC/rep-geral-G14/LIC/Trabalho/Trabalho/Countup.vhd}
+vcom -93 -work work {C:/Leonel/LIC/rep-geral-G14/LIC/Trabalho/Trabalho/FA.vhd}
+vcom -93 -work work {C:/Leonel/LIC/rep-geral-G14/LIC/Trabalho/Trabalho/FFD.vhd}
+vcom -93 -work work {C:/Leonel/LIC/rep-geral-G14/LIC/Trabalho/Trabalho/MUX2_1_4.vhd}
+vcom -93 -work work {C:/Leonel/LIC/rep-geral-G14/LIC/Trabalho/Trabalho/Reg.vhd}
+

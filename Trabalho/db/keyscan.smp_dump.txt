@@ -1,0 +1,7 @@
+
+State Machine - |Keydecode|Keycontrol:key_control|CurrentState
+Name CurrentState.STATE_WAIT CurrentState.STATE_ACK_PRESS CurrentState.STATE_PRESS CurrentState.STATE_INIT 
+CurrentState.STATE_INIT 0 0 0 0 
+CurrentState.STATE_PRESS 0 0 1 1 
+CurrentState.STATE_ACK_PRESS 0 1 0 1 
+CurrentState.STATE_WAIT 1 0 0 1 

@@ -1,0 +1,70 @@
+LIBRARY IEEE;
+use IEEE.std_logic_1164.all;
+
+
+entity Keydecode is
+port(		  MR : in STD_LOGIC;
+			  CLK : in STD_LOGIC;
+			  KLine: in std_logic_vector(3 downto 0);
+			  Kack: in std_logic;
+			  KCol: out std_logic_vector(2 downto 0);
+			  Kout : out STD_LOGIC_VECTOR(3 downto 0);
+			  Kval : out STD_LOGIC
+);
+end Keydecode;
+
+architecture arc_keydecode of Keydecode is
+
+component Keyscan
+port(
+	MR : in STD_LOGIC;
+	Kscan : in STD_LOGIC;
+	CLK : in STD_LOGIC;
+	MuxIn : in STD_LOGIC_VECTOR(3 downto 0);
+	DecOut : out STD_LOGIC_VECTOR(2 downto 0);
+	Kout : out STD_LOGIC_VECTOR(3 downto 0);
+	Kpress : out STD_LOGIC
+);		
+end component;
+
+component keycontrol
+port(
+	reset: in std_logic;
+	clk: in std_logic;
+	Kack: in std_logic;
+	Kpress: in std_logic;
+	Kval: out std_logic;
+	Kscan: out std_logic
+);
+end component;
+
+signal KscanSignal: std_logic;
+signal KpressSignal: std_logic;
+signal KoutSignal: std_logic_vector(3 downto 0);
+signal KvalSignal: std_logic;
+
+begin
+
+key_scan: Keyscan port map(
+	MR => MR,
+	Kscan => KscanSignal,
+	CLK => CLK,
+	MuxIn => KLine,
+	DecOut => KCOl,
+	Kout => KoutSignal,
+	Kpress => KpressSignal
+);
+
+key_control: Keycontrol port map(
+	reset => MR,
+	clk => CLK,
+	Kack => Kack,
+	Kpress => KpressSignal,
+	Kval => KvalSignal,
+	Kscan => KscanSignal
+);
+
+Kval <= KvalSignal;
+Kout <= KoutSignal;
+
+end arc_keydecode;

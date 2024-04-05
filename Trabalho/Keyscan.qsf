@@ -1,0 +1,58 @@
+#set_location_assignment PIN_W8     -to LCD_RS
+#set_location_assignment PIN_V5     -to LCD_EN
+
+#set_location_assignment PIN_AA15   -to LCD_DATA[0]
+#set_location_assignment PIN_W13    -to LCD_DATA[1]
+#set_location_assignment PIN_AB13   -to LCD_DATA[2]
+#set_location_assignment PIN_Y11    -to LCD_DATA[3]
+#set_location_assignment PIN_W11    -to LCD_DATA[4]
+#set_location_assignment PIN_AA10   -to LCD_DATA[5]
+#set_location_assignment PIN_Y8     -to LCD_DATA[6]
+#set_location_assignment PIN_Y7     -to LCD_DATA[7]
+
+set_location_assignment PIN_W5     -to KLine[0]
+set_location_assignment PIN_AA14   -to KLine[1]
+set_location_assignment PIN_W12    -to KLine[2]
+set_location_assignment PIN_AB12   -to KLine[3]
+set_location_assignment PIN_AB11   -to KCol[0]
+set_location_assignment PIN_AB10   -to KCol[1]
+set_location_assignment PIN_AA9    -to KCol[2]
+#set_location_assignment PIN_AA8    -to KCol[3]
+
+#============================================================
+# CLOCK
+#============================================================
+#set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_50
+#set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK2_50
+#set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_ADC_10
+set_location_assignment PIN_P11 -to CLK
+#set_location_assignment PIN_N14 -to CLOCK2_50
+#set_location_assignment PIN_N5 -to CLOCK_ADC_10
+
+#============================================================
+SW
+#============================================================
+set_location_assignment PIN_C10 -to MR
+#set_location_assignment PIN_C11 -to SW[1]
+#set_location_assignment PIN_D12 -to SW[2]
+#set_location_assignment PIN_C12 -to SW[3]
+#set_location_assignment PIN_A12 -to SW[4]
+#set_location_assignment PIN_B12 -to SW[5]
+#set_location_assignment PIN_A13 -to SW[6]
+#set_location_assignment PIN_A14 -to SW[7]
+#set_location_assignment PIN_B14 -to SW[8]
+#set_location_assignment PIN_F15 -to SW[9]
+
+#============================================================
+LED
+#============================================================
+set_location_assignment PIN_A8 -to Kout[0]
+set_location_assignment PIN_A9 -to Kout[1]
+set_location_assignment PIN_A10 -to Kout[2]
+set_location_assignment PIN_B10 -to Kout[3]
+#set_location_assignment PIN_D13 -to LEDR[4]
+#set_location_assignment PIN_C13 -to LEDR[5]
+#set_location_assignment PIN_E14 -to LEDR[6]
+#set_location_assignment PIN_D14 -to LEDR[7]
+#set_location_assignment PIN_A11 -to LEDR[8]
+#set_location_assignment PIN_B11 -to LEDR[9]

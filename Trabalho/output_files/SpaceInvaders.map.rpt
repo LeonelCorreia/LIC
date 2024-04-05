@@ -1,6 +1,6 @@
 Analysis & Synthesis report for SpaceInvaders
-Fri Mar  1 15:23:40 2024
-Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+Sat Mar 16 14:21:31 2024
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
 ---------------------
@@ -13,16 +13,16 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
+  8. State Machine - |Keydecode|Keycontrol:key_control|CurrentState
   9. General Register Statistics
  10. Inverted Register Statistics
- 11. Port Connectivity Checks: "CountUp:Cont|Reg:UReg|FFD:UFFD_3"
- 12. Port Connectivity Checks: "CountUp:Cont|Reg:UReg|FFD:UFFD_2"
- 13. Port Connectivity Checks: "CountUp:Cont|Reg:UReg|FFD:UFFD_1"
- 14. Port Connectivity Checks: "CountUp:Cont|Reg:UReg|FFD:UFFD_0"
- 15. Port Connectivity Checks: "CountUp:Cont|Full_Adder:UFull_Adder"
- 16. Port Connectivity Checks: "CountUp:Cont"
- 17. Port Connectivity Checks: "Decoder:Dec"
+ 11. Port Connectivity Checks: "keyscan:key_scan|Countup:Cont|Reg:Registor|FFD:U3"
+ 12. Port Connectivity Checks: "keyscan:key_scan|Countup:Cont|Reg:Registor|FFD:U2"
+ 13. Port Connectivity Checks: "keyscan:key_scan|Countup:Cont|Reg:Registor|FFD:U1"
+ 14. Port Connectivity Checks: "keyscan:key_scan|Countup:Cont|Reg:Registor|FFD:U0"
+ 15. Port Connectivity Checks: "keyscan:key_scan|Countup:Cont|adder4bit:Adder"
+ 16. Port Connectivity Checks: "keyscan:key_scan|Countup:Cont"
+ 17. Port Connectivity Checks: "keyscan:key_scan|Decoder:Dec"
  18. Post-Synthesis Netlist Statistics for Top Partition
  19. Elapsed Time Per Partition
  20. Analysis & Synthesis Messages
@@ -32,7 +32,7 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2023  Intel Corporation. All rights reserved.
+Copyright (C) 2020  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -49,26 +49,26 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-------------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                        ;
-+------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Mar  1 15:23:40 2024          ;
-; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
-; Revision Name                      ; SpaceInvaders                                  ;
-; Top-level Entity Name              ; keyscan                                        ;
-; Family                             ; MAX 10                                         ;
-; Total logic elements               ; 2                                              ;
-;     Total combinational functions  ; 2                                              ;
-;     Dedicated logic registers      ; 1                                              ;
-; Total registers                    ; 1                                              ;
-; Total pins                         ; 15                                             ;
-; Total virtual pins                 ; 0                                              ;
-; Total memory bits                  ; 0                                              ;
-; Embedded Multiplier 9-bit elements ; 0                                              ;
-; Total PLLs                         ; 0                                              ;
-; UFM blocks                         ; 0                                              ;
-; ADC blocks                         ; 0                                              ;
-+------------------------------------+------------------------------------------------+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Mar 16 14:21:31 2024       ;
+; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                      ; SpaceInvaders                               ;
+; Top-level Entity Name              ; Keydecode                                   ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 17                                          ;
+;     Total combinational functions  ; 17                                          ;
+;     Dedicated logic registers      ; 8                                           ;
+; Total registers                    ; 8                                           ;
+; Total pins                         ; 15                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------+
@@ -77,7 +77,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; 10M50DAF484C6GES   ;                    ;
-; Top-level entity name                                            ; keyscan            ; SpaceInvaders      ;
+; Top-level entity name                                            ; Keydecode          ; SpaceInvaders      ;
 ; Family name                                                      ; MAX 10             ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -162,92 +162,107 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 3           ;
+; Maximum allowed            ; 3           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 3           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processors 2-3         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                        ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                 ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
-; Decoder.vhd                      ; yes             ; User VHDL File  ; C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/Decoder.vhd    ;         ;
-; MUX4_1.vhd                       ; yes             ; User VHDL File  ; C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/MUX4_1.vhd     ;         ;
-; keyscan.vhd                      ; yes             ; User VHDL File  ; C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/keyscan.vhd    ;         ;
-; ../FFD.vhd                       ; yes             ; User VHDL File  ; C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/FFD.vhd        ;         ;
-; Full_Adder.vhd                   ; yes             ; User VHDL File  ; C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/Full_Adder.vhd ;         ;
-; MUX2_1.vhd                       ; yes             ; User VHDL File  ; C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/MUX2_1.vhd     ;         ;
-; Reg.vhd                          ; yes             ; User VHDL File  ; C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/Reg.vhd        ;         ;
-; semi_Adder.vhd                   ; yes             ; User VHDL File  ; C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/semi_Adder.vhd ;         ;
-; Countup.vhd                      ; yes             ; User VHDL File  ; C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/Countup.vhd    ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                  ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                           ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------+---------+
+; Decoder.vhd                      ; yes             ; User VHDL File  ; C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Decoder.vhd    ;         ;
+; MUX4_1.vhd                       ; yes             ; User VHDL File  ; C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/MUX4_1.vhd     ;         ;
+; keyscan.vhd                      ; yes             ; User VHDL File  ; C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/keyscan.vhd    ;         ;
+; ../adder4bit.vhd                 ; yes             ; User VHDL File  ; C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/adder4bit.vhd  ;         ;
+; ../Countup.vhd                   ; yes             ; User VHDL File  ; C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Countup.vhd    ;         ;
+; ../FA.vhd                        ; yes             ; User VHDL File  ; C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/FA.vhd         ;         ;
+; ../FFD.vhd                       ; yes             ; User VHDL File  ; C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/FFD.vhd        ;         ;
+; ../MUX2_1_4.vhd                  ; yes             ; User VHDL File  ; C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/MUX2_1_4.vhd   ;         ;
+; ../Reg.vhd                       ; yes             ; User VHDL File  ; C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Reg.vhd        ;         ;
+; OR_.vhd                          ; yes             ; User VHDL File  ; C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/OR_.vhd        ;         ;
+; Keycontrol.vhd                   ; yes             ; User VHDL File  ; C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Keycontrol.vhd ;         ;
+; Keydecode.vhd                    ; yes             ; User VHDL File  ; C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Keydecode.vhd  ;         ;
+; AND_.vhd                         ; yes             ; User VHDL File  ; C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/AND_.vhd       ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                      ;
-+---------------------------------------------+------------------------------------+
-; Resource                                    ; Usage                              ;
-+---------------------------------------------+------------------------------------+
-; Estimated Total logic elements              ; 2                                  ;
-;                                             ;                                    ;
-; Total combinational functions               ; 2                                  ;
-; Logic element usage by number of LUT inputs ;                                    ;
-;     -- 4 input functions                    ; 0                                  ;
-;     -- 3 input functions                    ; 1                                  ;
-;     -- <=2 input functions                  ; 1                                  ;
-;                                             ;                                    ;
-; Logic elements by mode                      ;                                    ;
-;     -- normal mode                          ; 2                                  ;
-;     -- arithmetic mode                      ; 0                                  ;
-;                                             ;                                    ;
-; Total registers                             ; 1                                  ;
-;     -- Dedicated logic registers            ; 1                                  ;
-;     -- I/O registers                        ; 0                                  ;
-;                                             ;                                    ;
-; I/O pins                                    ; 15                                 ;
-;                                             ;                                    ;
-; Embedded Multiplier 9-bit elements          ; 0                                  ;
-;                                             ;                                    ;
-; Maximum fan-out node                        ; CountUp:Cont|Reg:UReg|FFD:UFFD_0|Q ;
-; Maximum fan-out                             ; 7                                  ;
-; Total fan-out                               ; 28                                 ;
-; Average fan-out                             ; 0.85                               ;
-+---------------------------------------------+------------------------------------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 17        ;
+;                                             ;           ;
+; Total combinational functions               ; 17        ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 10        ;
+;     -- 3 input functions                    ; 2         ;
+;     -- <=2 input functions                  ; 5         ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 17        ;
+;     -- arithmetic mode                      ; 0         ;
+;                                             ;           ;
+; Total registers                             ; 8         ;
+;     -- Dedicated logic registers            ; 8         ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 15        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; CLK~input ;
+; Maximum fan-out                             ; 8         ;
+; Total fan-out                               ; 99        ;
+; Average fan-out                             ; 1.80      ;
++---------------------------------------------+-----------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                       ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------+-------------+--------------+
-; |keyscan                   ; 2 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 15   ; 0            ; 0          ; |keyscan                                  ; keyscan     ; work         ;
-;    |CountUp:Cont|          ; 1 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |keyscan|CountUp:Cont                     ; CountUp     ; work         ;
-;       |MUX2_1:UMux2_1_0|   ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |keyscan|CountUp:Cont|MUX2_1:UMux2_1_0    ; MUX2_1      ; work         ;
-;       |Reg:UReg|           ; 0 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |keyscan|CountUp:Cont|Reg:UReg            ; Reg         ; work         ;
-;          |FFD:UFFD_0|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |keyscan|CountUp:Cont|Reg:UReg|FFD:UFFD_0 ; FFD         ; work         ;
-;    |MUX4_1:MUX|            ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |keyscan|MUX4_1:MUX                       ; MUX4_1      ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------+-------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                         ;
++-----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                    ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                               ; Entity Name         ; Library Name ;
++-----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------+---------------------+--------------+
+; |Keydecode                                    ; 17 (0)              ; 8 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 15   ; 0            ; 0          ; |Keydecode                                                        ; Keydecode           ; work         ;
+;    |Keycontrol:key_control|                   ; 4 (4)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Keydecode|Keycontrol:key_control                                 ; Keycontrol          ; work         ;
+;    |keyscan:key_scan|                         ; 13 (0)              ; 4 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Keydecode|keyscan:key_scan                                       ; keyscan             ; work         ;
+;       |Countup:Cont|                          ; 5 (0)               ; 4 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Keydecode|keyscan:key_scan|Countup:Cont                          ; Countup             ; work         ;
+;          |MUX2_1_4:MUX|                       ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Keydecode|keyscan:key_scan|Countup:Cont|MUX2_1_4:MUX             ; MUX2_1_4            ; work         ;
+;          |Reg:Registor|                       ; 0 (0)               ; 4 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Keydecode|keyscan:key_scan|Countup:Cont|Reg:Registor             ; Reg                 ; work         ;
+;             |FFD:U0|                          ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Keydecode|keyscan:key_scan|Countup:Cont|Reg:Registor|FFD:U0      ; FFD                 ; work         ;
+;             |FFD:U1|                          ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Keydecode|keyscan:key_scan|Countup:Cont|Reg:Registor|FFD:U1      ; FFD                 ; work         ;
+;             |FFD:U2|                          ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Keydecode|keyscan:key_scan|Countup:Cont|Reg:Registor|FFD:U2      ; FFD                 ; work         ;
+;             |FFD:U3|                          ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Keydecode|keyscan:key_scan|Countup:Cont|Reg:Registor|FFD:U3      ; FFD                 ; work         ;
+;          |adder4bit:Adder|                    ; 1 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Keydecode|keyscan:key_scan|Countup:Cont|adder4bit:Adder          ; adder4bit           ; work         ;
+;             |FA:U1|                           ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Keydecode|keyscan:key_scan|Countup:Cont|adder4bit:Adder|FA:U1    ; FA                  ; work         ;
+;       |Decoder:Dec|                           ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Keydecode|keyscan:key_scan|Decoder:Dec                           ; Decoder             ; work         ;
+;       |MUX4_1:MUX|                            ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Keydecode|keyscan:key_scan|MUX4_1:MUX                            ; MUX4_1              ; work         ;
+;       |Reset_signal_Enable:Reset_signal_Enbl| ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Keydecode|keyscan:key_scan|Reset_signal_Enable:Reset_signal_Enbl ; Reset_signal_Enable ; work         ;
+;       |TCorMR:Tc_or_Mr|                       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Keydecode|keyscan:key_scan|TCorMR:Tc_or_Mr                       ; TCorMR              ; work         ;
++-----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+----------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                     ;
-+---------------------------------------+------------------------------------------------+
-; Register name                         ; Reason for Removal                             ;
-+---------------------------------------+------------------------------------------------+
-; CountUp:Cont|Reg:UReg|FFD:UFFD_1|Q    ; Merged with CountUp:Cont|Reg:UReg|FFD:UFFD_0|Q ;
-; CountUp:Cont|Reg:UReg|FFD:UFFD_2|Q    ; Merged with CountUp:Cont|Reg:UReg|FFD:UFFD_0|Q ;
-; CountUp:Cont|Reg:UReg|FFD:UFFD_3|Q    ; Merged with CountUp:Cont|Reg:UReg|FFD:UFFD_0|Q ;
-; Total Number of Removed Registers = 3 ;                                                ;
-+---------------------------------------+------------------------------------------------+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Keydecode|Keycontrol:key_control|CurrentState                                                                             ;
++------------------------------+-------------------------+------------------------------+--------------------------+-------------------------+
+; Name                         ; CurrentState.STATE_WAIT ; CurrentState.STATE_ACK_PRESS ; CurrentState.STATE_PRESS ; CurrentState.STATE_INIT ;
++------------------------------+-------------------------+------------------------------+--------------------------+-------------------------+
+; CurrentState.STATE_INIT      ; 0                       ; 0                            ; 0                        ; 0                       ;
+; CurrentState.STATE_PRESS     ; 0                       ; 0                            ; 1                        ; 1                       ;
+; CurrentState.STATE_ACK_PRESS ; 0                       ; 1                            ; 0                        ; 1                       ;
+; CurrentState.STATE_WAIT      ; 1                       ; 0                            ; 0                        ; 1                       ;
++------------------------------+-------------------------+------------------------------+--------------------------+-------------------------+
 
 
 +------------------------------------------------------+
@@ -255,93 +270,95 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1     ;
+; Total registers                              ; 8     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 4     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; CountUp:Cont|Reg:UReg|FFD:UFFD_0|Q     ; 7       ;
-; Total number of inverted registers = 1 ;         ;
-+----------------------------------------+---------+
++---------------------------------------------------------------+
+; Inverted Register Statistics                                  ;
++-----------------------------------------------------+---------+
+; Inverted Register                                   ; Fan out ;
++-----------------------------------------------------+---------+
+; keyscan:key_scan|Countup:Cont|Reg:Registor|FFD:U2|Q ; 6       ;
+; keyscan:key_scan|Countup:Cont|Reg:Registor|FFD:U3|Q ; 5       ;
+; keyscan:key_scan|Countup:Cont|Reg:Registor|FFD:U0|Q ; 5       ;
+; keyscan:key_scan|Countup:Cont|Reg:Registor|FFD:U1|Q ; 7       ;
+; Total number of inverted registers = 4              ;         ;
++-----------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------+
-; Port Connectivity Checks: "CountUp:Cont|Reg:UReg|FFD:UFFD_3" ;
-+-------+-------+----------+-----------------------------------+
-; Port  ; Type  ; Severity ; Details                           ;
-+-------+-------+----------+-----------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                      ;
-; set   ; Input ; Info     ; Stuck at GND                      ;
-; en    ; Input ; Info     ; Stuck at VCC                      ;
-+-------+-------+----------+-----------------------------------+
++-------------------------------------------------------------------------------+
+; Port Connectivity Checks: "keyscan:key_scan|Countup:Cont|Reg:Registor|FFD:U3" ;
++-------+-------+----------+----------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                            ;
++-------+-------+----------+----------------------------------------------------+
+; reset ; Input ; Info     ; Stuck at GND                                       ;
+; set   ; Input ; Info     ; Stuck at GND                                       ;
+; en    ; Input ; Info     ; Stuck at VCC                                       ;
++-------+-------+----------+----------------------------------------------------+
 
 
-+--------------------------------------------------------------+
-; Port Connectivity Checks: "CountUp:Cont|Reg:UReg|FFD:UFFD_2" ;
-+-------+-------+----------+-----------------------------------+
-; Port  ; Type  ; Severity ; Details                           ;
-+-------+-------+----------+-----------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                      ;
-; set   ; Input ; Info     ; Stuck at GND                      ;
-; en    ; Input ; Info     ; Stuck at VCC                      ;
-+-------+-------+----------+-----------------------------------+
++-------------------------------------------------------------------------------+
+; Port Connectivity Checks: "keyscan:key_scan|Countup:Cont|Reg:Registor|FFD:U2" ;
++-------+-------+----------+----------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                            ;
++-------+-------+----------+----------------------------------------------------+
+; reset ; Input ; Info     ; Stuck at GND                                       ;
+; set   ; Input ; Info     ; Stuck at GND                                       ;
+; en    ; Input ; Info     ; Stuck at VCC                                       ;
++-------+-------+----------+----------------------------------------------------+
 
 
-+--------------------------------------------------------------+
-; Port Connectivity Checks: "CountUp:Cont|Reg:UReg|FFD:UFFD_1" ;
-+-------+-------+----------+-----------------------------------+
-; Port  ; Type  ; Severity ; Details                           ;
-+-------+-------+----------+-----------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                      ;
-; set   ; Input ; Info     ; Stuck at GND                      ;
-; en    ; Input ; Info     ; Stuck at VCC                      ;
-+-------+-------+----------+-----------------------------------+
++-------------------------------------------------------------------------------+
+; Port Connectivity Checks: "keyscan:key_scan|Countup:Cont|Reg:Registor|FFD:U1" ;
++-------+-------+----------+----------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                            ;
++-------+-------+----------+----------------------------------------------------+
+; reset ; Input ; Info     ; Stuck at GND                                       ;
+; set   ; Input ; Info     ; Stuck at GND                                       ;
+; en    ; Input ; Info     ; Stuck at VCC                                       ;
++-------+-------+----------+----------------------------------------------------+
 
 
-+--------------------------------------------------------------+
-; Port Connectivity Checks: "CountUp:Cont|Reg:UReg|FFD:UFFD_0" ;
-+-------+-------+----------+-----------------------------------+
-; Port  ; Type  ; Severity ; Details                           ;
-+-------+-------+----------+-----------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                      ;
-; set   ; Input ; Info     ; Stuck at GND                      ;
-; en    ; Input ; Info     ; Stuck at VCC                      ;
-+-------+-------+----------+-----------------------------------+
++-------------------------------------------------------------------------------+
+; Port Connectivity Checks: "keyscan:key_scan|Countup:Cont|Reg:Registor|FFD:U0" ;
++-------+-------+----------+----------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                            ;
++-------+-------+----------+----------------------------------------------------+
+; reset ; Input ; Info     ; Stuck at GND                                       ;
+; set   ; Input ; Info     ; Stuck at GND                                       ;
+; en    ; Input ; Info     ; Stuck at VCC                                       ;
++-------+-------+----------+----------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CountUp:Cont|Full_Adder:UFull_Adder"                                                   ;
+; Port Connectivity Checks: "keyscan:key_scan|Countup:Cont|adder4bit:Adder"                                         ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port    ; Type   ; Severity ; Details                                                                             ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
-; a[2..0] ; Input  ; Info     ; Stuck at GND                                                                        ;
-; c0      ; Input  ; Info     ; Stuck at GND                                                                        ;
-; c4      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; a[3..1] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; ci      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; co      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CountUp:Cont"                                                                       ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; d    ; Input  ; Info     ; Stuck at GND                                                                        ;
-; tc   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "keyscan:key_scan|Countup:Cont" ;
++------+-------+----------+---------------------------------+
+; Port ; Type  ; Severity ; Details                         ;
++------+-------+----------+---------------------------------+
+; d    ; Input ; Info     ; Stuck at GND                    ;
++------+-------+----------+---------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Decoder:Dec"                                                                        ;
+; Port Connectivity Checks: "keyscan:key_scan|Decoder:Dec"                                                       ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -355,17 +372,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 15                          ;
-; cycloneiii_ff         ; 1                           ;
-;     plain             ; 1                           ;
-; cycloneiii_lcell_comb ; 5                           ;
-;     normal            ; 5                           ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 1                           ;
-;         3 data inputs ; 1                           ;
+; cycloneiii_ff         ; 8                           ;
+;     CLR               ; 4                           ;
+;     plain             ; 4                           ;
+; cycloneiii_lcell_comb ; 23                          ;
+;     normal            ; 23                          ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 5                           ;
+;         3 data inputs ; 2                           ;
+;         4 data inputs ; 10                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.30                        ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 2.63                        ;
 +-----------------------+-----------------------------+
 
 
@@ -383,70 +401,84 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Fri Mar  1 15:23:28 2024
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Sat Mar 16 14:21:09 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off keyscan -c SpaceInvaders
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 3 of the 3 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file decoder.vhd
-    Info (12022): Found design unit 1: Decoder-arq_decoder File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/Decoder.vhd Line: 11
-    Info (12023): Found entity 1: Decoder File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/Decoder.vhd Line: 4
+    Info (12022): Found design unit 1: Decoder-arq_decoder File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Decoder.vhd Line: 11
+    Info (12023): Found entity 1: Decoder File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Decoder.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file mux4_1.vhd
-    Info (12022): Found design unit 1: mux4_1-arq_mux4_1 File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/MUX4_1.vhd Line: 10
-    Info (12023): Found entity 1: MUX4_1 File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/MUX4_1.vhd Line: 4
+    Info (12022): Found design unit 1: mux4_1-arq_mux4_1 File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/MUX4_1.vhd Line: 10
+    Info (12023): Found entity 1: MUX4_1 File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/MUX4_1.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file keyscan.vhd
-    Info (12022): Found design unit 1: keyscan-structural File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/keyscan.vhd Line: 14
-    Info (12023): Found entity 1: keyscan File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/keyscan.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file ffd.vhd
-    Info (12022): Found design unit 1: FFD-logicFunction File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/FFD.vhd Line: 14
-    Info (12023): Found entity 1: FFD File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/FFD.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file keyscan_tb.vhd
-    Info (12022): Found design unit 1: keyscan_tb-keyscan_tb_arc File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/keyscan_tb.vhd Line: 7
-    Info (12023): Found entity 1: keyscan_tb File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/keyscan_tb.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file full_adder.vhd
-    Info (12022): Found design unit 1: Full_Adder-arq_Full_Adder File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/Full_Adder.vhd Line: 12
-    Info (12023): Found entity 1: Full_Adder File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/Full_Adder.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file mux2_1.vhd
-    Info (12022): Found design unit 1: MUX2_1-arq_MUX2_1 File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/MUX2_1.vhd Line: 11
-    Info (12023): Found entity 1: MUX2_1 File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/MUX2_1.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file reg.vhd
-    Info (12022): Found design unit 1: Reg-arq_Reg File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/Reg.vhd Line: 13
-    Info (12023): Found entity 1: Reg File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/Reg.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file semi_adder.vhd
-    Info (12022): Found design unit 1: semi_Adder-arq_semi_Adder File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/semi_Adder.vhd Line: 12
-    Info (12023): Found entity 1: semi_Adder File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/semi_Adder.vhd Line: 4
+    Info (12022): Found design unit 1: keyscan-arc_keyscan File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/keyscan.vhd Line: 14
+    Info (12023): Found entity 1: keyscan File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/keyscan.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file adder4bit.vhd
+    Info (12022): Found design unit 1: adder4bit-structural File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/adder4bit.vhd Line: 15
+    Info (12023): Found entity 1: adder4bit File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/adder4bit.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file countup.vhd
-    Info (12022): Found design unit 1: CountUp-arq_CountUp File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/Countup.vhd Line: 16
-    Info (12023): Found entity 1: CountUp File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/Countup.vhd Line: 4
-Info (12127): Elaborating entity "keyscan" for the top level hierarchy
-Critical Warning (10920): VHDL Incomplete Partial Association warning at keyscan.vhd(62): port or argument "O" has 1/4 unassociated elements File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/keyscan.vhd Line: 62
-Info (12128): Elaborating entity "MUX4_1" for hierarchy "MUX4_1:MUX" File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/keyscan.vhd Line: 52
-Info (12128): Elaborating entity "Decoder" for hierarchy "Decoder:Dec" File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/keyscan.vhd Line: 62
-Info (12128): Elaborating entity "CountUp" for hierarchy "CountUp:Cont" File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/keyscan.vhd Line: 70
-Critical Warning (10920): VHDL Incomplete Partial Association warning at Countup.vhd(48): port or argument "A" has 1/4 unassociated elements File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/Countup.vhd Line: 48
-Info (12128): Elaborating entity "Full_Adder" for hierarchy "CountUp:Cont|Full_Adder:UFull_Adder" File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/Countup.vhd Line: 48
-Info (12128): Elaborating entity "semi_Adder" for hierarchy "CountUp:Cont|Full_Adder:UFull_Adder|semi_Adder:Usemi_Adder_1" File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/Full_Adder.vhd Line: 27
-Info (12128): Elaborating entity "MUX2_1" for hierarchy "CountUp:Cont|MUX2_1:UMux2_1_0" File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/Countup.vhd Line: 57
-Info (12128): Elaborating entity "Reg" for hierarchy "CountUp:Cont|Reg:UReg" File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/Countup.vhd Line: 84
-Info (12128): Elaborating entity "FFD" for hierarchy "CountUp:Cont|Reg:UReg|FFD:UFFD_0" File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/Reg.vhd Line: 26
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "DecOut[1]" is stuck at VCC File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/keyscan.vhd Line: 9
-    Warning (13410): Pin "DecOut[2]" is stuck at VCC File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/keyscan.vhd Line: 9
+    Info (12022): Found design unit 1: Countup-logicFunction File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Countup.vhd Line: 13
+    Info (12023): Found entity 1: Countup File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Countup.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file fa.vhd
+    Info (12022): Found design unit 1: FA-structural File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/FA.vhd Line: 15
+    Info (12023): Found entity 1: FA File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/FA.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ffd.vhd
+    Info (12022): Found design unit 1: FFD-logicFunction File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/FFD.vhd Line: 14
+    Info (12023): Found entity 1: FFD File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/FFD.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file mux2_1_4.vhd
+    Info (12022): Found design unit 1: MUX2_1_4-logicFunction File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/MUX2_1_4.vhd Line: 12
+    Info (12023): Found entity 1: MUX2_1_4 File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/MUX2_1_4.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file reg.vhd
+    Info (12022): Found design unit 1: Reg-logicFunction File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Reg.vhd Line: 10
+    Info (12023): Found entity 1: Reg File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Reg.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file keyscan_tb.vhd
+    Info (12022): Found design unit 1: keyscan_tb-keyscan_tb_arc File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/keyscan_tb.vhd Line: 7
+    Info (12023): Found entity 1: keyscan_tb File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/keyscan_tb.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file or_.vhd
+    Info (12022): Found design unit 1: TCorMR-arc_TCorMR File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/OR_.vhd Line: 11
+    Info (12023): Found entity 1: TCorMR File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/OR_.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file keycontrol.vhd
+    Info (12022): Found design unit 1: Keycontrol-behavioral File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Keycontrol.vhd Line: 16
+    Info (12023): Found entity 1: Keycontrol File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Keycontrol.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file keydecode.vhd
+    Info (12022): Found design unit 1: Keydecode-arc_keydecode File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Keydecode.vhd Line: 16
+    Info (12023): Found entity 1: Keydecode File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Keydecode.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file keydecode_tb.vhd
+    Info (12022): Found design unit 1: keydecode_tb-keydecode_tb_arc File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/keydecode_tb.vhd Line: 7
+    Info (12023): Found entity 1: keydecode_tb File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/keydecode_tb.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /leonel/git_grupo/rep-geral-g14/lic/trabalho/keydecode_tb_9keyfix.vhd
+    Info (12022): Found design unit 1: keydecode_tb_9keyfix-keydecode_tb_9keyfix_arc File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/keydecode_tb_9keyfix.vhd Line: 7
+    Info (12023): Found entity 1: keydecode_tb_9keyfix File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/keydecode_tb_9keyfix.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file and_.vhd
+    Info (12022): Found design unit 1: Reset_signal_Enable-arc_Reset_signal_Enable File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/AND_.vhd Line: 11
+    Info (12023): Found entity 1: Reset_signal_Enable File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/AND_.vhd Line: 4
+Info (12127): Elaborating entity "Keydecode" for the top level hierarchy
+Info (12128): Elaborating entity "keyscan" for hierarchy "keyscan:key_scan" File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Keydecode.vhd Line: 48
+Warning (10036): Verilog HDL or VHDL warning at keyscan.vhd(59): object "decCol3" assigned a value but never read File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/keyscan.vhd Line: 59
+Info (12128): Elaborating entity "MUX4_1" for hierarchy "keyscan:key_scan|MUX4_1:MUX" File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/keyscan.vhd Line: 70
+Info (12128): Elaborating entity "Decoder" for hierarchy "keyscan:key_scan|Decoder:Dec" File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/keyscan.vhd Line: 80
+Info (12128): Elaborating entity "TCorMR" for hierarchy "keyscan:key_scan|TCorMR:Tc_or_Mr" File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/keyscan.vhd Line: 90
+Info (12128): Elaborating entity "Reset_signal_Enable" for hierarchy "keyscan:key_scan|Reset_signal_Enable:Reset_signal_Enbl" File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/keyscan.vhd Line: 97
+Info (12128): Elaborating entity "Countup" for hierarchy "keyscan:key_scan|Countup:Cont" File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/keyscan.vhd Line: 103
+Info (12128): Elaborating entity "adder4bit" for hierarchy "keyscan:key_scan|Countup:Cont|adder4bit:Adder" File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Countup.vhd Line: 44
+Info (12128): Elaborating entity "FA" for hierarchy "keyscan:key_scan|Countup:Cont|adder4bit:Adder|FA:U1" File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/adder4bit.vhd Line: 31
+Info (12128): Elaborating entity "MUX2_1_4" for hierarchy "keyscan:key_scan|Countup:Cont|MUX2_1_4:MUX" File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Countup.vhd Line: 52
+Info (12128): Elaborating entity "Reg" for hierarchy "keyscan:key_scan|Countup:Cont|Reg:Registor" File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Countup.vhd Line: 57
+Info (12128): Elaborating entity "FFD" for hierarchy "keyscan:key_scan|Countup:Cont|Reg:Registor|FFD:U0" File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Reg.vhd Line: 24
+Info (12128): Elaborating entity "Keycontrol" for hierarchy "Keycontrol:key_control" File: C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Keydecode.vhd Line: 58
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 3 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "Kscan" File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/keyscan.vhd Line: 6
-    Warning (15610): No output dependent on input pin "MuxIn[1]" File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/keyscan.vhd Line: 8
-    Warning (15610): No output dependent on input pin "MuxIn[2]" File: C:/Leonel/Isel/UCs/rep-geral-G14_github/LIC/Trabalho/Trabalho/keyscan.vhd Line: 8
-Info (21057): Implemented 17 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 32 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 7 input pins
     Info (21059): Implemented 8 output pins
-    Info (21061): Implemented 2 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 4796 megabytes
-    Info: Processing ended: Fri Mar  1 15:23:40 2024
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:12
+    Info (21061): Implemented 17 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4776 megabytes
+    Info: Processing ended: Sat Mar 16 14:21:31 2024
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:17
 
 

@@ -1,0 +1,63 @@
+LIBRARY IEEE;
+use IEEE.std_logic_1164.all;
+
+entity Countup is
+port ( CLK : in std_logic;
+		 D : in std_logic_vector(3 downto 0);
+		 Q : out std_logic_vector(3 downto 0);
+		 CE : in std_logic;
+		 MR : in std_logic;
+		 TC : out std_logic);
+end Countup;
+
+architecture logicFunction of Countup is
+
+component Reg 
+port ( CLK : in std_logic;
+		 D : in std_logic_vector(3 downto 0);
+		 Q : out std_logic_vector(3 downto 0));
+end component;
+
+component MUX2_1_4 
+ port(
+ I0, I1: in std_logic_vector (3 downto 0);
+ S: in std_logic;
+ O : out std_logic_vector (3 downto 0)
+ );		
+end component;
+
+component adder4bit 
+	port
+	(
+	A  : in std_logic_vector(3 downto 0);
+	B  : in std_logic_vector(3 downto 0);
+	Ci : in std_logic;
+	S  : out std_logic_vector(3 downto 0);
+	Co : out std_logic
+	);
+end component;
+
+signal sQ, sadderout, smuxout : std_logic_vector(3 downto 0);
+
+begin
+
+Adder : adder4bit port map( A(0) => CE,
+									 A(1) => '0',
+									 A(2) => '0',
+									 A(3) => '0',
+									 B => sQ,
+									 Ci =>'0',
+									 S => sadderout);
+									 
+MUX : MUX2_1_4 port map( I0 => sadderout,
+								 I1 => D,
+								 S => MR,
+								 O => smuxout);
+								 
+Registor : Reg port map( CLK => CLK,
+						  D => smuxout,
+						  Q => sQ);
+						  
+Q <= sQ;
+TC <= sQ(0) and sQ(1) and sQ(2) and sQ(3);
+END LogicFunction;

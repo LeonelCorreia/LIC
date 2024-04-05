@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
 
--- DATE "03/01/2024 11:30:56"
+-- DATE "03/16/2024 14:22:18"
 
 -- 
 -- Device: Altera 10M50DAF484C6GES Package FBGA484
@@ -88,37 +88,37 @@ USE ALTERA.ALTERA_PRIMITIVES_COMPONENTS.ALL;
 USE FIFTYFIVENM.FIFTYFIVENM_COMPONENTS.ALL;
 USE IEEE.STD_LOGIC_1164.ALL;
 
-ENTITY 	keyscan IS
+ENTITY 	Keydecode IS
     PORT (
 	MR : IN std_logic;
-	Kscan : IN std_logic;
 	CLK : IN std_logic;
-	MuxIn : IN std_logic_vector(3 DOWNTO 0);
-	DecOut : BUFFER std_logic_vector(2 DOWNTO 0);
+	KLine : IN std_logic_vector(3 DOWNTO 0);
+	Kack : IN std_logic;
+	KCol : BUFFER std_logic_vector(2 DOWNTO 0);
 	Kout : BUFFER std_logic_vector(3 DOWNTO 0);
-	Kpress : BUFFER std_logic
+	Kval : BUFFER std_logic
 	);
-END keyscan;
+END Keydecode;
 
 -- Design Ports Information
--- DecOut[0]	=>  Location: PIN_Y1,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- DecOut[1]	=>  Location: PIN_W6,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- DecOut[2]	=>  Location: PIN_W3,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- Kout[0]	=>  Location: PIN_Y2,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- Kout[1]	=>  Location: PIN_V7,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- Kout[2]	=>  Location: PIN_Y5,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- Kout[3]	=>  Location: PIN_W4,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- Kpress	=>  Location: PIN_Y6,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- MuxIn[0]	=>  Location: PIN_U7,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- MuxIn[2]	=>  Location: PIN_AA2,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- MuxIn[1]	=>  Location: PIN_AA1,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- MuxIn[3]	=>  Location: PIN_Y7,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- Kscan	=>  Location: PIN_V8,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- MR	=>  Location: PIN_Y8,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- CLK	=>  Location: PIN_M8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- KCol[0]	=>  Location: PIN_AB11,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- KCol[1]	=>  Location: PIN_AB10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- KCol[2]	=>  Location: PIN_AA9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- Kout[0]	=>  Location: PIN_A8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- Kout[1]	=>  Location: PIN_A9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- Kout[2]	=>  Location: PIN_A10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- Kout[3]	=>  Location: PIN_B10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- Kval	=>  Location: PIN_V13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- KLine[0]	=>  Location: PIN_W5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- KLine[2]	=>  Location: PIN_W12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- KLine[1]	=>  Location: PIN_AA14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- KLine[3]	=>  Location: PIN_AB12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- MR	=>  Location: PIN_C10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- CLK	=>  Location: PIN_P11,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- Kack	=>  Location: PIN_W13,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
 
-ARCHITECTURE structure OF keyscan IS
+ARCHITECTURE structure OF Keydecode IS
 SIGNAL gnd : std_logic := '0';
 SIGNAL vcc : std_logic := '1';
 SIGNAL unknown : std_logic := 'X';
@@ -129,12 +129,12 @@ SIGNAL ww_devoe : std_logic;
 SIGNAL ww_devclrn : std_logic;
 SIGNAL ww_devpor : std_logic;
 SIGNAL ww_MR : std_logic;
-SIGNAL ww_Kscan : std_logic;
 SIGNAL ww_CLK : std_logic;
-SIGNAL ww_MuxIn : std_logic_vector(3 DOWNTO 0);
-SIGNAL ww_DecOut : std_logic_vector(2 DOWNTO 0);
+SIGNAL ww_KLine : std_logic_vector(3 DOWNTO 0);
+SIGNAL ww_Kack : std_logic;
+SIGNAL ww_KCol : std_logic_vector(2 DOWNTO 0);
 SIGNAL ww_Kout : std_logic_vector(3 DOWNTO 0);
-SIGNAL ww_Kpress : std_logic;
+SIGNAL ww_Kval : std_logic;
 SIGNAL \~QUARTUS_CREATED_ADC1~_CHSEL_bus\ : std_logic_vector(4 DOWNTO 0);
 SIGNAL \~QUARTUS_CREATED_ADC2~_CHSEL_bus\ : std_logic_vector(4 DOWNTO 0);
 SIGNAL \CLK~inputclkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
@@ -142,40 +142,53 @@ SIGNAL \~QUARTUS_CREATED_GND~I_combout\ : std_logic;
 SIGNAL \~QUARTUS_CREATED_UNVM~~busy\ : std_logic;
 SIGNAL \~QUARTUS_CREATED_ADC1~~eoc\ : std_logic;
 SIGNAL \~QUARTUS_CREATED_ADC2~~eoc\ : std_logic;
-SIGNAL \DecOut[0]~output_o\ : std_logic;
-SIGNAL \DecOut[1]~output_o\ : std_logic;
-SIGNAL \DecOut[2]~output_o\ : std_logic;
+SIGNAL \KCol[0]~output_o\ : std_logic;
+SIGNAL \KCol[1]~output_o\ : std_logic;
+SIGNAL \KCol[2]~output_o\ : std_logic;
 SIGNAL \Kout[0]~output_o\ : std_logic;
 SIGNAL \Kout[1]~output_o\ : std_logic;
 SIGNAL \Kout[2]~output_o\ : std_logic;
 SIGNAL \Kout[3]~output_o\ : std_logic;
-SIGNAL \Kpress~output_o\ : std_logic;
+SIGNAL \Kval~output_o\ : std_logic;
 SIGNAL \CLK~input_o\ : std_logic;
 SIGNAL \CLK~inputclkctrl_outclk\ : std_logic;
 SIGNAL \MR~input_o\ : std_logic;
-SIGNAL \Kscan~input_o\ : std_logic;
-SIGNAL \Cont|MUX|O~2_combout\ : std_logic;
-SIGNAL \Cont|Registor|U0|Q~q\ : std_logic;
-SIGNAL \Cont|MUX|O~3_combout\ : std_logic;
-SIGNAL \Cont|Registor|U1|Q~q\ : std_logic;
-SIGNAL \Cont|Adder|U2|Co~0_combout\ : std_logic;
-SIGNAL \Cont|MUX|O~0_combout\ : std_logic;
-SIGNAL \Cont|Registor|U2|Q~q\ : std_logic;
-SIGNAL \Cont|MUX|O~1_combout\ : std_logic;
-SIGNAL \Cont|Registor|U3|Q~q\ : std_logic;
-SIGNAL \MuxIn[3]~input_o\ : std_logic;
-SIGNAL \MuxIn[1]~input_o\ : std_logic;
-SIGNAL \MUX|R~0_combout\ : std_logic;
-SIGNAL \MuxIn[2]~input_o\ : std_logic;
-SIGNAL \MuxIn[0]~input_o\ : std_logic;
-SIGNAL \MUX|R~1_combout\ : std_logic;
-SIGNAL \Dec|O\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \MUX|ALT_INV_R~1_combout\ : std_logic;
-SIGNAL \Cont|Registor|U1|ALT_INV_Q~q\ : std_logic;
-SIGNAL \Cont|Registor|U0|ALT_INV_Q~q\ : std_logic;
-SIGNAL \Dec|ALT_INV_O\ : std_logic_vector(2 DOWNTO 1);
-SIGNAL \Cont|Registor|U3|ALT_INV_Q~q\ : std_logic;
-SIGNAL \Cont|Registor|U2|ALT_INV_Q~q\ : std_logic;
+SIGNAL \Kack~input_o\ : std_logic;
+SIGNAL \KLine[2]~input_o\ : std_logic;
+SIGNAL \KLine[0]~input_o\ : std_logic;
+SIGNAL \key_scan|Dec|O[2]~0_combout\ : std_logic;
+SIGNAL \key_scan|Tc_or_Mr|O~combout\ : std_logic;
+SIGNAL \key_scan|Cont|MUX|O~3_combout\ : std_logic;
+SIGNAL \key_scan|Cont|Registor|U0|Q~q\ : std_logic;
+SIGNAL \key_scan|MUX|R~0_combout\ : std_logic;
+SIGNAL \KLine[1]~input_o\ : std_logic;
+SIGNAL \KLine[3]~input_o\ : std_logic;
+SIGNAL \key_scan|MUX|R~1_combout\ : std_logic;
+SIGNAL \key_scan|MUX|R~2_combout\ : std_logic;
+SIGNAL \key_control|Selector1~0_combout\ : std_logic;
+SIGNAL \key_control|CurrentState.STATE_PRESS~q\ : std_logic;
+SIGNAL \key_control|Selector2~0_combout\ : std_logic;
+SIGNAL \key_control|CurrentState.STATE_WAIT~q\ : std_logic;
+SIGNAL \key_control|NextState.STATE_ACK_PRESS~0_combout\ : std_logic;
+SIGNAL \key_control|CurrentState.STATE_ACK_PRESS~q\ : std_logic;
+SIGNAL \key_control|Selector0~0_combout\ : std_logic;
+SIGNAL \key_control|CurrentState.STATE_INIT~q\ : std_logic;
+SIGNAL \key_scan|Cont|Adder|U1|Co~0_combout\ : std_logic;
+SIGNAL \key_scan|Cont|MUX|O~4_combout\ : std_logic;
+SIGNAL \key_scan|Cont|Registor|U1|Q~q\ : std_logic;
+SIGNAL \key_scan|Cont|MUX|O~5_combout\ : std_logic;
+SIGNAL \key_scan|Cont|Registor|U2|Q~q\ : std_logic;
+SIGNAL \key_scan|Reset_signal_Enbl|O~0_combout\ : std_logic;
+SIGNAL \key_scan|Cont|MUX|O~2_combout\ : std_logic;
+SIGNAL \key_scan|Cont|Registor|U3|Q~q\ : std_logic;
+SIGNAL \key_scan|Dec|O\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \ALT_INV_MR~input_o\ : std_logic;
+SIGNAL \key_scan|Cont|Registor|U1|ALT_INV_Q~q\ : std_logic;
+SIGNAL \key_scan|Cont|Registor|U0|ALT_INV_Q~q\ : std_logic;
+SIGNAL \key_scan|Dec|ALT_INV_O[2]~0_combout\ : std_logic;
+SIGNAL \key_scan|Dec|ALT_INV_O\ : std_logic_vector(1 DOWNTO 1);
+SIGNAL \key_scan|Cont|Registor|U3|ALT_INV_Q~q\ : std_logic;
+SIGNAL \key_scan|Cont|Registor|U2|ALT_INV_Q~q\ : std_logic;
 
 COMPONENT hard_block
     PORT (
@@ -187,12 +200,12 @@ END COMPONENT;
 BEGIN
 
 ww_MR <= MR;
-ww_Kscan <= Kscan;
 ww_CLK <= CLK;
-ww_MuxIn <= MuxIn;
-DecOut <= ww_DecOut;
+ww_KLine <= KLine;
+ww_Kack <= Kack;
+KCol <= ww_KCol;
 Kout <= ww_Kout;
-Kpress <= ww_Kpress;
+Kval <= ww_Kval;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
@@ -202,20 +215,20 @@ ww_devpor <= devpor;
 \~QUARTUS_CREATED_ADC2~_CHSEL_bus\ <= (\~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\);
 
 \CLK~inputclkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \CLK~input_o\);
-\MUX|ALT_INV_R~1_combout\ <= NOT \MUX|R~1_combout\;
-\Cont|Registor|U1|ALT_INV_Q~q\ <= NOT \Cont|Registor|U1|Q~q\;
-\Cont|Registor|U0|ALT_INV_Q~q\ <= NOT \Cont|Registor|U0|Q~q\;
-\Dec|ALT_INV_O\(2) <= NOT \Dec|O\(2);
-\Dec|ALT_INV_O\(1) <= NOT \Dec|O\(1);
-\Cont|Registor|U3|ALT_INV_Q~q\ <= NOT \Cont|Registor|U3|Q~q\;
-\Cont|Registor|U2|ALT_INV_Q~q\ <= NOT \Cont|Registor|U2|Q~q\;
+\ALT_INV_MR~input_o\ <= NOT \MR~input_o\;
+\key_scan|Cont|Registor|U1|ALT_INV_Q~q\ <= NOT \key_scan|Cont|Registor|U1|Q~q\;
+\key_scan|Cont|Registor|U0|ALT_INV_Q~q\ <= NOT \key_scan|Cont|Registor|U0|Q~q\;
+\key_scan|Dec|ALT_INV_O[2]~0_combout\ <= NOT \key_scan|Dec|O[2]~0_combout\;
+\key_scan|Dec|ALT_INV_O\(1) <= NOT \key_scan|Dec|O\(1);
+\key_scan|Cont|Registor|U3|ALT_INV_Q~q\ <= NOT \key_scan|Cont|Registor|U3|Q~q\;
+\key_scan|Cont|Registor|U2|ALT_INV_Q~q\ <= NOT \key_scan|Cont|Registor|U2|Q~q\;
 auto_generated_inst : hard_block
 PORT MAP (
 	devoe => ww_devoe,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor);
 
--- Location: LCCOMB_X44_Y43_N16
+-- Location: LCCOMB_X44_Y52_N4
 \~QUARTUS_CREATED_GND~I\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \~QUARTUS_CREATED_GND~I_combout\ = GND
@@ -228,43 +241,43 @@ GENERIC MAP (
 PORT MAP (
 	combout => \~QUARTUS_CREATED_GND~I_combout\);
 
--- Location: IOOBUF_X16_Y0_N23
-\DecOut[0]~output\ : fiftyfivenm_io_obuf
+-- Location: IOOBUF_X38_Y0_N9
+\KCol[0]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \Dec|O\(0),
+	i => \key_scan|Dec|O\(0),
 	devoe => ww_devoe,
-	o => \DecOut[0]~output_o\);
+	o => \KCol[0]~output_o\);
 
--- Location: IOOBUF_X16_Y0_N30
-\DecOut[1]~output\ : fiftyfivenm_io_obuf
+-- Location: IOOBUF_X38_Y0_N16
+\KCol[1]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \Dec|ALT_INV_O\(1),
+	i => \key_scan|Dec|ALT_INV_O\(1),
 	devoe => ww_devoe,
-	o => \DecOut[1]~output_o\);
+	o => \KCol[1]~output_o\);
 
--- Location: IOOBUF_X18_Y0_N9
-\DecOut[2]~output\ : fiftyfivenm_io_obuf
+-- Location: IOOBUF_X34_Y0_N23
+\KCol[2]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \Dec|ALT_INV_O\(2),
+	i => \key_scan|Dec|ALT_INV_O[2]~0_combout\,
 	devoe => ww_devoe,
-	o => \DecOut[2]~output_o\);
+	o => \KCol[2]~output_o\);
 
--- Location: IOOBUF_X16_Y0_N16
+-- Location: IOOBUF_X46_Y54_N2
 \Kout[0]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -272,11 +285,11 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \Cont|Registor|U2|ALT_INV_Q~q\,
+	i => \key_scan|Cont|Registor|U0|ALT_INV_Q~q\,
 	devoe => ww_devoe,
 	o => \Kout[0]~output_o\);
 
--- Location: IOOBUF_X20_Y0_N23
+-- Location: IOOBUF_X46_Y54_N23
 \Kout[1]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -284,11 +297,11 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \Cont|Registor|U3|ALT_INV_Q~q\,
+	i => \key_scan|Cont|Registor|U1|ALT_INV_Q~q\,
 	devoe => ww_devoe,
 	o => \Kout[1]~output_o\);
 
--- Location: IOOBUF_X18_Y0_N2
+-- Location: IOOBUF_X51_Y54_N16
 \Kout[2]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -296,11 +309,11 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \Cont|Registor|U0|ALT_INV_Q~q\,
+	i => \key_scan|Cont|Registor|U2|ALT_INV_Q~q\,
 	devoe => ww_devoe,
 	o => \Kout[2]~output_o\);
 
--- Location: IOOBUF_X18_Y0_N16
+-- Location: IOOBUF_X46_Y54_N9
 \Kout[3]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -308,23 +321,23 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \Cont|Registor|U1|ALT_INV_Q~q\,
+	i => \key_scan|Cont|Registor|U3|ALT_INV_Q~q\,
 	devoe => ww_devoe,
 	o => \Kout[3]~output_o\);
 
--- Location: IOOBUF_X20_Y0_N30
-\Kpress~output\ : fiftyfivenm_io_obuf
+-- Location: IOOBUF_X49_Y0_N30
+\Kval~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \MUX|ALT_INV_R~1_combout\,
+	i => \key_control|CurrentState.STATE_PRESS~q\,
 	devoe => ww_devoe,
-	o => \Kpress~output_o\);
+	o => \Kval~output_o\);
 
--- Location: IOIBUF_X0_Y18_N15
+-- Location: IOIBUF_X34_Y0_N29
 \CLK~input\ : fiftyfivenm_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -336,7 +349,7 @@ PORT MAP (
 	i => ww_CLK,
 	o => \CLK~input_o\);
 
--- Location: CLKCTRL_G3
+-- Location: CLKCTRL_G19
 \CLK~inputclkctrl\ : fiftyfivenm_clkctrl
 -- pragma translate_off
 GENERIC MAP (
@@ -349,7 +362,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	outclk => \CLK~inputclkctrl_outclk\);
 
--- Location: IOIBUF_X20_Y0_N1
+-- Location: IOIBUF_X51_Y54_N29
 \MR~input\ : fiftyfivenm_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -361,8 +374,8 @@ PORT MAP (
 	i => ww_MR,
 	o => \MR~input_o\);
 
--- Location: IOIBUF_X20_Y0_N15
-\Kscan~input\ : fiftyfivenm_io_ibuf
+-- Location: IOIBUF_X46_Y0_N1
+\Kack~input\ : fiftyfivenm_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
@@ -370,166 +383,37 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_Kscan,
-	o => \Kscan~input_o\);
+	i => ww_Kack,
+	o => \Kack~input_o\);
 
--- Location: LCCOMB_X19_Y1_N26
-\Cont|MUX|O~2\ : fiftyfivenm_lcell_comb
+-- Location: IOIBUF_X46_Y0_N8
+\KLine[2]~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_KLine(2),
+	o => \KLine[2]~input_o\);
+
+-- Location: IOIBUF_X14_Y0_N1
+\KLine[0]~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_KLine(0),
+	o => \KLine[0]~input_o\);
+
+-- Location: LCCOMB_X46_Y4_N4
+\key_scan|Dec|O[2]~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \Cont|MUX|O~2_combout\ = (\MR~input_o\) # (\Cont|Registor|U0|Q~q\ $ (\Kscan~input_o\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100111111111100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \MR~input_o\,
-	datac => \Cont|Registor|U0|Q~q\,
-	datad => \Kscan~input_o\,
-	combout => \Cont|MUX|O~2_combout\);
-
--- Location: FF_X19_Y1_N27
-\Cont|Registor|U0|Q\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLK~inputclkctrl_outclk\,
-	d => \Cont|MUX|O~2_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \Cont|Registor|U0|Q~q\);
-
--- Location: LCCOMB_X19_Y1_N24
-\Cont|MUX|O~3\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \Cont|MUX|O~3_combout\ = (\MR~input_o\) # (\Cont|Registor|U1|Q~q\ $ (((\Kscan~input_o\ & !\Cont|Registor|U0|Q~q\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111110011011110",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \Kscan~input_o\,
-	datab => \MR~input_o\,
-	datac => \Cont|Registor|U1|Q~q\,
-	datad => \Cont|Registor|U0|Q~q\,
-	combout => \Cont|MUX|O~3_combout\);
-
--- Location: FF_X19_Y1_N25
-\Cont|Registor|U1|Q\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLK~inputclkctrl_outclk\,
-	d => \Cont|MUX|O~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \Cont|Registor|U1|Q~q\);
-
--- Location: LCCOMB_X19_Y1_N6
-\Cont|Adder|U2|Co~0\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \Cont|Adder|U2|Co~0_combout\ = (\Kscan~input_o\ & (!\Cont|Registor|U0|Q~q\ & !\Cont|Registor|U1|Q~q\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000001010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \Kscan~input_o\,
-	datac => \Cont|Registor|U0|Q~q\,
-	datad => \Cont|Registor|U1|Q~q\,
-	combout => \Cont|Adder|U2|Co~0_combout\);
-
--- Location: LCCOMB_X19_Y1_N12
-\Cont|MUX|O~0\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \Cont|MUX|O~0_combout\ = (\MR~input_o\) # (\Cont|Registor|U2|Q~q\ $ (\Cont|Adder|U2|Co~0_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100111111111100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \MR~input_o\,
-	datac => \Cont|Registor|U2|Q~q\,
-	datad => \Cont|Adder|U2|Co~0_combout\,
-	combout => \Cont|MUX|O~0_combout\);
-
--- Location: FF_X19_Y1_N13
-\Cont|Registor|U2|Q\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLK~inputclkctrl_outclk\,
-	d => \Cont|MUX|O~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \Cont|Registor|U2|Q~q\);
-
--- Location: LCCOMB_X19_Y1_N30
-\Cont|MUX|O~1\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \Cont|MUX|O~1_combout\ = (\MR~input_o\) # (\Cont|Registor|U3|Q~q\ $ (((!\Cont|Registor|U2|Q~q\ & \Cont|Adder|U2|Co~0_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1110110111111100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \Cont|Registor|U2|Q~q\,
-	datab => \MR~input_o\,
-	datac => \Cont|Registor|U3|Q~q\,
-	datad => \Cont|Adder|U2|Co~0_combout\,
-	combout => \Cont|MUX|O~1_combout\);
-
--- Location: FF_X19_Y1_N31
-\Cont|Registor|U3|Q\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLK~inputclkctrl_outclk\,
-	d => \Cont|MUX|O~1_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \Cont|Registor|U3|Q~q\);
-
--- Location: LCCOMB_X19_Y1_N28
-\Dec|O[0]\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \Dec|O\(0) = (!\Cont|Registor|U2|Q~q\) # (!\Cont|Registor|U3|Q~q\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111111111111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \Cont|Registor|U3|Q~q\,
-	datad => \Cont|Registor|U2|Q~q\,
-	combout => \Dec|O\(0));
-
--- Location: LCCOMB_X19_Y1_N2
-\Dec|O[1]\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \Dec|O\(1) = (!\Cont|Registor|U3|Q~q\ & \Cont|Registor|U2|Q~q\)
+-- \key_scan|Dec|O[2]~0_combout\ = (!\key_scan|Cont|Registor|U3|Q~q\ & \key_scan|Cont|Registor|U2|Q~q\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -537,14 +421,404 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \Cont|Registor|U3|Q~q\,
-	datad => \Cont|Registor|U2|Q~q\,
-	combout => \Dec|O\(1));
+	datac => \key_scan|Cont|Registor|U3|Q~q\,
+	datad => \key_scan|Cont|Registor|U2|Q~q\,
+	combout => \key_scan|Dec|O[2]~0_combout\);
 
--- Location: LCCOMB_X19_Y1_N20
-\Dec|O[2]\ : fiftyfivenm_lcell_comb
+-- Location: LCCOMB_X46_Y4_N6
+\key_scan|Tc_or_Mr|O\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \Dec|O\(2) = (\Cont|Registor|U3|Q~q\ & !\Cont|Registor|U2|Q~q\)
+-- \key_scan|Tc_or_Mr|O~combout\ = (\MR~input_o\) # ((!\key_scan|Cont|Registor|U1|Q~q\ & (\key_scan|Dec|O[2]~0_combout\ & \key_scan|Cont|Adder|U1|Co~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1101110011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \key_scan|Cont|Registor|U1|Q~q\,
+	datab => \MR~input_o\,
+	datac => \key_scan|Dec|O[2]~0_combout\,
+	datad => \key_scan|Cont|Adder|U1|Co~0_combout\,
+	combout => \key_scan|Tc_or_Mr|O~combout\);
+
+-- Location: LCCOMB_X46_Y4_N14
+\key_scan|Cont|MUX|O~3\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \key_scan|Cont|MUX|O~3_combout\ = (\key_scan|Tc_or_Mr|O~combout\) # (\key_scan|Cont|Registor|U0|Q~q\ $ (((!\key_control|CurrentState.STATE_INIT~q\ & !\key_scan|MUX|R~2_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111100001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \key_control|CurrentState.STATE_INIT~q\,
+	datab => \key_scan|MUX|R~2_combout\,
+	datac => \key_scan|Cont|Registor|U0|Q~q\,
+	datad => \key_scan|Tc_or_Mr|O~combout\,
+	combout => \key_scan|Cont|MUX|O~3_combout\);
+
+-- Location: FF_X46_Y4_N15
+\key_scan|Cont|Registor|U0|Q\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK~inputclkctrl_outclk\,
+	d => \key_scan|Cont|MUX|O~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \key_scan|Cont|Registor|U0|Q~q\);
+
+-- Location: LCCOMB_X46_Y4_N10
+\key_scan|MUX|R~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \key_scan|MUX|R~0_combout\ = (\key_scan|Cont|Registor|U0|Q~q\ & ((\key_scan|Cont|Registor|U1|Q~q\ & ((\KLine[0]~input_o\))) # (!\key_scan|Cont|Registor|U1|Q~q\ & (\KLine[2]~input_o\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100000010100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \KLine[2]~input_o\,
+	datab => \KLine[0]~input_o\,
+	datac => \key_scan|Cont|Registor|U0|Q~q\,
+	datad => \key_scan|Cont|Registor|U1|Q~q\,
+	combout => \key_scan|MUX|R~0_combout\);
+
+-- Location: IOIBUF_X51_Y0_N22
+\KLine[1]~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_KLine(1),
+	o => \KLine[1]~input_o\);
+
+-- Location: IOIBUF_X40_Y0_N22
+\KLine[3]~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_KLine(3),
+	o => \KLine[3]~input_o\);
+
+-- Location: LCCOMB_X46_Y4_N8
+\key_scan|MUX|R~1\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \key_scan|MUX|R~1_combout\ = (!\key_scan|Cont|Registor|U0|Q~q\ & ((\key_scan|Cont|Registor|U1|Q~q\ & (\KLine[1]~input_o\)) # (!\key_scan|Cont|Registor|U1|Q~q\ & ((\KLine[3]~input_o\)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000101000001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \KLine[1]~input_o\,
+	datab => \KLine[3]~input_o\,
+	datac => \key_scan|Cont|Registor|U0|Q~q\,
+	datad => \key_scan|Cont|Registor|U1|Q~q\,
+	combout => \key_scan|MUX|R~1_combout\);
+
+-- Location: LCCOMB_X46_Y4_N0
+\key_scan|MUX|R~2\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \key_scan|MUX|R~2_combout\ = (\key_scan|MUX|R~0_combout\) # (\key_scan|MUX|R~1_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \key_scan|MUX|R~0_combout\,
+	datad => \key_scan|MUX|R~1_combout\,
+	combout => \key_scan|MUX|R~2_combout\);
+
+-- Location: LCCOMB_X46_Y4_N22
+\key_control|Selector1~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \key_control|Selector1~0_combout\ = (\key_control|CurrentState.STATE_INIT~q\ & (!\Kack~input_o\ & (\key_control|CurrentState.STATE_PRESS~q\))) # (!\key_control|CurrentState.STATE_INIT~q\ & ((\key_scan|MUX|R~2_combout\) # ((!\Kack~input_o\ & 
+-- \key_control|CurrentState.STATE_PRESS~q\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0111010100110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \key_control|CurrentState.STATE_INIT~q\,
+	datab => \Kack~input_o\,
+	datac => \key_control|CurrentState.STATE_PRESS~q\,
+	datad => \key_scan|MUX|R~2_combout\,
+	combout => \key_control|Selector1~0_combout\);
+
+-- Location: FF_X46_Y4_N23
+\key_control|CurrentState.STATE_PRESS\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK~inputclkctrl_outclk\,
+	d => \key_control|Selector1~0_combout\,
+	clrn => \ALT_INV_MR~input_o\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \key_control|CurrentState.STATE_PRESS~q\);
+
+-- Location: LCCOMB_X46_Y4_N26
+\key_control|Selector2~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \key_control|Selector2~0_combout\ = (\Kack~input_o\ & (((\key_control|CurrentState.STATE_WAIT~q\ & \key_scan|MUX|R~2_combout\)))) # (!\Kack~input_o\ & ((\key_control|CurrentState.STATE_ACK_PRESS~q\) # ((\key_control|CurrentState.STATE_WAIT~q\ & 
+-- \key_scan|MUX|R~2_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111010001000100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \Kack~input_o\,
+	datab => \key_control|CurrentState.STATE_ACK_PRESS~q\,
+	datac => \key_control|CurrentState.STATE_WAIT~q\,
+	datad => \key_scan|MUX|R~2_combout\,
+	combout => \key_control|Selector2~0_combout\);
+
+-- Location: FF_X46_Y4_N27
+\key_control|CurrentState.STATE_WAIT\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK~inputclkctrl_outclk\,
+	d => \key_control|Selector2~0_combout\,
+	clrn => \ALT_INV_MR~input_o\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \key_control|CurrentState.STATE_WAIT~q\);
+
+-- Location: LCCOMB_X47_Y4_N0
+\key_control|NextState.STATE_ACK_PRESS~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \key_control|NextState.STATE_ACK_PRESS~0_combout\ = (\Kack~input_o\ & (!\key_control|CurrentState.STATE_WAIT~q\ & \key_control|CurrentState.STATE_INIT~q\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000110000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \Kack~input_o\,
+	datac => \key_control|CurrentState.STATE_WAIT~q\,
+	datad => \key_control|CurrentState.STATE_INIT~q\,
+	combout => \key_control|NextState.STATE_ACK_PRESS~0_combout\);
+
+-- Location: FF_X46_Y4_N25
+\key_control|CurrentState.STATE_ACK_PRESS\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK~inputclkctrl_outclk\,
+	asdata => \key_control|NextState.STATE_ACK_PRESS~0_combout\,
+	clrn => \ALT_INV_MR~input_o\,
+	sload => VCC,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \key_control|CurrentState.STATE_ACK_PRESS~q\);
+
+-- Location: LCCOMB_X46_Y4_N12
+\key_control|Selector0~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \key_control|Selector0~0_combout\ = (\key_control|CurrentState.STATE_PRESS~q\) # ((\key_control|CurrentState.STATE_ACK_PRESS~q\) # ((\key_scan|MUX|R~0_combout\) # (\key_scan|MUX|R~1_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111111110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \key_control|CurrentState.STATE_PRESS~q\,
+	datab => \key_control|CurrentState.STATE_ACK_PRESS~q\,
+	datac => \key_scan|MUX|R~0_combout\,
+	datad => \key_scan|MUX|R~1_combout\,
+	combout => \key_control|Selector0~0_combout\);
+
+-- Location: FF_X46_Y4_N13
+\key_control|CurrentState.STATE_INIT\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK~inputclkctrl_outclk\,
+	d => \key_control|Selector0~0_combout\,
+	clrn => \ALT_INV_MR~input_o\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \key_control|CurrentState.STATE_INIT~q\);
+
+-- Location: LCCOMB_X46_Y4_N18
+\key_scan|Cont|Adder|U1|Co~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \key_scan|Cont|Adder|U1|Co~0_combout\ = (!\key_control|CurrentState.STATE_INIT~q\ & (!\key_scan|Cont|Registor|U0|Q~q\ & (!\key_scan|MUX|R~1_combout\ & !\key_scan|MUX|R~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \key_control|CurrentState.STATE_INIT~q\,
+	datab => \key_scan|Cont|Registor|U0|Q~q\,
+	datac => \key_scan|MUX|R~1_combout\,
+	datad => \key_scan|MUX|R~0_combout\,
+	combout => \key_scan|Cont|Adder|U1|Co~0_combout\);
+
+-- Location: LCCOMB_X46_Y4_N28
+\key_scan|Cont|MUX|O~4\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \key_scan|Cont|MUX|O~4_combout\ = (\MR~input_o\) # (\key_scan|Cont|Registor|U1|Q~q\ $ (\key_scan|Cont|Adder|U1|Co~0_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100111111111100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \MR~input_o\,
+	datac => \key_scan|Cont|Registor|U1|Q~q\,
+	datad => \key_scan|Cont|Adder|U1|Co~0_combout\,
+	combout => \key_scan|Cont|MUX|O~4_combout\);
+
+-- Location: FF_X46_Y4_N29
+\key_scan|Cont|Registor|U1|Q\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK~inputclkctrl_outclk\,
+	d => \key_scan|Cont|MUX|O~4_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \key_scan|Cont|Registor|U1|Q~q\);
+
+-- Location: LCCOMB_X46_Y4_N20
+\key_scan|Cont|MUX|O~5\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \key_scan|Cont|MUX|O~5_combout\ = (\key_scan|Tc_or_Mr|O~combout\) # (\key_scan|Cont|Registor|U2|Q~q\ $ (((!\key_scan|Cont|Registor|U1|Q~q\ & \key_scan|Cont|Adder|U1|Co~0_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111110110100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \key_scan|Cont|Registor|U1|Q~q\,
+	datab => \key_scan|Cont|Adder|U1|Co~0_combout\,
+	datac => \key_scan|Cont|Registor|U2|Q~q\,
+	datad => \key_scan|Tc_or_Mr|O~combout\,
+	combout => \key_scan|Cont|MUX|O~5_combout\);
+
+-- Location: FF_X46_Y4_N21
+\key_scan|Cont|Registor|U2|Q\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK~inputclkctrl_outclk\,
+	d => \key_scan|Cont|MUX|O~5_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \key_scan|Cont|Registor|U2|Q~q\);
+
+-- Location: LCCOMB_X46_Y4_N16
+\key_scan|Reset_signal_Enbl|O~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \key_scan|Reset_signal_Enbl|O~0_combout\ = (!\key_scan|Cont|Registor|U1|Q~q\ & \key_scan|Cont|Adder|U1|Co~0_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \key_scan|Cont|Registor|U1|Q~q\,
+	datad => \key_scan|Cont|Adder|U1|Co~0_combout\,
+	combout => \key_scan|Reset_signal_Enbl|O~0_combout\);
+
+-- Location: LCCOMB_X46_Y4_N30
+\key_scan|Cont|MUX|O~2\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \key_scan|Cont|MUX|O~2_combout\ = (\key_scan|Tc_or_Mr|O~combout\) # (\key_scan|Cont|Registor|U3|Q~q\ $ (((!\key_scan|Cont|Registor|U2|Q~q\ & \key_scan|Reset_signal_Enbl|O~0_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111110110100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \key_scan|Cont|Registor|U2|Q~q\,
+	datab => \key_scan|Reset_signal_Enbl|O~0_combout\,
+	datac => \key_scan|Cont|Registor|U3|Q~q\,
+	datad => \key_scan|Tc_or_Mr|O~combout\,
+	combout => \key_scan|Cont|MUX|O~2_combout\);
+
+-- Location: FF_X46_Y4_N31
+\key_scan|Cont|Registor|U3|Q\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK~inputclkctrl_outclk\,
+	d => \key_scan|Cont|MUX|O~2_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \key_scan|Cont|Registor|U3|Q~q\);
+
+-- Location: LCCOMB_X46_Y4_N24
+\key_scan|Dec|O[0]\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \key_scan|Dec|O\(0) = (!\key_scan|Cont|Registor|U2|Q~q\) # (!\key_scan|Cont|Registor|U3|Q~q\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101010111111111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \key_scan|Cont|Registor|U3|Q~q\,
+	datad => \key_scan|Cont|Registor|U2|Q~q\,
+	combout => \key_scan|Dec|O\(0));
+
+-- Location: LCCOMB_X46_Y4_N2
+\key_scan|Dec|O[1]\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \key_scan|Dec|O\(1) = (\key_scan|Cont|Registor|U3|Q~q\ & !\key_scan|Cont|Registor|U2|Q~q\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -552,91 +826,9 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \Cont|Registor|U3|Q~q\,
-	datad => \Cont|Registor|U2|Q~q\,
-	combout => \Dec|O\(2));
-
--- Location: IOIBUF_X20_Y0_N8
-\MuxIn[3]~input\ : fiftyfivenm_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	listen_to_nsleep_signal => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_MuxIn(3),
-	o => \MuxIn[3]~input_o\);
-
--- Location: IOIBUF_X18_Y0_N29
-\MuxIn[1]~input\ : fiftyfivenm_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	listen_to_nsleep_signal => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_MuxIn(1),
-	o => \MuxIn[1]~input_o\);
-
--- Location: LCCOMB_X19_Y1_N22
-\MUX|R~0\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \MUX|R~0_combout\ = (\Cont|Registor|U1|Q~q\ & (((\MuxIn[1]~input_o\) # (\Cont|Registor|U0|Q~q\)))) # (!\Cont|Registor|U1|Q~q\ & (\MuxIn[3]~input_o\ & ((!\Cont|Registor|U0|Q~q\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100110011100010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \MuxIn[3]~input_o\,
-	datab => \Cont|Registor|U1|Q~q\,
-	datac => \MuxIn[1]~input_o\,
-	datad => \Cont|Registor|U0|Q~q\,
-	combout => \MUX|R~0_combout\);
-
--- Location: IOIBUF_X18_Y0_N22
-\MuxIn[2]~input\ : fiftyfivenm_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	listen_to_nsleep_signal => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_MuxIn(2),
-	o => \MuxIn[2]~input_o\);
-
--- Location: IOIBUF_X16_Y0_N1
-\MuxIn[0]~input\ : fiftyfivenm_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	listen_to_nsleep_signal => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_MuxIn(0),
-	o => \MuxIn[0]~input_o\);
-
--- Location: LCCOMB_X19_Y1_N16
-\MUX|R~1\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \MUX|R~1_combout\ = (\MUX|R~0_combout\ & (((\MuxIn[0]~input_o\) # (!\Cont|Registor|U0|Q~q\)))) # (!\MUX|R~0_combout\ & (\MuxIn[2]~input_o\ & ((\Cont|Registor|U0|Q~q\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1110010010101010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \MUX|R~0_combout\,
-	datab => \MuxIn[2]~input_o\,
-	datac => \MuxIn[0]~input_o\,
-	datad => \Cont|Registor|U0|Q~q\,
-	combout => \MUX|R~1_combout\);
+	datac => \key_scan|Cont|Registor|U3|Q~q\,
+	datad => \key_scan|Cont|Registor|U2|Q~q\,
+	combout => \key_scan|Dec|O\(1));
 
 -- Location: UNVM_X0_Y40_N40
 \~QUARTUS_CREATED_UNVM~\ : fiftyfivenm_unvm
@@ -709,11 +901,11 @@ PORT MAP (
 	chsel => \~QUARTUS_CREATED_ADC2~_CHSEL_bus\,
 	eoc => \~QUARTUS_CREATED_ADC2~~eoc\);
 
-ww_DecOut(0) <= \DecOut[0]~output_o\;
+ww_KCol(0) <= \KCol[0]~output_o\;
 
-ww_DecOut(1) <= \DecOut[1]~output_o\;
+ww_KCol(1) <= \KCol[1]~output_o\;
 
-ww_DecOut(2) <= \DecOut[2]~output_o\;
+ww_KCol(2) <= \KCol[2]~output_o\;
 
 ww_Kout(0) <= \Kout[0]~output_o\;
 
@@ -723,7 +915,7 @@ ww_Kout(2) <= \Kout[2]~output_o\;
 
 ww_Kout(3) <= \Kout[3]~output_o\;
 
-ww_Kpress <= \Kpress~output_o\;
+ww_Kval <= \Kval~output_o\;
 END structure;
 
 

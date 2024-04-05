@@ -11,7 +11,21 @@ port(		  MR : in STD_LOGIC;
 			  Kpress : out STD_LOGIC);
 end keyscan;
 
-architecture structural of keyscan is
+architecture arc_keyscan of keyscan is
+
+component TCorMR
+port(
+ I0, I1: in std_logic;
+ O : out std_logic
+ );		
+end component;
+
+component Reset_signal_Enable
+port(
+ I0, I1: in std_logic;
+ O : out std_logic
+ );		
+end component;
 
 component MUX4_1
 port(A : in STD_LOGIC_VECTOR(3 downto 0);
@@ -42,7 +56,11 @@ signal decS1 : std_logic;
 signal decCol0 : std_logic;
 signal decCol1 : std_logic;
 signal decCol2 : std_logic;
+signal decCol3 : std_logic;
 signal clksignal : std_logic;
+signal TCsignal : std_logic;
+signal AndSignal : std_logic;
+signal resetSignal : std_logic;
 signal signalKpress : std_logic;
 
 
@@ -64,8 +82,23 @@ Dec: Decoder port map (
 	S(1) => decS1,
 	O(0) => decCol0,
 	O(1) => decCol1,
-	O(2) => decCol2
+	O(2) => decCol2,
+	O(3) => decCol3
 );
+
+
+Tc_or_Mr: TCorMR port map(
+	I0 => MR,
+	I1 => AndSignal,
+	O => resetSignal
+);
+
+
+Reset_signal_Enbl: Reset_signal_Enable port map(
+	I0 => TCSignal,
+	I1 => Kscan,
+	O => AndSignal
+); 
 
 Cont : Countup port map (
 	CLK => CLK,
@@ -74,16 +107,18 @@ Cont : Countup port map (
 	Q(1) => muxS1,
 	Q(2) => decS0,
 	Q(3) => decS1,
-	MR => MR,
+	MR => resetSignal,
+	TC => TCsignal,
 	CE => Kscan
 );
 DecOut(0) <= Not decCol0;
 DecOut(1) <= Not decCol1;
 DecOut(2) <= Not decCol2;
-Kout(0) <= decS0;
-Kout(1) <= decS1;
-Kout(2) <= muxS0;
-Kout(3) <= muxS1;
-Kpress <= Not signalKpress;
+Kout(0) <= muxS0;
+Kout(1) <= muxS1;
+Kout(2) <= decS0;
+Kout(3) <= decS1;
+-- Precisa negar para a placa o Kpress
+Kpress <=  signalKpress;
 
-end architecture;
+end arc_keyscan;

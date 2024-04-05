@@ -10,67 +10,207 @@
 # Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vcom -93 -work work {C:/Users/Ricardo Gomes/Documents/Faculdade/2ano/2 Semestre/LIC/Trabalho/Decoder.vhd}
+# vcom -93 -work work {C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Decoder.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:31:13 on Mar 01,2024
-# vcom -reportprogress 300 -93 -work work C:/Users/Ricardo Gomes/Documents/Faculdade/2ano/2 Semestre/LIC/Trabalho/Decoder.vhd 
+# Start time: 13:14:00 on Mar 16,2024
+# vcom -reportprogress 300 -93 -work work C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Decoder.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity Decoder
 # -- Compiling architecture arq_decoder of Decoder
-# End time: 11:31:13 on Mar 01,2024, Elapsed time: 0:00:00
+# End time: 13:14:00 on Mar 16,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/Ricardo Gomes/Documents/Faculdade/2ano/2 Semestre/LIC/Trabalho/MUX4_1.vhd}
+# vcom -93 -work work {C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/MUX4_1.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:31:13 on Mar 01,2024
-# vcom -reportprogress 300 -93 -work work C:/Users/Ricardo Gomes/Documents/Faculdade/2ano/2 Semestre/LIC/Trabalho/MUX4_1.vhd 
+# Start time: 13:14:00 on Mar 16,2024
+# vcom -reportprogress 300 -93 -work work C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/MUX4_1.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity MUX4_1
 # -- Compiling architecture arq_mux4_1 of mux4_1
-# End time: 11:31:13 on Mar 01,2024, Elapsed time: 0:00:00
+# End time: 13:14:01 on Mar 16,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/Ricardo Gomes/Documents/Faculdade/2ano/2 Semestre/LIC/Trabalho/keyscan.vhd}
+# vcom -93 -work work {C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/keyscan.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:31:13 on Mar 01,2024
-# vcom -reportprogress 300 -93 -work work C:/Users/Ricardo Gomes/Documents/Faculdade/2ano/2 Semestre/LIC/Trabalho/keyscan.vhd 
+# Start time: 13:14:01 on Mar 16,2024
+# vcom -reportprogress 300 -93 -work work C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/keyscan.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity keyscan
-# -- Compiling architecture structural of keyscan
-# ** Error: C:/Users/Ricardo Gomes/Documents/Faculdade/2ano/2 Semestre/LIC/Trabalho/keyscan.vhd(65): (vcom-1193) Formal "O" length is 4; number of individual associations is 3.
-# ** Note: C:/Users/Ricardo Gomes/Documents/Faculdade/2ano/2 Semestre/LIC/Trabalho/keyscan.vhd(89): VHDL Compiler exiting
-# End time: 11:31:14 on Mar 01,2024, Elapsed time: 0:00:01
-# Errors: 1, Warnings: 0
-# ** Error: C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/vcom failed.
-# Error in macro ./SpaceInvaders_run_msim_rtl_vhdl.do line 10
-# C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/vcom failed.
-#     while executing
-# "vcom -93 -work work {C:/Users/Ricardo Gomes/Documents/Faculdade/2ano/2 Semestre/LIC/Trabalho/keyscan.vhd}"
-vsim work.keyscan
-# vsim work.keyscan 
-# Start time: 11:31:24 on Mar 01,2024
+# -- Compiling architecture arc_keyscan of keyscan
+# End time: 13:14:01 on Mar 16,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/adder4bit.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:14:01 on Mar 16,2024
+# vcom -reportprogress 300 -93 -work work C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/adder4bit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity adder4bit
+# -- Compiling architecture structural of adder4bit
+# End time: 13:14:01 on Mar 16,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Countup.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:14:01 on Mar 16,2024
+# vcom -reportprogress 300 -93 -work work C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Countup.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Countup
+# -- Compiling architecture logicFunction of Countup
+# End time: 13:14:01 on Mar 16,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/FA.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:14:01 on Mar 16,2024
+# vcom -reportprogress 300 -93 -work work C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/FA.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity FA
+# -- Compiling architecture structural of FA
+# End time: 13:14:01 on Mar 16,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/FFD.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:14:01 on Mar 16,2024
+# vcom -reportprogress 300 -93 -work work C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/FFD.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity FFD
+# -- Compiling architecture logicFunction of FFD
+# End time: 13:14:01 on Mar 16,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/MUX2_1_4.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:14:01 on Mar 16,2024
+# vcom -reportprogress 300 -93 -work work C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/MUX2_1_4.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MUX2_1_4
+# -- Compiling architecture logicFunction of MUX2_1_4
+# End time: 13:14:02 on Mar 16,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Reg.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:14:02 on Mar 16,2024
+# vcom -reportprogress 300 -93 -work work C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Reg
+# -- Compiling architecture logicFunction of Reg
+# End time: 13:14:02 on Mar 16,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/OR_.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:14:02 on Mar 16,2024
+# vcom -reportprogress 300 -93 -work work C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/OR_.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity TCorMR
+# -- Compiling architecture arc_TCorMR of TCorMR
+# End time: 13:14:02 on Mar 16,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Keycontrol.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:14:02 on Mar 16,2024
+# vcom -reportprogress 300 -93 -work work C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Keycontrol.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Keycontrol
+# -- Compiling architecture behavioral of Keycontrol
+# End time: 13:14:02 on Mar 16,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Keydecode.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:14:02 on Mar 16,2024
+# vcom -reportprogress 300 -93 -work work C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Keydecode.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Keydecode
+# -- Compiling architecture arc_keydecode of Keydecode
+# End time: 13:14:02 on Mar 16,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/AND_.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:14:02 on Mar 16,2024
+# vcom -reportprogress 300 -93 -work work C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/AND_.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Reset_signal_Enable
+# -- Compiling architecture arc_Reset_signal_Enable of Reset_signal_Enable
+# End time: 13:14:02 on Mar 16,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vcom -reportprogress 300 -work work C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/keydecode_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:14:17 on Mar 16,2024
+# vcom -reportprogress 300 -work work C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/keydecode_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity keydecode_tb
+# -- Compiling architecture keydecode_tb_arc of keydecode_tb
+# End time: 13:14:17 on Mar 16,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/keydecode_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:14:36 on Mar 16,2024
+# vcom -reportprogress 300 -work work C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/keydecode_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity keydecode_tb
+# -- Compiling architecture keydecode_tb_arc of keydecode_tb
+# End time: 13:14:36 on Mar 16,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.keydecode_tb
+# vsim work.keydecode_tb 
+# Start time: 13:14:44 on Mar 16,2024
 # Loading std.standard
-# ** Error: (vsim-3173) Entity 'C:/Users/Ricardo Gomes/Documents/Faculdade/2ano/2 Semestre/LIC/Trabalho/simulation/modelsim/rtl_work.keyscan' has no architecture.
-# Error loading design
-# End time: 11:31:25 on Mar 01,2024, Elapsed time: 0:00:01
-# Errors: 1, Warnings: 0
-vsim work.keyscan
-# vsim work.keyscan 
-# Start time: 11:31:37 on Mar 01,2024
-# Loading std.standard
-# ** Error: (vsim-3173) Entity 'C:/Users/Ricardo Gomes/Documents/Faculdade/2ano/2 Semestre/LIC/Trabalho/simulation/modelsim/rtl_work.keyscan' has no architecture.
-# Error loading design
-# End time: 11:31:37 on Mar 01,2024, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-vsim work.keyscan
-# vsim work.keyscan 
-# Start time: 11:31:53 on Mar 01,2024
-# Loading std.standard
-# ** Error: (vsim-3173) Entity 'C:/Users/Ricardo Gomes/Documents/Faculdade/2ano/2 Semestre/LIC/Trabalho/simulation/modelsim/rtl_work.keyscan' has no architecture.
-# Error loading design
-# End time: 11:31:54 on Mar 01,2024, Elapsed time: 0:00:01
-# Errors: 1, Warnings: 0
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.keydecode_tb(keydecode_tb_arc)
+# Loading work.keydecode(arc_keydecode)
+# Loading work.keyscan(arc_keyscan)
+# Loading work.mux4_1(arq_mux4_1)
+# Loading work.decoder(arq_decoder)
+# Loading work.tcormr(arc_tcormr)
+# Loading work.reset_signal_enable(arc_reset_signal_enable)
+# Loading work.countup(logicfunction)
+# Loading work.adder4bit(structural)
+# Loading work.fa(structural)
+# Loading work.mux2_1_4(logicfunction)
+# Loading work.reg(logicfunction)
+# Loading work.ffd(logicfunction)
+# Loading work.keycontrol(behavioral)
+add wave -position insertpoint sim:/keydecode_tb/UKEYDECODE/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Leonel  Hostname: DESKTOP-0JS84HN  ProcessID: 3796
+#           Attempting to use alternate WLF file "./wlfttv46aj".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfttv46aj
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# End time: 14:19:26 on Mar 16,2024, Elapsed time: 1:04:42
+# Errors: 0, Warnings: 2

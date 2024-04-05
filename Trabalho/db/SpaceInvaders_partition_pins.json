@@ -4,7 +4,15 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "DecOut[0]",
+					"name" : "KCol[0]",
+					"strict" : false
+				},
+				{
+					"name" : "KCol[1]",
+					"strict" : false
+				},
+				{
+					"name" : "KCol[2]",
 					"strict" : false
 				},
 				{
@@ -24,15 +32,23 @@
 					"strict" : false
 				},
 				{
-					"name" : "Kpress",
+					"name" : "Kval",
 					"strict" : false
 				},
 				{
-					"name" : "MuxIn[0]",
+					"name" : "KLine[0]",
 					"strict" : false
 				},
 				{
-					"name" : "MuxIn[3]",
+					"name" : "KLine[2]",
+					"strict" : false
+				},
+				{
+					"name" : "KLine[1]",
+					"strict" : false
+				},
+				{
+					"name" : "KLine[3]",
 					"strict" : false
 				},
 				{
@@ -41,6 +57,10 @@
 				},
 				{
 					"name" : "CLK",
+					"strict" : false
+				},
+				{
+					"name" : "Kack",
 					"strict" : false
 				}
 			]

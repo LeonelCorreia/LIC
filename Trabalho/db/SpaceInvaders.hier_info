@@ -1,22 +1,43 @@
-|keyscan
-MR => Countup:Cont.MR
+|Keydecode
+MR => Keyscan:key_scan.MR
+MR => keycontrol:key_control.reset
+CLK => Keyscan:key_scan.CLK
+CLK => keycontrol:key_control.clk
+KLine[0] => Keyscan:key_scan.MuxIn[0]
+KLine[1] => Keyscan:key_scan.MuxIn[1]
+KLine[2] => Keyscan:key_scan.MuxIn[2]
+KLine[3] => Keyscan:key_scan.MuxIn[3]
+Kack => keycontrol:key_control.Kack
+KCol[0] << Keyscan:key_scan.DecOut[0]
+KCol[1] << Keyscan:key_scan.DecOut[1]
+KCol[2] << Keyscan:key_scan.DecOut[2]
+Kout[0] << Keyscan:key_scan.Kout[0]
+Kout[1] << Keyscan:key_scan.Kout[1]
+Kout[2] << Keyscan:key_scan.Kout[2]
+Kout[3] << Keyscan:key_scan.Kout[3]
+Kval << keycontrol:key_control.Kval
+
+
+|Keydecode|keyscan:key_scan
+MR => TCorMR:Tc_or_Mr.I0
+Kscan => Reset_signal_Enable:Reset_signal_Enbl.I1
 Kscan => Countup:Cont.CE
 CLK => Countup:Cont.CLK
 MuxIn[0] => MUX4_1:MUX.A[0]
 MuxIn[1] => MUX4_1:MUX.A[1]
 MuxIn[2] => MUX4_1:MUX.A[2]
 MuxIn[3] => MUX4_1:MUX.A[3]
-DecOut[0] << Decoder:Dec.O[0]
-DecOut[1] << Decoder:Dec.O[1]
-DecOut[2] << Decoder:Dec.O[2]
-Kout[0] << Countup:Cont.Q[2]
-Kout[1] << Countup:Cont.Q[3]
-Kout[2] << Countup:Cont.Q[0]
-Kout[3] << Countup:Cont.Q[1]
-Kpress << MUX4_1:MUX.R
+DecOut[0] <= Decoder:Dec.O[0]
+DecOut[1] <= Decoder:Dec.O[1]
+DecOut[2] <= Decoder:Dec.O[2]
+Kout[0] <= Countup:Cont.Q[0]
+Kout[1] <= Countup:Cont.Q[1]
+Kout[2] <= Countup:Cont.Q[2]
+Kout[3] <= Countup:Cont.Q[3]
+Kpress <= MUX4_1:MUX.R
 
 
-|keyscan|MUX4_1:MUX
+|Keydecode|keyscan:key_scan|MUX4_1:MUX
 A[0] => R.IN1
 A[1] => R.IN1
 A[2] => R.IN1
@@ -32,7 +53,7 @@ S[1] => R.IN1
 R <= R.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|keyscan|Decoder:Dec
+|Keydecode|keyscan:key_scan|Decoder:Dec
 S[0] => O.IN0
 S[0] => O.IN0
 S[0] => O.IN0
@@ -47,129 +68,145 @@ O[2] <= O.DB_MAX_OUTPUT_PORT_TYPE
 O[3] <= O.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|keyscan|CountUp:Cont
-D[0] => MUX2_1:UMux2_1_0.B
-D[1] => MUX2_1:UMux2_1_1.B
-D[2] => MUX2_1:UMux2_1_2.B
-D[3] => MUX2_1:UMux2_1_3.B
-CLK => Reg:UReg.CLK
-CE => ~NO_FANOUT~
-MR => MUX2_1:UMux2_1_0.sel
-MR => MUX2_1:UMux2_1_1.sel
-MR => MUX2_1:UMux2_1_2.sel
-MR => MUX2_1:UMux2_1_3.sel
-Q[0] <= Reg:UReg.Q[0]
-Q[1] <= Reg:UReg.Q[1]
-Q[2] <= Reg:UReg.Q[2]
-Q[3] <= Reg:UReg.Q[3]
+|Keydecode|keyscan:key_scan|TCorMR:Tc_or_Mr
+I0 => O.IN0
+I1 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Keydecode|keyscan:key_scan|Reset_signal_Enable:Reset_signal_Enbl
+I0 => O.IN0
+I1 => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Keydecode|keyscan:key_scan|Countup:Cont
+CLK => Reg:Registor.CLK
+D[0] => MUX2_1_4:MUX.I1[0]
+D[1] => MUX2_1_4:MUX.I1[1]
+D[2] => MUX2_1_4:MUX.I1[2]
+D[3] => MUX2_1_4:MUX.I1[3]
+Q[0] <= Reg:Registor.Q[0]
+Q[1] <= Reg:Registor.Q[1]
+Q[2] <= Reg:Registor.Q[2]
+Q[3] <= Reg:Registor.Q[3]
+CE => adder4bit:Adder.A[0]
+MR => MUX2_1_4:MUX.S
 TC <= TC.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|keyscan|CountUp:Cont|Full_Adder:UFull_Adder
-A[0] => semi_Adder:Usemi_Adder_1.A
-A[1] => semi_Adder:Usemi_Adder_2.A
-A[2] => semi_Adder:Usemi_Adder_3.A
-A[3] => semi_Adder:Usemi_Adder_4.A
-B[0] => semi_Adder:Usemi_Adder_1.B
-B[1] => semi_Adder:Usemi_Adder_2.B
-B[2] => semi_Adder:Usemi_Adder_3.B
-B[3] => semi_Adder:Usemi_Adder_4.B
-C0 => semi_Adder:Usemi_Adder_1.CBi
-C4 <= semi_Adder:Usemi_Adder_4.CBo
-S[0] <= semi_Adder:Usemi_Adder_1.S
-S[1] <= semi_Adder:Usemi_Adder_2.S
-S[2] <= semi_Adder:Usemi_Adder_3.S
-S[3] <= semi_Adder:Usemi_Adder_4.S
+|Keydecode|keyscan:key_scan|Countup:Cont|adder4bit:Adder
+A[0] => FA:U1.A
+A[1] => FA:U2.A
+A[2] => FA:U3.A
+A[3] => FA:U4.A
+B[0] => FA:U1.B
+B[1] => FA:U2.B
+B[2] => FA:U3.B
+B[3] => FA:U4.B
+Ci => FA:U1.Ci
+S[0] <= FA:U1.S
+S[1] <= FA:U2.S
+S[2] <= FA:U3.S
+S[3] <= FA:U4.S
+Co <= FA:U4.Co
 
 
-|keyscan|CountUp:Cont|Full_Adder:UFull_Adder|semi_Adder:Usemi_Adder_1
+|Keydecode|keyscan:key_scan|Countup:Cont|adder4bit:Adder|FA:U1
 A => S.IN0
-A => CBo.IN0
+A => Co.IN0
+A => Co.IN0
 B => S.IN1
-B => CBo.IN1
-CBi => S.IN1
+B => Co.IN1
+B => Co.IN0
+Ci => S.IN1
+Ci => Co.IN1
+Ci => Co.IN1
 S <= S.DB_MAX_OUTPUT_PORT_TYPE
-CBo <= CBo.DB_MAX_OUTPUT_PORT_TYPE
+Co <= Co.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|keyscan|CountUp:Cont|Full_Adder:UFull_Adder|semi_Adder:Usemi_Adder_2
+|Keydecode|keyscan:key_scan|Countup:Cont|adder4bit:Adder|FA:U2
 A => S.IN0
-A => CBo.IN0
+A => Co.IN0
+A => Co.IN0
 B => S.IN1
-B => CBo.IN1
-CBi => S.IN1
+B => Co.IN1
+B => Co.IN0
+Ci => S.IN1
+Ci => Co.IN1
+Ci => Co.IN1
 S <= S.DB_MAX_OUTPUT_PORT_TYPE
-CBo <= CBo.DB_MAX_OUTPUT_PORT_TYPE
+Co <= Co.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|keyscan|CountUp:Cont|Full_Adder:UFull_Adder|semi_Adder:Usemi_Adder_3
+|Keydecode|keyscan:key_scan|Countup:Cont|adder4bit:Adder|FA:U3
 A => S.IN0
-A => CBo.IN0
+A => Co.IN0
+A => Co.IN0
 B => S.IN1
-B => CBo.IN1
-CBi => S.IN1
+B => Co.IN1
+B => Co.IN0
+Ci => S.IN1
+Ci => Co.IN1
+Ci => Co.IN1
 S <= S.DB_MAX_OUTPUT_PORT_TYPE
-CBo <= CBo.DB_MAX_OUTPUT_PORT_TYPE
+Co <= Co.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|keyscan|CountUp:Cont|Full_Adder:UFull_Adder|semi_Adder:Usemi_Adder_4
+|Keydecode|keyscan:key_scan|Countup:Cont|adder4bit:Adder|FA:U4
 A => S.IN0
-A => CBo.IN0
+A => Co.IN0
+A => Co.IN0
 B => S.IN1
-B => CBo.IN1
-CBi => S.IN1
+B => Co.IN1
+B => Co.IN0
+Ci => S.IN1
+Ci => Co.IN1
+Ci => Co.IN1
 S <= S.DB_MAX_OUTPUT_PORT_TYPE
-CBo <= CBo.DB_MAX_OUTPUT_PORT_TYPE
+Co <= Co.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|keyscan|CountUp:Cont|MUX2_1:UMux2_1_0
-A => R.IN0
-B => R.IN0
-sel => R.IN1
-sel => R.IN1
-R <= R.DB_MAX_OUTPUT_PORT_TYPE
+|Keydecode|keyscan:key_scan|Countup:Cont|MUX2_1_4:MUX
+I0[0] => O.IN0
+I0[1] => O.IN0
+I0[2] => O.IN0
+I0[3] => O.IN0
+I1[0] => O.IN0
+I1[1] => O.IN0
+I1[2] => O.IN0
+I1[3] => O.IN0
+S => O.IN1
+S => O.IN1
+S => O.IN1
+S => O.IN1
+S => O.IN1
+S => O.IN1
+S => O.IN1
+S => O.IN1
+O[0] <= O.DB_MAX_OUTPUT_PORT_TYPE
+O[1] <= O.DB_MAX_OUTPUT_PORT_TYPE
+O[2] <= O.DB_MAX_OUTPUT_PORT_TYPE
+O[3] <= O.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|keyscan|CountUp:Cont|MUX2_1:UMux2_1_1
-A => R.IN0
-B => R.IN0
-sel => R.IN1
-sel => R.IN1
-R <= R.DB_MAX_OUTPUT_PORT_TYPE
+|Keydecode|keyscan:key_scan|Countup:Cont|Reg:Registor
+CLK => FFD:U0.CLK
+CLK => FFD:U1.CLK
+CLK => FFD:U2.CLK
+CLK => FFD:U3.CLK
+D[0] => FFD:U0.D
+D[1] => FFD:U1.D
+D[2] => FFD:U2.D
+D[3] => FFD:U3.D
+Q[0] <= FFD:U0.Q
+Q[1] <= FFD:U1.Q
+Q[2] <= FFD:U2.Q
+Q[3] <= FFD:U3.Q
 
 
-|keyscan|CountUp:Cont|MUX2_1:UMux2_1_2
-A => R.IN0
-B => R.IN0
-sel => R.IN1
-sel => R.IN1
-R <= R.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|keyscan|CountUp:Cont|MUX2_1:UMux2_1_3
-A => R.IN0
-B => R.IN0
-sel => R.IN1
-sel => R.IN1
-R <= R.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|keyscan|CountUp:Cont|Reg:UReg
-D[0] => FFD:UFFD_0.D
-D[1] => FFD:UFFD_1.D
-D[2] => FFD:UFFD_2.D
-D[3] => FFD:UFFD_3.D
-CLK => FFD:UFFD_0.CLK
-CLK => FFD:UFFD_1.CLK
-CLK => FFD:UFFD_2.CLK
-CLK => FFD:UFFD_3.CLK
-Q[0] <= FFD:UFFD_0.Q
-Q[1] <= FFD:UFFD_1.Q
-Q[2] <= FFD:UFFD_2.Q
-Q[3] <= FFD:UFFD_3.Q
-
-
-|keyscan|CountUp:Cont|Reg:UReg|FFD:UFFD_0
+|Keydecode|keyscan:key_scan|Countup:Cont|Reg:Registor|FFD:U0
 CLK => Q~reg0.CLK
 RESET => Q~reg0.ACLR
 RESET => Q.IN0
@@ -179,7 +216,7 @@ EN => Q~reg0.ENA
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|keyscan|CountUp:Cont|Reg:UReg|FFD:UFFD_1
+|Keydecode|keyscan:key_scan|Countup:Cont|Reg:Registor|FFD:U1
 CLK => Q~reg0.CLK
 RESET => Q~reg0.ACLR
 RESET => Q.IN0
@@ -189,7 +226,7 @@ EN => Q~reg0.ENA
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|keyscan|CountUp:Cont|Reg:UReg|FFD:UFFD_2
+|Keydecode|keyscan:key_scan|Countup:Cont|Reg:Registor|FFD:U2
 CLK => Q~reg0.CLK
 RESET => Q~reg0.ACLR
 RESET => Q.IN0
@@ -199,7 +236,7 @@ EN => Q~reg0.ENA
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|keyscan|CountUp:Cont|Reg:UReg|FFD:UFFD_3
+|Keydecode|keyscan:key_scan|Countup:Cont|Reg:Registor|FFD:U3
 CLK => Q~reg0.CLK
 RESET => Q~reg0.ACLR
 RESET => Q.IN0
@@ -207,5 +244,19 @@ SET => Q.IN1
 D => Q~reg0.DATAIN
 EN => Q~reg0.ENA
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Keydecode|Keycontrol:key_control
+reset => CurrentState~3.DATAIN
+clk => CurrentState~1.DATAIN
+Kack => NextState.STATE_ACK_PRESS.DATAA
+Kack => Selector1.IN1
+Kack => Selector2.IN1
+Kpress => Selector1.IN3
+Kpress => Selector2.IN3
+Kpress => Kscan.IN0
+Kpress => Selector0.IN2
+Kval <= Kval.DB_MAX_OUTPUT_PORT_TYPE
+Kscan <= Kscan.DB_MAX_OUTPUT_PORT_TYPE
 
 

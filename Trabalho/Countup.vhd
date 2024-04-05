@@ -1,91 +1,63 @@
 LIBRARY IEEE;
 use IEEE.std_logic_1164.all;
 
-entity CountUp is
+entity Countup is
+port ( CLK : in std_logic;
+		 D : in std_logic_vector(3 downto 0);
+		 Q : out std_logic_vector(3 downto 0);
+		 CE : in std_logic;
+		 MR : in std_logic;
+		 TC : out std_logic);
+end Countup;
 
-	port(
-	D: in STD_LOGIC_VECTOR (3 DOWNTO 0);
-	CLK: in STD_LOGIC;
-	CE: in STD_LOGIC;
-	MR: in STD_LOGIC;
-	Q: out STD_LOGIC_VECTOR (3 DOWNTO 0);
-	TC: out STD_LOGIC
-	);
-	
-end CountUp;
-architecture arq_CountUp of CountUp is
+architecture logicFunction of Countup is
 
-component Reg
-	port(
-		D: in STD_LOGIC_VECTOR (3 DOWNTO 0);
-		CLK: in STD_LOGIC;
-		Q: out STD_LOGIC_VECTOR (3 DOWNTO 0)
+component Reg 
+port ( CLK : in std_logic;
+		 D : in std_logic_vector(3 downto 0);
+		 Q : out std_logic_vector(3 downto 0));
+end component;
+
+component MUX2_1_4 
+ port(
+ I0, I1: in std_logic_vector (3 downto 0);
+ S: in std_logic;
+ O : out std_logic_vector (3 downto 0)
+ );		
+end component;
+
+component adder4bit 
+	port
+	(
+	A  : in std_logic_vector(3 downto 0);
+	B  : in std_logic_vector(3 downto 0);
+	Ci : in std_logic;
+	S  : out std_logic_vector(3 downto 0);
+	Co : out std_logic
 	);
 end component;
-component Full_Adder
-	port( 
-		A: in STD_LOGIC_VECTOR (3 downto 0);
-		B: in STD_LOGIC_VECTOR (3 downto 0);
-		C0: in STD_LOGIC;
-		C4: out STD_LOGIC;
-		S: out STD_LOGIC_VECTOR (3 downto 0)
-	);
-end component;
-component MUX2_1
-	port(
-		A: in STD_LOGIC;
-		B: in STD_LOGIC;
-		sel: in STD_LOGIC;
-		R: out STD_LOGIC
-	);
-end component;
-signal signalReg: STD_LOGIC_VECTOR(3 DOWNTO 0);
-signal signalAdder: STD_LOGIC_VECTOR(3 DOWNTO 0);
-signal signalMUX2_1: STD_LOGIC_VECTOR (3 DOWNTO 0);
+
+signal sQ, sadderout, smuxout : std_logic_vector(3 downto 0);
 
 begin
-		
-	UFull_Adder: Full_Adder port map(
-		A(0) => '0',
-		A(1) => '0',
-		A(2) => '0',
-		B => signalReg,
-		C0 => '0',
-		S => signalAdder
-		);
-		
-	UMux2_1_0: MUX2_1 port map(
-		A => signalAdder(0),
-		B => D(0),
-		sel => MR,
-		R => signalMUX2_1(0)
-	);
-	UMux2_1_1: MUX2_1 port map(
-		A => signalAdder(1),
-		B => D(1),
-		sel => MR,
-		R => signalMUX2_1(1)
-	);
-	
-	UMux2_1_2: MUX2_1 port map(
-		A => signalAdder(2),
-		B => D(2),
-		sel => MR,
-		R => signalMUX2_1(2)
-	);
-	
-	UMux2_1_3: MUX2_1 port map(
-		A => signalAdder(3),
-		B => D(3),
-		sel => MR,
-		R => signalMUX2_1(3)
-	);
-	
-	UReg: Reg port map (
-		CLK => CLK,
-		D => signalMUX2_1,
-		Q => signalReg
-		);
-	Q <= signalReg;
-	TC <= signalReg(0) and signalReg(1) and signalReg(2) and signalReg(3);
-end arq_CountUp;
+
+Adder : adder4bit port map( A(0) => CE,
+									 A(1) => '0',
+									 A(2) => '0',
+									 A(3) => '0',
+									 B => sQ,
+									 Ci =>'0',
+									 S => sadderout);
+									 
+MUX : MUX2_1_4 port map( I0 => sadderout,
+								 I1 => D,
+								 S => MR,
+								 O => smuxout);
+								 
+Registor : Reg port map( CLK => CLK,
+						  D => smuxout,
+						  Q => sQ);
+						  
+Q <= sQ;
+TC <= sQ(0) and sQ(1) and not sQ(2) and sQ(3);
+END LogicFunction;

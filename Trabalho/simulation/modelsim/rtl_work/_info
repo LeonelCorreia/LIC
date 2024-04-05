@@ -8,38 +8,38 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/Ricardo Gomes/Documents/Faculdade/2ano/2 Semestre/LIC/Trabalho/simulation/modelsim
-Edecoder
-Z1 w1709280582
+Z0 dC:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/simulation/modelsim
+Eadder4bit
+Z1 w1709985994
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 0
+!i122 3
 R0
-Z4 8C:/Users/Ricardo Gomes/Documents/Faculdade/2ano/2 Semestre/LIC/Trabalho/Decoder.vhd
-Z5 FC:/Users/Ricardo Gomes/Documents/Faculdade/2ano/2 Semestre/LIC/Trabalho/Decoder.vhd
+Z4 8C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/adder4bit.vhd
+Z5 FC:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/adder4bit.vhd
 l0
 L4 1
-VeDAVRkzJ6nbe@NVAPl4zF2
-!s100 X:No<dTVW@IMo:TQT2jEa1
+V?H^U@XAEeiizB5IV0@ncG2
+!s100 o1clBJnk6OQmMHPnTkK>D2
 Z6 OV;C;2020.1;71
 31
-Z7 !s110 1709292673
+Z7 !s110 1710594841
 !i10b 1
-Z8 !s108 1709292673.000000
-Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/Ricardo Gomes/Documents/Faculdade/2ano/2 Semestre/LIC/Trabalho/Decoder.vhd|
-Z10 !s107 C:/Users/Ricardo Gomes/Documents/Faculdade/2ano/2 Semestre/LIC/Trabalho/Decoder.vhd|
+Z8 !s108 1710594841.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/adder4bit.vhd|
+Z10 !s107 C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/adder4bit.vhd|
 !i113 1
 Z11 o-93 -work work
 Z12 tExplicit 1 CvgOpt 0
-Aarq_decoder
+Astructural
 R2
 R3
-DEx4 work 7 decoder 0 22 eDAVRkzJ6nbe@NVAPl4zF2
-!i122 0
-l12
-L11 9
-VbE>MC_SLLYhNXAz6>C4_32
-!s100 Y>4O=MK3k>W:c>?a5Q7`C0
+DEx4 work 9 adder4bit 0 22 ?H^U@XAEeiizB5IV0@ncG2
+!i122 3
+l29
+L15 26
+V8A;6GPI27E33BI=a3hkOV0
+!s100 OiiS0gD<[=`K_i1@Uhe^X1
 R6
 31
 R7
@@ -50,36 +50,383 @@ R10
 !i113 1
 R11
 R12
+Ecountup
+R1
+R2
+R3
+!i122 4
+R0
+Z13 8C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Countup.vhd
+Z14 FC:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Countup.vhd
+l0
+L4 1
+VMe_m2AXe9_[Nh]FSl>GjE3
+!s100 OeO1Pc4Jbd_mVJ@P=F`3a1
+R6
+31
+R7
+!i10b 1
+R8
+Z15 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Countup.vhd|
+Z16 !s107 C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Countup.vhd|
+!i113 1
+R11
+R12
+Alogicfunction
+R2
+R3
+DEx4 work 7 countup 0 22 Me_m2AXe9_[Nh]FSl>GjE3
+!i122 4
+l42
+L13 51
+V6X>C4kle?gIF34ES^56i^3
+!s100 BJaF0S99B=aT`d@o[a5BZ3
+R6
+31
+R7
+!i10b 1
+R8
+R15
+R16
+!i113 1
+R11
+R12
+Edecoder
+R1
+R2
+R3
+!i122 0
+R0
+Z17 8C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Decoder.vhd
+Z18 FC:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Decoder.vhd
+l0
+L4 1
+VeDAVRkzJ6nbe@NVAPl4zF2
+!s100 X:No<dTVW@IMo:TQT2jEa1
+R6
+31
+Z19 !s110 1710594840
+!i10b 1
+Z20 !s108 1710594840.000000
+Z21 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Decoder.vhd|
+Z22 !s107 C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Decoder.vhd|
+!i113 1
+R11
+R12
+Aarq_decoder
+R2
+R3
+DEx4 work 7 decoder 0 22 eDAVRkzJ6nbe@NVAPl4zF2
+!i122 0
+l12
+L11 9
+V<16iooeJ4bdA33NVgPjeG0
+!s100 F@e0TVVEi^MzLzl^g5Z0c2
+R6
+31
+R19
+!i10b 1
+R20
+R21
+R22
+!i113 1
+R11
+R12
+Efa
+R1
+R2
+R3
+!i122 5
+R0
+Z23 8C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/FA.vhd
+Z24 FC:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/FA.vhd
+l0
+L4 1
+VU:_EG`:^b=EnJD3f5EddT3
+!s100 T1?8Y6:JQG8Sif<dVR_Yi0
+R6
+31
+R7
+!i10b 1
+R8
+Z25 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/FA.vhd|
+Z26 !s107 C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/FA.vhd|
+!i113 1
+R11
+R12
+Astructural
+R2
+R3
+DEx4 work 2 fa 0 22 U:_EG`:^b=EnJD3f5EddT3
+!i122 5
+l17
+L15 8
+Vd1FEXHhDH`3hAmidJeI=Q3
+!s100 >V^VIhW9=mzQL7ZzB6_^V3
+R6
+31
+R7
+!i10b 1
+R8
+R25
+R26
+!i113 1
+R11
+R12
+Effd
+R1
+R2
+R3
+!i122 6
+R0
+Z27 8C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/FFD.vhd
+Z28 FC:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/FFD.vhd
+l0
+L4 1
+VlLnJhUY99`]7^:0M0ZT@z3
+!s100 7zIA7N0c8k?G4DH:]Q7>;3
+R6
+31
+R7
+!i10b 1
+R8
+Z29 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/FFD.vhd|
+Z30 !s107 C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/FFD.vhd|
+!i113 1
+R11
+R12
+Alogicfunction
+R2
+R3
+DEx4 work 3 ffd 0 22 lLnJhUY99`]7^:0M0ZT@z3
+!i122 6
+l16
+L14 9
+VXLGJhA0YLNkWk3eiz=LFX0
+!s100 EbhLHDh93W5h:OfQP8>M81
+R6
+31
+R7
+!i10b 1
+R8
+R29
+R30
+!i113 1
+R11
+R12
+Ekeycontrol
+R1
+R2
+R3
+!i122 10
+R0
+Z31 8C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Keycontrol.vhd
+Z32 FC:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Keycontrol.vhd
+l0
+L4 1
+VCP<2E^1QXcV?OPb1IE<T12
+!s100 AlOlj31>dTeC_`dEZQg>e0
+R6
+31
+Z33 !s110 1710594842
+!i10b 1
+Z34 !s108 1710594842.000000
+Z35 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Keycontrol.vhd|
+Z36 !s107 C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Keycontrol.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R2
+R3
+DEx4 work 10 keycontrol 0 22 CP<2E^1QXcV?OPb1IE<T12
+!i122 10
+l22
+L16 47
+V6c@SLD[@YlMJ`FNe=3=7`1
+!s100 4zNKJfVXg_eOYnFG1Re<Q3
+R6
+31
+R33
+!i10b 1
+R34
+R35
+R36
+!i113 1
+R11
+R12
+Ekeydecode
+Z37 w1710587652
+R2
+R3
+!i122 11
+R0
+Z38 8C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Keydecode.vhd
+Z39 FC:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Keydecode.vhd
+l0
+L5 1
+V:cZT;3CF;7eI74RcDk9461
+!s100 9zfeP6@2>iMY?V`E=M4H?1
+R6
+31
+R33
+!i10b 1
+R34
+Z40 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Keydecode.vhd|
+Z41 !s107 C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Keydecode.vhd|
+!i113 1
+R11
+R12
+Aarc_keydecode
+R2
+R3
+DEx4 work 9 keydecode 0 22 :cZT;3CF;7eI74RcDk9461
+!i122 11
+l46
+L16 55
+V8b38ZfbN;Zz;T_[QRBY2D2
+!s100 ONKLm4RO96Ei<HfZS1=bz0
+R6
+31
+R33
+!i10b 1
+R34
+R40
+R41
+!i113 1
+R11
+R12
+Ekeydecode_tb
+Z42 w1710594639
+R2
+R3
+!i122 14
+R0
+Z43 8C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/keydecode_tb.vhd
+Z44 FC:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/keydecode_tb.vhd
+l0
+L4 1
+V9?DI79oeLHal_R`kA2WoR0
+!s100 kP21Lbc4<fzDY3b`?gQ;Y0
+R6
+32
+Z45 !s110 1710594876
+!i10b 1
+Z46 !s108 1710594876.000000
+Z47 !s90 -reportprogress|300|-work|work|C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/keydecode_tb.vhd|
+Z48 !s107 C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/keydecode_tb.vhd|
+!i113 1
+Z49 o-work work
+R12
+Akeydecode_tb_arc
+R2
+R3
+Z50 DEx4 work 12 keydecode_tb 0 22 9?DI79oeLHal_R`kA2WoR0
+!i122 14
+l33
+Z51 L7 92
+Z52 V<[K95R5>YaMBPP[A6z8la1
+Z53 !s100 a?gN5^=GcQ9MWAW3VHb0[2
+R6
+32
+R45
+!i10b 1
+R46
+R47
+R48
+!i113 1
+R49
+R12
 Ekeyscan
-w1709288178
+Z54 w1710594765
 R2
 R3
 !i122 2
 R0
-8C:/Users/Ricardo Gomes/Documents/Faculdade/2ano/2 Semestre/LIC/Trabalho/keyscan.vhd
-FC:/Users/Ricardo Gomes/Documents/Faculdade/2ano/2 Semestre/LIC/Trabalho/keyscan.vhd
+Z55 8C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/keyscan.vhd
+Z56 FC:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/keyscan.vhd
 l0
 L4 1
 V>z@c>?eNWWLUT^FP]`FiO3
 !s100 L6m?E;ODngbX7W_R0f_X>2
 R6
 31
-!s110 1709292674
+R7
 !i10b 1
 R8
-!s90 -reportprogress|300|-93|-work|work|C:/Users/Ricardo Gomes/Documents/Faculdade/2ano/2 Semestre/LIC/Trabalho/keyscan.vhd|
-!s107 C:/Users/Ricardo Gomes/Documents/Faculdade/2ano/2 Semestre/LIC/Trabalho/keyscan.vhd|
+Z57 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/keyscan.vhd|
+Z58 !s107 C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/keyscan.vhd|
+!i113 1
+R11
+R12
+Aarc_keyscan
+R2
+R3
+DEx4 work 7 keyscan 0 22 >z@c>?eNWWLUT^FP]`FiO3
+!i122 2
+l68
+L14 111
+V3g`KOd5FzeDzYPXD^a=Yk0
+!s100 EFYXY]j?glPRb9Igi]zeK0
+R6
+31
+R7
+!i10b 1
+R8
+R57
+R58
+!i113 1
+R11
+R12
+Emux2_1_4
+R1
+R2
+R3
+!i122 7
+R0
+Z59 8C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/MUX2_1_4.vhd
+Z60 FC:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/MUX2_1_4.vhd
+l0
+L4 1
+VddR;?5R`2JHLzc[1X<LIP0
+!s100 GYY4CJmN1Ai?`GU[GoeDn3
+R6
+31
+R33
+!i10b 1
+R8
+Z61 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/MUX2_1_4.vhd|
+Z62 !s107 C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/MUX2_1_4.vhd|
+!i113 1
+R11
+R12
+Alogicfunction
+R2
+R3
+DEx4 work 8 mux2_1_4 0 22 ddR;?5R`2JHLzc[1X<LIP0
+!i122 7
+l13
+L12 7
+V>`1Ti>QESDA:`c2zRg;Hj1
+!s100 QLU6=28c2QA>dI@@bOdF20
+R6
+31
+R33
+!i10b 1
+R8
+R61
+R62
 !i113 1
 R11
 R12
 Emux4_1
-Z13 w1709283324
+R1
 R2
 R3
 !i122 1
 R0
-Z14 8C:/Users/Ricardo Gomes/Documents/Faculdade/2ano/2 Semestre/LIC/Trabalho/MUX4_1.vhd
-Z15 FC:/Users/Ricardo Gomes/Documents/Faculdade/2ano/2 Semestre/LIC/Trabalho/MUX4_1.vhd
+Z63 8C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/MUX4_1.vhd
+Z64 FC:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/MUX4_1.vhd
 l0
 L4 1
 Va`P`Zz0cMHWYLoQh5z_4n1
@@ -88,9 +435,9 @@ R6
 31
 R7
 !i10b 1
-R8
-Z16 !s90 -reportprogress|300|-93|-work|work|C:/Users/Ricardo Gomes/Documents/Faculdade/2ano/2 Semestre/LIC/Trabalho/MUX4_1.vhd|
-Z17 !s107 C:/Users/Ricardo Gomes/Documents/Faculdade/2ano/2 Semestre/LIC/Trabalho/MUX4_1.vhd|
+R20
+Z65 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/MUX4_1.vhd|
+Z66 !s107 C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/MUX4_1.vhd|
 !i113 1
 R11
 R12
@@ -107,9 +454,132 @@ R6
 31
 R7
 !i10b 1
-R8
-R16
-R17
+R20
+R65
+R66
+!i113 1
+R11
+R12
+Ereg
+R1
+R2
+R3
+!i122 8
+R0
+Z67 8C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Reg.vhd
+Z68 FC:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Reg.vhd
+l0
+L4 1
+VEO_b0D>XOmWWPzU90W2^e3
+!s100 WN@ZCzC5azGC;=950:am01
+R6
+31
+R33
+!i10b 1
+R34
+Z69 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Reg.vhd|
+Z70 !s107 C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/Reg.vhd|
+!i113 1
+R11
+R12
+Alogicfunction
+R2
+R3
+DEx4 work 3 reg 0 22 EO_b0D>XOmWWPzU90W2^e3
+!i122 8
+l22
+L10 43
+V7^Vh;hT9fNKEQhKhL^8^A0
+!s100 in4N6GFkzWHfXeHJY2CZP0
+R6
+31
+R33
+!i10b 1
+R34
+R69
+R70
+!i113 1
+R11
+R12
+Ereset_signal_enable
+Z71 w1710594677
+R2
+R3
+!i122 12
+R0
+Z72 8C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/AND_.vhd
+Z73 FC:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/AND_.vhd
+l0
+L4 1
+VlhcV<KnEERm9PnK>cfmBM1
+!s100 AT`K2hIXOX7YG5io1^chE0
+R6
+31
+R33
+!i10b 1
+R34
+Z74 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/AND_.vhd|
+Z75 !s107 C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/AND_.vhd|
+!i113 1
+R11
+R12
+Aarc_reset_signal_enable
+R2
+R3
+DEx4 work 19 reset_signal_enable 0 22 lhcV<KnEERm9PnK>cfmBM1
+!i122 12
+l12
+Z76 L11 4
+VE;7W:GTHK0k<KOEiNbI]I1
+!s100 X4T]HlLjAG5lVP7RV`=Yc2
+R6
+31
+R33
+!i10b 1
+R34
+R74
+R75
+!i113 1
+R11
+R12
+Etcormr
+R1
+R2
+R3
+!i122 9
+R0
+Z77 8C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/OR_.vhd
+Z78 FC:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/OR_.vhd
+l0
+L4 1
+VJf@1EPDX5`Cki@kgB:2@B0
+!s100 T7n1ia>[<4MNjbk>8mYHR2
+R6
+31
+R33
+!i10b 1
+R34
+Z79 !s90 -reportprogress|300|-93|-work|work|C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/OR_.vhd|
+Z80 !s107 C:/Leonel/git_grupo/rep-geral-G14/LIC/Trabalho/Trabalho/OR_.vhd|
+!i113 1
+R11
+R12
+Aarc_tcormr
+R2
+R3
+DEx4 work 6 tcormr 0 22 Jf@1EPDX5`Cki@kgB:2@B0
+!i122 9
+l12
+R76
+VTj=0K[JHYWLCz:dWP0<U21
+!s100 HFG2Fjg?M=a_g2^?0di4M1
+R6
+31
+R33
+!i10b 1
+R34
+R79
+R80
 !i113 1
 R11
 R12
